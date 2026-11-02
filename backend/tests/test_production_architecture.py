@@ -254,3 +254,4 @@ def test_enterprise_config_and_secrets():
     sec.set_secret("DATABASE_PASSWORD", "SuperSecureP@ssword99")
     val = sec.get_secret("DATABASE_PASSWORD")
     assert val == "SuperSecureP@ssword99"
+

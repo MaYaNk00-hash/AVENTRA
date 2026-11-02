@@ -118,3 +118,4 @@ class OfflineLicenseVerifier:
             "status": "ACTIVE_ENTITLED",
             "expires_in_days": (entitlements.expires_at - datetime.utcnow()).days
         }
+

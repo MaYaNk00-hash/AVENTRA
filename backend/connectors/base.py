@@ -128,3 +128,4 @@ class BaseEnterpriseConnector(ABC):
                 val = str(safe[k])
                 safe[k] = val[:3] + "..." + val[-3:] if len(val) > 8 else "***REDACTED***"
         return safe
+

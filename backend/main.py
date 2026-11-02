@@ -18,6 +18,7 @@ from backend.api.data import router as data_router
 from backend.api.audit import router as audit_router
 from backend.api.analytics import router as analytics_router
 from backend.api.agent import router as agent_router
+from backend.api.licensing import router as licensing_router
 
 
 @asynccontextmanager
@@ -57,6 +58,7 @@ app.include_router(data_router)
 app.include_router(audit_router)
 app.include_router(analytics_router)
 app.include_router(agent_router)
+app.include_router(licensing_router)
 
 
 @app.get("/")

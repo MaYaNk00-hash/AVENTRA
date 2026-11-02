@@ -112,3 +112,4 @@ class IAuditLedgerService(ABC):
     def verify_ledger_integrity(self) -> Dict[str, Any]:
         """Cryptographically validates full ledger chain from genesis block to tip."""
         pass
+

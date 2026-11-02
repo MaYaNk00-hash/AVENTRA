@@ -108,3 +108,4 @@ class EnvironmentSecretsManager(ISecretsManager):
     def set_secret(self, key: str, value: str) -> None:
         env_key = f"{self.prefix}{key.upper()}"
         os.environ[env_key] = value
+

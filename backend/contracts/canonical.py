@@ -176,3 +176,4 @@ class CanonicalQueryResult(BaseModel):
     total_returned: int
     execution_time_ms: float
     is_truncated: bool = False
+

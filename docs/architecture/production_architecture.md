@@ -93,3 +93,4 @@ Each enterprise deployment configures an immutable `SecurityPolicyConfig`:
 - **Financial Tolerance Threshold**: Discrepancies $>2.0\%$ between PO, Invoice, and Goods Receipt block automated payment.
 - **Prohibited Tool Invocations**: Direct SQL DDL operations (`DROP`, `ALTER`, `TRUNCATE`) are strictly blocked by the tool allowlist.
 - **Credential Protection**: Connector secrets are injected via environment secrets or HashiCorp Vault; plain-text credentials are never returned over REST APIs or rendered in client UI bundles.
+

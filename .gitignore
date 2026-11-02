@@ -31,6 +31,8 @@ venv/
 .env.local
 .env.*.local
 *.pem
+backend/licensing/*.json
+backend/licensing/*.lic
 
 # Large raw datasets & competition files (>100MB exceeds GitHub limit)
 amazon_ml/dataset/
