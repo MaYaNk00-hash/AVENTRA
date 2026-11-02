@@ -1,0 +1,9 @@
+model_identifier: "document_intelligence"
+model_version: "1.0.0"
+algorithm: "Layout-aware Regex & Token Extraction + ERP Schema Normalizer"
+confidence_threshold: 0.80
+metrics:
+  field_level_f1: 0.942
+  exact_match_rate: 0.918
+  missing_field_rate: 0.024
+

@@ -1,0 +1,48 @@
+# Roadmap tracker
+roadmap_tracker/
+
+# Dependencies & Build artifacts
+node_modules/
+.next/
+out/
+build/
+*.tsbuildinfo
+.pnp
+.pnp.js
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Large raw datasets & competition files (>100MB exceeds GitHub limit)
+amazon_ml/dataset/
+*.parquet
+*.tsv
+*.tsv.gz
+*.zip
+
+# System & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.log

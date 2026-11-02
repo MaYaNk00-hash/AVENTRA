@@ -1,0 +1,74 @@
+@import '@xyflow/react/dist/style.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #090B10;
+  --foreground: #E6EDF3;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars for Blackbox terminal style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #21262D;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #30363D;
+}
+
+/* React Flow dark overrides */
+.react-flow__background {
+  background-color: #090B10 !important;
+}
+
+.react-flow__node {
+  border-radius: 8px;
+}
+
+.react-flow__handle {
+  width: 8px !important;
+  height: 8px !important;
+  background: #00D2FF !important;
+  border: 1px solid #161B22 !important;
+}
+
+.react-flow__edge-path {
+  stroke: #388BFD !important;
+  stroke-width: 2 !important;
+}
+
+.react-flow__controls {
+  box-shadow: none !important;
+  border: 1px solid #21262D !important;
+  background: #0E1117 !important;
+  border-radius: 6px;
+}
+
+.react-flow__controls-button {
+  background: #0E1117 !important;
+  border-bottom: 1px solid #21262D !important;
+  fill: #8B949E !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #161B22 !important;
+  fill: #C9D1D9 !important;
+}

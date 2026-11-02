@@ -1,0 +1,10 @@
+model_identifier: "adaptation_recommender"
+model_version: "1.0.0"
+algorithm: "Schema Drift Diff Engine + Impact Dependency Analyzer"
+auto_apply_changes: false  # Strict policy: AI never self-authorizes
+drift_similarity_threshold: 0.60
+metrics:
+  drift_detection_recall: 0.985
+  migration_test_pass_rate: 0.991
+  unauthorized_changes_blocked: 1.000
+

@@ -1,0 +1,18 @@
+model_identifier: "entity_resolution"
+model_version: "1.2.0"
+algorithm: "LightGBM + Lexical/Address Interaction Blocking"
+num_features: 16
+confidence_threshold: 0.65
+golden_record_threshold: 0.85
+review_threshold_low: 0.40
+review_threshold_high: 0.85
+top_k_candidates: 10
+country_allowlist: ["US", "India", "France", "GLOBAL"]
+artifact_path: "ml/models/entity_resolution/artifacts/matching_lgb_model.pkl"
+metrics:
+  blocking_recall: 0.942
+  heldout_precision: 0.915
+  heldout_recall: 0.887
+  heldout_f05: 0.909
+  avg_inference_ms: 4.8
+

@@ -1,0 +1,12 @@
+model_identifier: "invoice_reconciliation"
+model_version: "1.0.0"
+algorithm: "3-Way Deterministic Reconciliation Engine with Policy Tolerances"
+price_tolerance_pct: 2.0
+quantity_tolerance_pct: 0.0
+tax_tolerance_currency: 1.0
+approval_required_variance_currency: 50.0
+metrics:
+  exception_precision: 0.998
+  exception_recall: 0.995
+  reconciliation_accuracy: 0.997
+

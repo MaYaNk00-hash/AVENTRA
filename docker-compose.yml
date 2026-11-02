@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: infrastructure/backend.Dockerfile
+    container_name: aventra-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - DATABASE_URL=sqlite:///./backend/aventra.db
+      - SECRET_KEY=AVENTRA_SUPER_SECURE_ENTERPRISE_KEY_2026_PRODUCTION
+    volumes:
+      - ./backend:/app/backend
+      - ./ml:/app/ml
+      - ./amazon_ml:/app/amazon_ml
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../infrastructure/frontend.Dockerfile
+    container_name: aventra-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+

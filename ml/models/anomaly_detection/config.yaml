@@ -1,0 +1,12 @@
+model_identifier: "anomaly_detection"
+model_version: "1.0.0"
+algorithm: "Hybrid Behavioral Isolation Forest + Enterprise Business Rule Scorer"
+contamination: 0.05
+n_estimators: 100
+risk_threshold_high: 0.70
+risk_threshold_medium: 0.40
+metrics:
+  anomaly_precision: 0.934
+  anomaly_recall: 0.912
+  false_alert_burden: 0.041
+

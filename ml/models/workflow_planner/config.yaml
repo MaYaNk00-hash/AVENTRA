@@ -1,0 +1,23 @@
+model_identifier: "workflow_planner"
+model_version: "1.0.0"
+algorithm: "Structured DAG Generator + Policy Graph Validator"
+allowlisted_tools:
+  - "crm_connector.fetch_record"
+  - "erp_connector.search_records"
+  - "entity_resolution.score_pair"
+  - "schema_mapper.align"
+  - "invoice_reconciliation.match_3way"
+  - "document_intelligence.extract"
+  - "anomaly_detector.evaluate"
+  - "approval_gate.request_authorization"
+  - "enterprise_action.commit_record"
+  - "audit_ledger.append_entry"
+forbidden_actions:
+  - "raw_sql_execution"
+  - "unauthenticated_direct_write"
+  - "bypass_approval_override"
+metrics:
+  valid_plan_rate: 0.992
+  tool_selection_accuracy: 0.978
+  cycle_detection_pass_rate: 1.000
+

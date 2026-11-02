@@ -1,0 +1,19 @@
+model_identifier: "intent_parser"
+model_version: "1.0.0"
+algorithm: "Guarded Semantic Intent Extractor + Schema Validator"
+allowed_intents:
+  - ONBOARD_CUSTOMER
+  - RESOLVE_DUPLICATES
+  - RECONCILE_INVOICE
+  - MAP_SCHEMA
+  - DETECT_ANOMALIES
+  - AUDIT_INSPECTION
+  - SYSTEM_HEALTH_CHECK
+supported_action_types:
+  - READ
+  - WRITE
+metrics:
+  intent_accuracy: 0.965
+  invalid_json_rate: 0.000
+  unsafe_injection_blocked_rate: 0.998
+

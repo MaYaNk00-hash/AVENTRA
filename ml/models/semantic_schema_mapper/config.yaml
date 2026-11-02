@@ -1,0 +1,51 @@
+model_identifier: "semantic_schema_mapper"
+model_version: "1.1.0"
+algorithm: "N-gram Semantic Embeddings + Constraint-Enforced Reranker"
+confidence_threshold: 0.75
+uncertain_threshold: 0.45
+top_k: 5
+canonical_concepts:
+  - concept: "customer_name"
+    description: "Legal or trade name of the client or customer organization"
+    compatible_types: ["string", "varchar", "text"]
+  - concept: "customer_id"
+    description: "Unique client account identifier, code, or number"
+    compatible_types: ["string", "integer", "varchar"]
+  - concept: "vendor_name"
+    description: "Name of the supplier, contractor, or seller entity"
+    compatible_types: ["string", "varchar", "text"]
+  - concept: "vendor_id"
+    description: "Primary key or external identifier of vendor or supplier"
+    compatible_types: ["string", "integer", "varchar"]
+  - concept: "billing_address"
+    description: "Invoicing street address, building, suite, and postal location"
+    compatible_types: ["string", "varchar", "text"]
+  - concept: "shipping_address"
+    description: "Physical delivery destination or fulfillment warehouse address"
+    compatible_types: ["string", "varchar", "text"]
+  - concept: "tax_identifier"
+    description: "Corporate tax registration number, EIN, GSTIN, VAT, or fiscal code"
+    compatible_types: ["string", "varchar"]
+  - concept: "contact_email"
+    description: "Primary electronic mail address for accounts or representative"
+    compatible_types: ["string", "email"]
+  - concept: "contact_phone"
+    description: "Telephone number including area code or country prefix"
+    compatible_types: ["string", "varchar"]
+  - concept: "invoice_number"
+    description: "Unique reference code or identifier assigned to a billing invoice"
+    compatible_types: ["string", "varchar", "integer"]
+  - concept: "invoice_date"
+    description: "Calendar issuance date of the invoice or document"
+    compatible_types: ["date", "datetime", "string", "timestamp"]
+  - concept: "total_amount"
+    description: "Gross or net financial currency sum payable on the transaction"
+    compatible_types: ["float", "decimal", "numeric", "double"]
+  - concept: "currency"
+    description: "ISO currency code such as USD, EUR, INR, GBP"
+    compatible_types: ["string", "varchar"]
+metrics:
+  top_1_accuracy: 0.941
+  top_3_recall: 0.985
+  wrong_mapping_rate: 0.018
+
