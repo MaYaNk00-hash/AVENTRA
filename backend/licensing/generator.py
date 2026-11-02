@@ -76,3 +76,4 @@ def decode_license_token(token_str: str) -> LicenseEntitlements:
         return LicenseEntitlements(**data)
     except Exception as e:
         raise ValueError(f"Failed to decode license token: {str(e)}")
+

@@ -92,3 +92,4 @@ def generate_installation_identity(custom_override_id: str = None) -> Installati
         mac_node_hash=mac_hash,
         is_containerized=detect_container_environment()
     )
+

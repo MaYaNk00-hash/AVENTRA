@@ -9,21 +9,32 @@ from backend.database.models import (
 )
 
 DB_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "aventra.db"))
-DATABASE_URL = f"sqlite:///{DB_PATH}"
+DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{DB_PATH}")
 
-engine = create_engine(
-    DATABASE_URL,
-    connect_args={"check_same_thread": False}
-)
+# Handle both PostgreSQL enterprise deployments and local SQLite
+if DATABASE_URL.startswith("sqlite"):
+    engine = create_engine(
+        DATABASE_URL,
+        connect_args={"check_same_thread": False}
+    )
 
-# Enable WAL mode and foreign keys in SQLite
-@event.listens_for(engine, "connect")
-def set_sqlite_pragma(dbapi_connection, connection_record):
-    cursor = dbapi_connection.cursor()
-    cursor.execute("PRAGMA journal_mode=WAL")
-    cursor.execute("PRAGMA synchronous=NORMAL")
-    cursor.execute("PRAGMA foreign_keys=ON")
-    cursor.close()
+    # Enable WAL mode and foreign keys in SQLite
+    @event.listens_for(engine, "connect")
+    def set_sqlite_pragma(dbapi_connection, connection_record):
+        cursor = dbapi_connection.cursor()
+        cursor.execute("PRAGMA journal_mode=WAL")
+        cursor.execute("PRAGMA synchronous=NORMAL")
+        cursor.execute("PRAGMA foreign_keys=ON")
+        cursor.close()
+else:
+    # Enterprise PostgreSQL with connection pooling and health pre-ping
+    engine = create_engine(
+        DATABASE_URL,
+        pool_size=int(os.getenv("DB_POOL_SIZE", "15")),
+        max_overflow=int(os.getenv("DB_MAX_OVERFLOW", "10")),
+        pool_pre_ping=True,
+        pool_recycle=3600
+    )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

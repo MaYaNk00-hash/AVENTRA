@@ -235,3 +235,4 @@ class LicenseManager:
             return False
         conn_types = [c.upper() for c in self.active_entitlements.allowed_connectors]
         return (connector_type.upper() in conn_types) or ("*" in conn_types)
+

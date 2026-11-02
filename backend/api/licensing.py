@@ -87,3 +87,4 @@ def revoke_license(
     mgr = LicenseManager()
     res = mgr.revoke_license(req.license_id, reason=req.reason)
     return res
+

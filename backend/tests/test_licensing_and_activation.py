@@ -169,3 +169,4 @@ def test_licensing_traffic_separation_from_customer_data():
     disallowed_keywords = ["customer", "invoice", "vendor", "account", "transaction", "balance", "email_body", "ssn"]
     for kw in disallowed_keywords:
         assert kw not in ent_json.lower()
+
