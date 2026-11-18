@@ -1,11 +1,17 @@
 import os
 import sys
 from contextlib import asynccontextmanager
+from pathlib import Path
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 # Ensure AVENTRA root is in sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+# Local secrets only. Shell/deployment environment takes precedence; never load
+# .env.example, which also contains illustrative production database settings.
+load_dotenv(Path(__file__).resolve().parents[1] / ".env.local", override=False)
 
 from backend.database.session import seed_database
 from ml.shared.model_registry.bootstrap import bootstrap_registry
@@ -19,6 +25,13 @@ from backend.api.audit import router as audit_router
 from backend.api.analytics import router as analytics_router
 from backend.api.agent import router as agent_router
 from backend.api.licensing import router as licensing_router
+from backend.api.connections import router as connections_router
+from backend.api.crm import router as crm_router
+from backend.api.erp import router as erp_router
+from backend.api.workbench import router as workbench_router
+from backend.api.adaptation import router as adaptation_router
+from backend.api.runtime import router as runtime_router
+from backend.agents.local_sandbox import LocalSandbox
 
 
 @asynccontextmanager
@@ -29,7 +42,8 @@ async def lifespan(app: FastAPI):
     print("[AVENTRA] Bootstrapping modular ML Model Registry...")
     bootstrap_registry()
     print("[AVENTRA] System ready. All trust & execution services active.")
-    yield
+    async with LocalSandbox():
+        yield
     print("[AVENTRA] Graceful shutdown completed.")
 
 
@@ -59,6 +73,12 @@ app.include_router(audit_router)
 app.include_router(analytics_router)
 app.include_router(agent_router)
 app.include_router(licensing_router)
+app.include_router(connections_router)
+app.include_router(crm_router)
+app.include_router(erp_router)
+app.include_router(workbench_router)
+app.include_router(adaptation_router)
+app.include_router(runtime_router)
 
 
 @app.get("/")

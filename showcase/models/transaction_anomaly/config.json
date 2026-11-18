@@ -1,0 +1,13 @@
+{
+  "name": "transaction_anomaly",
+  "version": "1.0.0",
+  "seed": 42,
+  "features": [
+    "amount",
+    "hour",
+    "account_age_days",
+    "daily_count",
+    "international"
+  ],
+  "shared_implementation": "showcase/core.py"
+}

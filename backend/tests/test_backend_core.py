@@ -95,8 +95,9 @@ def test_agent_task_execution():
     res = client.post("/api/agent/execute", json={
         "prompt": "Onboard new vendor Zenith Dynamics Corp into Company A CRM."
     })
-    assert res.status_code == 200
-    data = res.json()
-    assert data["status"] in ["AWAITING_APPROVAL", "COMPLETED", "RUNNING"]
-    assert "execution_id" in data
+    assert res.status_code == 401
+    from backend.security.auth import create_access_token
+    authenticated = client.post("/api/agent/execute", headers={"Authorization": "Bearer " + create_access_token({"sub": "admin"})}, json={"prompt": "Onboard new vendor Zenith Dynamics Corp"})
+    assert authenticated.status_code == 409
+    assert "Legacy agent execution is disabled" in authenticated.json()["detail"]
 

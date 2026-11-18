@@ -1,6 +1,7 @@
 import os
 import time
 import yaml
+import pickle
 from typing import Dict, Any, List, Optional
 from pydantic import BaseModel as PydanticBaseModel, Field
 
@@ -43,8 +44,16 @@ class WorkflowPlannerModel(BaseModel):
 
         self.allowlisted_tools = set(self.config.get("allowlisted_tools", []))
         self.forbidden_actions = set(self.config.get("forbidden_actions", []))
+        self.artifact_path = os.path.join(base_dir, "artifacts", "workflow_planner.pkl")
+        self.trained_bundle = None
 
     def load(self) -> None:
+        if os.path.exists(self.artifact_path):
+            try:
+                with open(self.artifact_path, "rb") as f:
+                    self.trained_bundle = pickle.load(f)
+            except Exception:
+                self.trained_bundle = None
         self.is_loaded = True
 
     def preprocess(self, data: Dict[str, Any]) -> PreprocessedPlanRequest:

@@ -1,0 +1,65 @@
+{
+  "provenance": "Synthetic editable inference examples; not training records, predictions, or evaluation metrics.",
+  "examples": {
+    "intent_parser": {
+      "prompt": "Review unusual supplier transactions for anomalies"
+    },
+    "workflow_planner": {
+      "intent_type": "DETECT_ANOMALIES"
+    },
+    "semantic_schema_mapper": {
+      "fields": [
+        {
+          "field_name": "billing_total",
+          "description": "Total invoice amount",
+          "datatype": "number"
+        }
+      ]
+    },
+    "invoice_reconciliation": {
+      "po_total": 1200,
+      "inv_total": 1260,
+      "price_variance": 60,
+      "qty_variance": 0,
+      "tax_diff": 0,
+      "has_exceptions": 1
+    },
+    "adaptation_recommender": {
+      "semantic_similarity": 0.82,
+      "has_type_shift": 1
+    },
+    "document_intelligence": {
+      "document_text": "Invoice Number: HYBRID-001\nSubtotal: $1200.00\nTax: $96.00\nTotal Amount: $1296.00",
+      "filename": "synthetic-example.txt"
+    },
+    "anomaly_detection": {
+      "transaction_id": "HYBRID-T1",
+      "vendor_id": "DEMO-V1",
+      "amount": 19000,
+      "historical_avg_amount": 1200,
+      "historical_std_amount": 250,
+      "vendor_age_days": 4,
+      "transactions_last_24h": 9,
+      "is_weekend": true,
+      "payment_terms_days": 30
+    },
+    "entity_resolution": {
+      "query": {
+        "entity_id": "DEMO-A",
+        "business_name": "Synthetic Cedar Components",
+        "business_address": "12 Fictional Road Pune",
+        "country": "IN",
+        "source_system": "CRM"
+      },
+      "candidates": [
+        {
+          "entity_id": "DEMO-B",
+          "business_name": "Synthetic Cedar Components Ltd",
+          "business_address": "12 Fictional Road Pune",
+          "country": "IN",
+          "source_system": "ERP"
+        }
+      ]
+    }
+  }
+}

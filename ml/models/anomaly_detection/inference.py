@@ -35,6 +35,12 @@ class AnomalyDetectionModel(BaseModel):
         self.artifact_path = os.path.join(base_dir, "artifacts", "isolation_forest.pkl")
 
     def load(self) -> None:
+        if os.path.exists(self.artifact_path):
+            with open(self.artifact_path, "rb") as f:
+                self.model = pickle.load(f)
+            self.is_loaded = True
+            return
+
         # Train baseline distribution if artifact not cached
         np.random.seed(42)
         baseline_X = np.column_stack([

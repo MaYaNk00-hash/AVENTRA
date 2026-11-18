@@ -63,11 +63,6 @@ def verify_ledger_chain(db: Session) -> Dict[str, Any]:
 
     prev_expected = "0" * 64
     for idx, entry in enumerate(entries):
-        if idx == 0 and entry.prev_hash == "0" * 64:
-            # Genesis entry
-            prev_expected = entry.current_hash
-            continue
-
         if entry.prev_hash != prev_expected:
             return {
                 "is_valid": False,
@@ -92,6 +87,18 @@ def verify_ledger_chain(db: Session) -> Dict[str, Any]:
             entry.actor_id,
             entry.action_type
         )
+        # The original seeder used a distinct genesis header. Verify that exact
+        # format only for the root block, preserving existing ledgers read-only.
+        if (idx == 0 and entry.actor_id == "SYSTEM"
+                and entry.actor_role == "SYSTEM_CORE"
+                and entry.action_type == "GENESIS_LEDGER_INITIALIZATION"
+                and entry.entity_type == "SYSTEM" and entry.entity_id == "ROOT_BLOCK"
+                and entry.details == {"genesis": "AVENTRA_TRUST_LEDGER_ROOT", "initialized_at": "2026-10-24T00:00:00Z"}):
+            legacy_hash = hashlib.sha256(
+                f"{entry.prev_hash}{entry.payload_hash}GENESIS_SYSTEM_INIT".encode()
+            ).hexdigest()
+            if entry.current_hash == legacy_hash:
+                expected_curr_hash = legacy_hash
         if entry.current_hash != expected_curr_hash:
             return {
                 "is_valid": False,

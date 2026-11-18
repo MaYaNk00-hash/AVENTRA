@@ -34,14 +34,27 @@ class SemanticSchemaMapperModel(BaseModel):
         self.canonical_embeddings = None
         self.canonical_texts = []
         self.artifact_path = os.path.join(base_dir, "artifacts", "schema_mapper.pkl")
+        self.trained_bundle = None
 
     def load(self) -> None:
+        if os.path.exists(self.artifact_path):
+            try:
+                with open(self.artifact_path, "rb") as f:
+                    self.trained_bundle = pickle.load(f)
+                    if "vectorizer" in self.trained_bundle:
+                        self.vectorizer = self.trained_bundle["vectorizer"]
+            except Exception:
+                self.trained_bundle = None
+
         self.canonical_texts = [
             f"{normalize_field_name(c['concept'])} {c['description']}"
             for c in self.canonical_concepts
         ]
         if self.canonical_texts:
-            self.canonical_embeddings = self.vectorizer.fit_transform(self.canonical_texts)
+            if self.trained_bundle is not None:
+                self.canonical_embeddings = self.vectorizer.transform(self.canonical_texts)
+            else:
+                self.canonical_embeddings = self.vectorizer.fit_transform(self.canonical_texts)
         self.is_loaded = True
 
     def preprocess(self, data: Dict[str, Any]) -> List[PreprocessedField]:
@@ -75,6 +88,13 @@ class SemanticSchemaMapperModel(BaseModel):
                 f_vec = self.vectorizer.transform([f.combined_text])
                 cos_sims = cosine_similarity(f_vec, self.canonical_embeddings)[0]
 
+                # Trained classifier probabilities if available
+                clf_probs = {}
+                if self.trained_bundle and "classifier" in self.trained_bundle:
+                    clf = self.trained_bundle["classifier"]
+                    probs = clf.predict_proba(f_vec)[0]
+                    clf_probs = {cls_name: float(p) for cls_name, p in zip(clf.classes_, probs)}
+
                 scored_candidates = []
                 for idx, c in enumerate(self.canonical_concepts):
                     base_sim = float(cos_sims[idx])
@@ -83,7 +103,12 @@ class SemanticSchemaMapperModel(BaseModel):
                     fuzzy_name = fuzz.token_sort_ratio(f.normalized_name, normalize_field_name(c["concept"])) / 100.0
                     token_sim = distance.JaroWinkler.similarity(f.normalized_name, normalize_field_name(c["concept"]))
                     
-                    combined_score = 0.5 * base_sim + 0.3 * fuzzy_name + 0.2 * token_sim
+                    ml_prob = clf_probs.get(c["concept"], 0.0)
+
+                    if clf_probs:
+                        combined_score = 0.35 * base_sim + 0.25 * fuzzy_name + 0.15 * token_sim + 0.25 * ml_prob
+                    else:
+                        combined_score = 0.5 * base_sim + 0.3 * fuzzy_name + 0.2 * token_sim
 
                     # Type compatibility check
                     type_ok = check_type_compatibility(f.raw.datatype, c.get("compatible_types", []))

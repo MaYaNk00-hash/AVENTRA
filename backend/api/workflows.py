@@ -91,8 +91,10 @@ def _background_run(execution_id: str):
 def execute_workflow(
     req: ExecuteWorkflowRequest,
     background_tasks: BackgroundTasks,
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_user)
 ):
+    raise HTTPException(409, "Legacy simulator execution is disabled. Import actual datasets through /api/workbench; external write execution is not enabled.")
     engine = WorkflowExecutionEngine(db)
     execution = engine.create_execution(
         workflow_id=req.workflow_id,

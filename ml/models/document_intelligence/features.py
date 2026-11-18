@@ -1,7 +1,7 @@
 import re
 from typing import Dict, Any, List, Optional
 
-INV_RE = re.compile(r'(?:invoice\s*(?:#|no\.?|num(?:ber)?)|inv#?)\s*[:\-]?\s*([A-Za-z0-9\-_]+)', re.IGNORECASE)
+INV_RE = re.compile(r'(?:invoice\s*(?:#|no\.?|num(?:ber)?)\s*[:\-]?|inv\s*[:\-#]\s*|inv#\s*)\s*([A-Za-z0-9\-_]+)', re.IGNORECASE)
 PO_RE = re.compile(r'(?:purchase\s*order|po\s*(?:#|no\.?|num(?:ber)?)|p\.o\.)\s*[:\-]?\s*([A-Za-z0-9\-_]+)', re.IGNORECASE)
 DATE_RE = re.compile(r'(?:date|dated|invoice\s*date)\s*[:\-]?\s*([0-9]{4}[-/][0-9]{1,2}[-/][0-9]{1,2}|[0-9]{1,2}[-/][0-9]{1,2}[-/][0-9]{2,4}|[A-Za-z]+\s+[0-9]{1,2},?\s+[0-9]{4})', re.IGNORECASE)
 SUBTOTAL_RE = re.compile(r'\bsubtotal\s*[:\-]?\s*\$?\s*([0-9,]+\.[0-9]{2})', re.IGNORECASE)

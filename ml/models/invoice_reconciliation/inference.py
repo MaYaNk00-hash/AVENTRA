@@ -1,6 +1,7 @@
 import os
 import time
 import yaml
+import pickle
 from typing import Dict, Any, Optional
 
 from ml.shared.schemas.base import BaseModel, BaseModelOutput, ModelExecutionStatus
@@ -24,7 +25,16 @@ class InvoiceReconciliationModel(BaseModel):
         else:
             self.config = {}
 
+        self.artifact_path = os.path.join(base_dir, "artifacts", "reconciliation_calibrator.pkl")
+        self.trained_bundle = None
+
     def load(self) -> None:
+        if os.path.exists(self.artifact_path):
+            try:
+                with open(self.artifact_path, "rb") as f:
+                    self.trained_bundle = pickle.load(f)
+            except Exception:
+                self.trained_bundle = None
         self.is_loaded = True
 
     def preprocess(self, data: Dict[str, Any]) -> ReconciliationInput:
@@ -37,7 +47,7 @@ class InvoiceReconciliationModel(BaseModel):
 
         try:
             rec_in = self.preprocess(data)
-            price_tol = float(self.config.get("price_tolerance_pct", 2.0))
+            price_tol = float(data.get("price_tolerance_pct") if data.get("price_tolerance_pct") is not None else self.config.get("price_tolerance_pct", 2.0))
             variance_analysis = calculate_variances(rec_in, price_tolerance_pct=price_tol)
 
             flags = variance_analysis["flags"]
@@ -48,7 +58,7 @@ class InvoiceReconciliationModel(BaseModel):
             if not has_exceptions:
                 status = "RECONCILED_EXACT"
                 requires_approval = False
-            elif total_variance <= threshold and not any("DUPLICATE" in f or "VENDOR_MISMATCH" in f for f in flags):
+            elif total_variance <= threshold and all(f.startswith("PRICE_VARIANCE") for f in flags):
                 status = "RECONCILED_WITHIN_TOLERANCE"
                 requires_approval = False
             else:

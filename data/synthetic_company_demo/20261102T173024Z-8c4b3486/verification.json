@@ -1,0 +1,246 @@
+{
+  "dataset_kind": "synthetic",
+  "seed": 42,
+  "sha256": "359da44fe1b398e74e3a8362f263b0379984a299bd1a79237a5f27ccbbcafc4c",
+  "runs": [
+    {
+      "id": "1949940f-a372-4360-b7d2-912dd5db1e87",
+      "status": "COMPLETED",
+      "result": {
+        "type": "retrieval",
+        "records": [
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000001",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000001",
+              "company_name": "Synthetic Cedar Bridge 00001",
+              "sector": "Communication Services",
+              "headquarters": "Fictional District 36, Mumbai, India",
+              "sub_industry": "Telecommunications",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000002",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000002",
+              "company_name": "Synthetic Orchid Point 00002",
+              "sector": "Industrials",
+              "headquarters": "Fictional District 76, Chennai, India",
+              "sub_industry": "Machinery",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000003",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000003",
+              "company_name": "Synthetic Summit Ventures 00003",
+              "sector": "Health Care",
+              "headquarters": "Fictional District 78, Gwalior, India",
+              "sub_industry": "Biotechnology",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000004",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000004",
+              "company_name": "Synthetic Orchid Solutions 00004",
+              "sector": "Communication Services",
+              "headquarters": "Fictional District 29, Ahmedabad, India",
+              "sub_industry": "Interactive Services",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000005",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000005",
+              "company_name": "Synthetic Silver Solutions 00005",
+              "sector": "Information Technology",
+              "headquarters": "Fictional District 44, Delhi, India",
+              "sub_industry": "Software",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000006",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000006",
+              "company_name": "Synthetic Cedar Point 00006",
+              "sector": "Consumer Staples",
+              "headquarters": "Fictional District 49, Pune, India",
+              "sub_industry": "Household Products",
+              "review_state": "queued"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000007",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000007",
+              "company_name": "Synthetic Cobalt Bridge 00007",
+              "sector": "Utilities",
+              "headquarters": "Fictional District 59, Jaipur, India",
+              "sub_industry": "Electric Utilities",
+              "review_state": "reviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000008",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000008",
+              "company_name": "Synthetic Cedar Ventures 00008",
+              "sector": "Energy",
+              "headquarters": "Fictional District 38, Indore, India",
+              "sub_industry": "Renewable Fuels",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000009",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000009",
+              "company_name": "Synthetic Amber Systems 00009",
+              "sector": "Industrials",
+              "headquarters": "Fictional District 38, Pune, India",
+              "sub_industry": "Machinery",
+              "review_state": "queued"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000010",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000010",
+              "company_name": "Synthetic Cobalt Group 00010",
+              "sector": "Energy",
+              "headquarters": "Fictional District 82, Hyderabad, India",
+              "sub_industry": "Energy Equipment",
+              "review_state": "unreviewed"
+            }
+          }
+        ],
+        "total_matches": 5011,
+        "returned_count": 10,
+        "requested_limit": 10,
+        "selection": "ranked matches",
+        "summary": "Returned 10 of 5011 matching records from 2 connected resources.",
+        "search": "",
+        "ranking": "lexical fuzzy relevance; relevance scores are not model probabilities",
+        "execution": {
+          "input": {
+            "request": "Show first 10 records",
+            "source_ids": [
+              "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b"
+            ]
+          },
+          "datasets": [
+            {
+              "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+              "kind": "synthetic",
+              "title": "Synthetic company directory \u2014 5,000 fictional records",
+              "sha256": "359da44fe1b398e74e3a8362f263b0379984a299bd1a79237a5f27ccbbcafc4c"
+            }
+          ],
+          "planner": "backend tools",
+          "provider": null,
+          "model": null,
+          "duration_ms": 260.12,
+          "score": null,
+          "score_note": "Retrieval returns source records; no trained classifier probability is produced."
+        }
+      },
+      "event_count": 6,
+      "resource_row_counts": {
+        "companies": 5000,
+        "sector_counts": 11
+      }
+    },
+    {
+      "id": "4fa4fb79-9010-4a80-8dc1-58e6297c912e",
+      "status": "COMPLETED",
+      "result": {
+        "type": "summary",
+        "resources": [
+          {
+            "source": "Synthetic company demo 359da44f 8c4b3486",
+            "resource": "companies",
+            "row_count": 5000,
+            "numeric_fields": {}
+          },
+          {
+            "source": "Synthetic company demo 359da44f 8c4b3486",
+            "resource": "sector_counts",
+            "row_count": 11,
+            "numeric_fields": {
+              "security_count": {
+                "count": 11,
+                "sum": 5000,
+                "minimum": 412,
+                "maximum": 494
+              }
+            }
+          }
+        ],
+        "summary": "Summarized 5011 live records from 2 resources. Numeric sums use source units; currencies are not inferred.",
+        "execution": {
+          "input": {
+            "request": "Summarize connected records",
+            "source_ids": [
+              "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b"
+            ]
+          },
+          "datasets": [
+            {
+              "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+              "kind": "synthetic",
+              "title": "Synthetic company directory \u2014 5,000 fictional records",
+              "sha256": "359da44fe1b398e74e3a8362f263b0379984a299bd1a79237a5f27ccbbcafc4c"
+            }
+          ],
+          "planner": "backend tools",
+          "provider": null,
+          "model": null,
+          "duration_ms": 188.93,
+          "score": null,
+          "score_note": "Retrieval returns source records; no trained classifier probability is produced."
+        }
+      },
+      "event_count": 6,
+      "resource_row_counts": {
+        "companies": 5000,
+        "sector_counts": 11
+      }
+    }
+  ]
+}

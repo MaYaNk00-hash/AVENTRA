@@ -8,6 +8,7 @@ from backend.database.models import ApprovalRequest, User
 from backend.workflows.engine import WorkflowExecutionEngine
 from backend.security.auth import get_current_user
 from backend.security.rbac import require_roles
+import secrets
 
 router = APIRouter(prefix="/api/approvals", tags=["Human Approvals"])
 
@@ -74,14 +75,22 @@ def get_approval_detail(approval_id: str, db: Session = Depends(get_db)):
 def decide_approval(
     approval_id: str,
     req: ApprovalDecisionRequest,
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_user)
 ):
+    if user.role not in ("ADMIN", "COMPLIANCE_OFFICER", "OPERATIONS_APPROVER"):
+        raise HTTPException(403, "Your role cannot decide approvals")
+    ticket = db.query(ApprovalRequest).filter_by(id=approval_id).first()
+    if ticket is None:
+        raise HTTPException(404, "Approval not found")
+    if not req.nonce_token or not secrets.compare_digest(req.nonce_token, ticket.nonce_token or ""):
+        raise HTTPException(403, "A valid approval nonce is required")
     engine = WorkflowExecutionEngine(db)
     try:
         res = engine.resume_after_approval(
             approval_id=approval_id,
-            approved_by=req.reviewer_name or "Elena Rostova",
-            user_role=req.reviewer_role or "COMPLIANCE_OFFICER",
+            approved_by=user.full_name,
+            user_role=user.role,
             decision=req.decision,
             comments=req.comments
         )

@@ -1,0 +1,377 @@
+{
+  "checks": [
+    {
+      "id": "73ad8bd9-6c71-4b0a-93ec-c01ad7abda94",
+      "goal": "Show first 10 records from companies",
+      "status": "COMPLETED",
+      "result": {
+        "type": "retrieval",
+        "records": [
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000001",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000001",
+              "company_name": "Synthetic Cedar Bridge 00001",
+              "sector": "Communication Services",
+              "headquarters": "Fictional District 36, Mumbai, India",
+              "sub_industry": "Telecommunications",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000002",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000002",
+              "company_name": "Synthetic Orchid Point 00002",
+              "sector": "Industrials",
+              "headquarters": "Fictional District 76, Chennai, India",
+              "sub_industry": "Machinery",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000003",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000003",
+              "company_name": "Synthetic Summit Ventures 00003",
+              "sector": "Health Care",
+              "headquarters": "Fictional District 78, Gwalior, India",
+              "sub_industry": "Biotechnology",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000004",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000004",
+              "company_name": "Synthetic Orchid Solutions 00004",
+              "sector": "Communication Services",
+              "headquarters": "Fictional District 29, Ahmedabad, India",
+              "sub_industry": "Interactive Services",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000005",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000005",
+              "company_name": "Synthetic Silver Solutions 00005",
+              "sector": "Information Technology",
+              "headquarters": "Fictional District 44, Delhi, India",
+              "sub_industry": "Software",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000006",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000006",
+              "company_name": "Synthetic Cedar Point 00006",
+              "sector": "Consumer Staples",
+              "headquarters": "Fictional District 49, Pune, India",
+              "sub_industry": "Household Products",
+              "review_state": "queued"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000007",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000007",
+              "company_name": "Synthetic Cobalt Bridge 00007",
+              "sector": "Utilities",
+              "headquarters": "Fictional District 59, Jaipur, India",
+              "sub_industry": "Electric Utilities",
+              "review_state": "reviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000008",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000008",
+              "company_name": "Synthetic Cedar Ventures 00008",
+              "sector": "Energy",
+              "headquarters": "Fictional District 38, Indore, India",
+              "sub_industry": "Renewable Fuels",
+              "review_state": "unreviewed"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000009",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000009",
+              "company_name": "Synthetic Amber Systems 00009",
+              "sector": "Industrials",
+              "headquarters": "Fictional District 38, Pune, India",
+              "sub_industry": "Machinery",
+              "review_state": "queued"
+            }
+          },
+          {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "record_key": "SYN000010",
+            "relevance": 1.0,
+            "record": {
+              "symbol": "SYN000010",
+              "company_name": "Synthetic Cobalt Group 00010",
+              "sector": "Energy",
+              "headquarters": "Fictional District 82, Hyderabad, India",
+              "sub_industry": "Energy Equipment",
+              "review_state": "unreviewed"
+            }
+          }
+        ],
+        "total_matches": 5000,
+        "returned_count": 10,
+        "requested_limit": 10,
+        "selection": "ranked matches",
+        "summary": "Returned 10 of 5000 matching records from 1 connected resources.",
+        "search": "",
+        "ranking": "lexical fuzzy relevance; relevance scores are not model probabilities",
+        "execution": {
+          "input": {
+            "request": "Show first 10 records from companies",
+            "source_ids": [
+              "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b"
+            ]
+          },
+          "datasets": [
+            {
+              "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+              "kind": "synthetic",
+              "title": "Synthetic company directory \u2014 5,000 fictional records",
+              "sha256": "359da44fe1b398e74e3a8362f263b0379984a299bd1a79237a5f27ccbbcafc4c"
+            }
+          ],
+          "planner": "gemini",
+          "provider": "google",
+          "model": "gemini-3.5-flash-lite",
+          "duration_ms": 2119.57,
+          "score": null,
+          "score_note": "Retrieval returns source records; no trained classifier probability is produced."
+        }
+      },
+      "events": [
+        {
+          "timestamp": "2026-11-02T18:00:00.701483+00:00",
+          "tool": "planner.gemini.request",
+          "message": "Requesting a language-to-tool plan using approved schema metadata; client rows are excluded",
+          "details": {
+            "model": "gemini-3.5-flash-lite"
+          }
+        },
+        {
+          "timestamp": "2026-11-02T18:00:02.651662+00:00",
+          "tool": "planner.gemini.validated",
+          "message": "Validated the Gemini plan against approved capabilities; execution remains controlled by the backend",
+          "details": {
+            "model": "gemini-3.5-flash-lite",
+            "plan": {
+              "action": "retrieve",
+              "query": "",
+              "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+              "resource": "companies",
+              "record_key": "",
+              "changes": [],
+              "explanation": "Retrieving the first 10 records from the companies resource."
+            }
+          }
+        },
+        {
+          "timestamp": "2026-11-02T18:00:02.658789+00:00",
+          "tool": "schema_guard",
+          "message": "Verified the current client schema against the approved fingerprint",
+          "details": {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "schema_sha256": "55468cae5f6f71834d366d22067cbfe2895688911ae0ffc9e53312534835884d"
+          }
+        },
+        {
+          "timestamp": "2026-11-02T18:00:02.735110+00:00",
+          "tool": "client.read",
+          "message": "Retrieved 5000 current records from Synthetic company demo 359da44f 8c4b3486 \u00b7 companies",
+          "details": {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "domain": "CRM",
+            "response_sha256": "cbe82b36c9b460804ee4d33356a94b16396f86544619828b0e528091f8e966e5"
+          }
+        },
+        {
+          "timestamp": "2026-11-02T18:00:02.768286+00:00",
+          "tool": "evidence.rank",
+          "message": "Ranked actual retrieved rows against the request",
+          "details": {
+            "matches": 5000
+          }
+        },
+        {
+          "timestamp": "2026-11-02T18:00:02.786571+00:00",
+          "tool": "complete",
+          "message": "Completed evidence-based read workflow; no client mutation performed",
+          "details": {}
+        }
+      ]
+    },
+    {
+      "id": "b358b8ca-364c-48a6-9cb5-caa006c559c5",
+      "goal": "Summarize connected records",
+      "status": "COMPLETED",
+      "result": {
+        "type": "summary",
+        "resources": [
+          {
+            "source": "Synthetic company demo 359da44f 8c4b3486",
+            "resource": "companies",
+            "row_count": 5000,
+            "numeric_fields": {}
+          },
+          {
+            "source": "Synthetic company demo 359da44f 8c4b3486",
+            "resource": "sector_counts",
+            "row_count": 11,
+            "numeric_fields": {
+              "security_count": {
+                "count": 11,
+                "sum": 5000,
+                "minimum": 412,
+                "maximum": 494
+              }
+            }
+          }
+        ],
+        "summary": "Summarized 5011 live records from 2 resources. Numeric sums use source units; currencies are not inferred.",
+        "execution": {
+          "input": {
+            "request": "Summarize connected records",
+            "source_ids": [
+              "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b"
+            ]
+          },
+          "datasets": [
+            {
+              "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+              "kind": "synthetic",
+              "title": "Synthetic company directory \u2014 5,000 fictional records",
+              "sha256": "359da44fe1b398e74e3a8362f263b0379984a299bd1a79237a5f27ccbbcafc4c"
+            }
+          ],
+          "planner": "gemini",
+          "provider": "google",
+          "model": "gemini-3.5-flash-lite",
+          "duration_ms": 2010.59,
+          "score": null,
+          "score_note": "Retrieval returns source records; no trained classifier probability is produced."
+        }
+      },
+      "events": [
+        {
+          "timestamp": "2026-11-02T18:00:02.936374+00:00",
+          "tool": "planner.gemini.request",
+          "message": "Requesting a language-to-tool plan using approved schema metadata; client rows are excluded",
+          "details": {
+            "model": "gemini-3.5-flash-lite"
+          }
+        },
+        {
+          "timestamp": "2026-11-02T18:00:04.840353+00:00",
+          "tool": "planner.gemini.validated",
+          "message": "Validated the Gemini plan against approved capabilities; execution remains controlled by the backend",
+          "details": {
+            "model": "gemini-3.5-flash-lite",
+            "plan": {
+              "action": "summary",
+              "query": "",
+              "source_id": "",
+              "resource": "",
+              "record_key": "",
+              "changes": [],
+              "explanation": "Summarize connected records across all selected resources."
+            }
+          }
+        },
+        {
+          "timestamp": "2026-11-02T18:00:04.844163+00:00",
+          "tool": "schema_guard",
+          "message": "Verified the current client schema against the approved fingerprint",
+          "details": {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "schema_sha256": "55468cae5f6f71834d366d22067cbfe2895688911ae0ffc9e53312534835884d"
+          }
+        },
+        {
+          "timestamp": "2026-11-02T18:00:04.893438+00:00",
+          "tool": "client.read",
+          "message": "Retrieved 5000 current records from Synthetic company demo 359da44f 8c4b3486 \u00b7 companies",
+          "details": {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "companies",
+            "domain": "CRM",
+            "response_sha256": "cbe82b36c9b460804ee4d33356a94b16396f86544619828b0e528091f8e966e5"
+          }
+        },
+        {
+          "timestamp": "2026-11-02T18:00:04.898195+00:00",
+          "tool": "client.read",
+          "message": "Retrieved 11 current records from Synthetic company demo 359da44f 8c4b3486 \u00b7 sector_counts",
+          "details": {
+            "source_id": "7617f62d-ce4c-4fb1-8bdb-70378fefbd4b",
+            "resource": "sector_counts",
+            "domain": "CRM",
+            "response_sha256": "3b7cc0b7d4b74b657950bbda958648613581240d5e410355ad95fcd94cfbf2ab"
+          }
+        },
+        {
+          "timestamp": "2026-11-02T18:00:04.916428+00:00",
+          "tool": "evidence.aggregate",
+          "message": "Computed counts and numeric summaries from client responses",
+          "details": {}
+        },
+        {
+          "timestamp": "2026-11-02T18:00:04.926612+00:00",
+          "tool": "complete",
+          "message": "Completed evidence-based read workflow; no client mutation performed",
+          "details": {}
+        }
+      ]
+    }
+  ],
+  "provider_status": {
+    "configured": true,
+    "model": "gemini-3.5-flash-lite",
+    "provider": "gemini",
+    "context": "User request and approved schema metadata only; no retrieved rows",
+    "live_connection_verified": true,
+    "verification_status": "verified",
+    "verification_reason": "validated_structured_response",
+    "checked_at": "2026-11-02T18:00:04.838766+00:00",
+    "duration_ms": 1902.02
+  }
+}

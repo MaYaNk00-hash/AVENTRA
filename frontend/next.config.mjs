@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: process.env.NEXT_OUTPUT_STANDALONE === "true" ? "standalone" : undefined,
+  output: process.env.NEXT_OUTPUT_EXPORT === "true" ? "export" : process.env.NEXT_OUTPUT_STANDALONE === "true" ? "standalone" : undefined,
   eslint: {
     ignoreDuringBuilds: true,
   },

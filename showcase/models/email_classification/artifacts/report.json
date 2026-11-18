@@ -1,0 +1,104 @@
+{
+  "name": "email_classification",
+  "version": "1.0.0",
+  "provenance": "Synthetic showcase data generated locally; no customer records or real-world validation. Text templates authored for this showcase; numeric labels from simulated adjudication with noise; anomaly test includes deliberate synthetic injections.",
+  "split": "Held-out template groups (text); stratified independent rows (invoice); normal-only train with held-out normals + injections (anomaly)",
+  "train_count": 240,
+  "test_count": 60,
+  "seed": 42,
+  "metrics": {
+    "accuracy": 0.9,
+    "macro_f1": 0.8933333333333333,
+    "per_class": {
+      "complaint": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1-score": 0.8,
+        "support": 12.0
+      },
+      "general_support": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1-score": 0.6666666666666666,
+        "support": 12.0
+      },
+      "invoice_inquiry": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 12.0
+      },
+      "refund": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 12.0
+      },
+      "supplier_communication": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 12.0
+      },
+      "accuracy": 0.9,
+      "macro avg": {
+        "precision": 0.9333333333333332,
+        "recall": 0.9,
+        "f1-score": 0.8933333333333333,
+        "support": 60.0
+      },
+      "weighted avg": {
+        "precision": 0.9333333333333333,
+        "recall": 0.9,
+        "f1-score": 0.8933333333333333,
+        "support": 60.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        12,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        6,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        12,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        12
+      ]
+    ],
+    "classes": [
+      "complaint",
+      "general_support",
+      "invoice_inquiry",
+      "refund",
+      "supplier_communication"
+    ]
+  },
+  "artifact_sha256": "a4cc2f58a37180a3fd1264ab175ff10593289ecd7e9effb7268f0ba10bd1a298",
+  "dataset_sha256": "13abfccb58d5a2b25de8fd7f283402b7ded3fb3523d253eebc33676980069fd4"
+}

@@ -1,0 +1,1506 @@
+{
+  "train": [
+    {
+      "text": "I am unhappy with your poor service for Aster reference 180.",
+      "label": "complaint",
+      "template_group": "complaint:0"
+    },
+    {
+      "text": "I am unhappy with your poor service for Birch reference 795.",
+      "label": "complaint",
+      "template_group": "complaint:0"
+    },
+    {
+      "text": "I am unhappy with your poor service for Cedar reference 688.",
+      "label": "complaint",
+      "template_group": "complaint:0"
+    },
+    {
+      "text": "I am unhappy with your poor service for Dover reference 494.",
+      "label": "complaint",
+      "template_group": "complaint:0"
+    },
+    {
+      "text": "I am unhappy with your poor service for Elm reference 489.",
+      "label": "complaint",
+      "template_group": "complaint:0"
+    },
+    {
+      "text": "I am unhappy with your poor service for Fern reference 871.",
+      "label": "complaint",
+      "template_group": "complaint:0"
+    },
+    {
+      "text": "I want to complain about the damaged delivery for Aster reference 177.",
+      "label": "complaint",
+      "template_group": "complaint:1"
+    },
+    {
+      "text": "I want to complain about the damaged delivery for Birch reference 726.",
+      "label": "complaint",
+      "template_group": "complaint:1"
+    },
+    {
+      "text": "I want to complain about the damaged delivery for Cedar reference 281.",
+      "label": "complaint",
+      "template_group": "complaint:1"
+    },
+    {
+      "text": "I want to complain about the damaged delivery for Dover reference 184.",
+      "label": "complaint",
+      "template_group": "complaint:1"
+    },
+    {
+      "text": "I want to complain about the damaged delivery for Elm reference 573.",
+      "label": "complaint",
+      "template_group": "complaint:1"
+    },
+    {
+      "text": "I want to complain about the damaged delivery for Fern reference 977.",
+      "label": "complaint",
+      "template_group": "complaint:1"
+    },
+    {
+      "text": "Your service was unacceptable for Aster reference 761.",
+      "label": "complaint",
+      "template_group": "complaint:2"
+    },
+    {
+      "text": "Your service was unacceptable for Birch reference 784.",
+      "label": "complaint",
+      "template_group": "complaint:2"
+    },
+    {
+      "text": "Your service was unacceptable for Cedar reference 745.",
+      "label": "complaint",
+      "template_group": "complaint:2"
+    },
+    {
+      "text": "Your service was unacceptable for Dover reference 806.",
+      "label": "complaint",
+      "template_group": "complaint:2"
+    },
+    {
+      "text": "Your service was unacceptable for Elm reference 561.",
+      "label": "complaint",
+      "template_group": "complaint:2"
+    },
+    {
+      "text": "Your service was unacceptable for Fern reference 215.",
+      "label": "complaint",
+      "template_group": "complaint:2"
+    },
+    {
+      "text": "I am disappointed with the repeated delays for Aster reference 854.",
+      "label": "complaint",
+      "template_group": "complaint:3"
+    },
+    {
+      "text": "I am disappointed with the repeated delays for Birch reference 504.",
+      "label": "complaint",
+      "template_group": "complaint:3"
+    },
+    {
+      "text": "I am disappointed with the repeated delays for Cedar reference 549.",
+      "label": "complaint",
+      "template_group": "complaint:3"
+    },
+    {
+      "text": "I am disappointed with the repeated delays for Dover reference 433.",
+      "label": "complaint",
+      "template_group": "complaint:3"
+    },
+    {
+      "text": "I am disappointed with the repeated delays for Elm reference 264.",
+      "label": "complaint",
+      "template_group": "complaint:3"
+    },
+    {
+      "text": "I am disappointed with the repeated delays for Fern reference 933.",
+      "label": "complaint",
+      "template_group": "complaint:3"
+    },
+    {
+      "text": "Please escalate my complaint for Aster reference 802.",
+      "label": "complaint",
+      "template_group": "complaint:4"
+    },
+    {
+      "text": "Please escalate my complaint for Birch reference 678.",
+      "label": "complaint",
+      "template_group": "complaint:4"
+    },
+    {
+      "text": "Please escalate my complaint for Cedar reference 461.",
+      "label": "complaint",
+      "template_group": "complaint:4"
+    },
+    {
+      "text": "Please escalate my complaint for Dover reference 839.",
+      "label": "complaint",
+      "template_group": "complaint:4"
+    },
+    {
+      "text": "Please escalate my complaint for Elm reference 590.",
+      "label": "complaint",
+      "template_group": "complaint:4"
+    },
+    {
+      "text": "Please escalate my complaint for Fern reference 498.",
+      "label": "complaint",
+      "template_group": "complaint:4"
+    },
+    {
+      "text": "The product arrived broken and I am upset for Aster reference 504.",
+      "label": "complaint",
+      "template_group": "complaint:5"
+    },
+    {
+      "text": "The product arrived broken and I am upset for Birch reference 304.",
+      "label": "complaint",
+      "template_group": "complaint:5"
+    },
+    {
+      "text": "The product arrived broken and I am upset for Cedar reference 182.",
+      "label": "complaint",
+      "template_group": "complaint:5"
+    },
+    {
+      "text": "The product arrived broken and I am upset for Dover reference 598.",
+      "label": "complaint",
+      "template_group": "complaint:5"
+    },
+    {
+      "text": "The product arrived broken and I am upset for Elm reference 898.",
+      "label": "complaint",
+      "template_group": "complaint:5"
+    },
+    {
+      "text": "The product arrived broken and I am upset for Fern reference 157.",
+      "label": "complaint",
+      "template_group": "complaint:5"
+    },
+    {
+      "text": "This quality is unacceptable and needs investigation for Aster reference 871.",
+      "label": "complaint",
+      "template_group": "complaint:6"
+    },
+    {
+      "text": "This quality is unacceptable and needs investigation for Birch reference 844.",
+      "label": "complaint",
+      "template_group": "complaint:6"
+    },
+    {
+      "text": "This quality is unacceptable and needs investigation for Cedar reference 348.",
+      "label": "complaint",
+      "template_group": "complaint:6"
+    },
+    {
+      "text": "This quality is unacceptable and needs investigation for Dover reference 667.",
+      "label": "complaint",
+      "template_group": "complaint:6"
+    },
+    {
+      "text": "This quality is unacceptable and needs investigation for Elm reference 248.",
+      "label": "complaint",
+      "template_group": "complaint:6"
+    },
+    {
+      "text": "This quality is unacceptable and needs investigation for Fern reference 781.",
+      "label": "complaint",
+      "template_group": "complaint:6"
+    },
+    {
+      "text": "I am dissatisfied with the customer experience for Aster reference 729.",
+      "label": "complaint",
+      "template_group": "complaint:7"
+    },
+    {
+      "text": "I am dissatisfied with the customer experience for Birch reference 418.",
+      "label": "complaint",
+      "template_group": "complaint:7"
+    },
+    {
+      "text": "I am dissatisfied with the customer experience for Cedar reference 161.",
+      "label": "complaint",
+      "template_group": "complaint:7"
+    },
+    {
+      "text": "I am dissatisfied with the customer experience for Dover reference 972.",
+      "label": "complaint",
+      "template_group": "complaint:7"
+    },
+    {
+      "text": "I am dissatisfied with the customer experience for Elm reference 500.",
+      "label": "complaint",
+      "template_group": "complaint:7"
+    },
+    {
+      "text": "I am dissatisfied with the customer experience for Fern reference 902.",
+      "label": "complaint",
+      "template_group": "complaint:7"
+    },
+    {
+      "text": "Please refund my payment for Aster reference 929.",
+      "label": "refund",
+      "template_group": "refund:0"
+    },
+    {
+      "text": "Please refund my payment for Birch reference 769.",
+      "label": "refund",
+      "template_group": "refund:0"
+    },
+    {
+      "text": "Please refund my payment for Cedar reference 429.",
+      "label": "refund",
+      "template_group": "refund:0"
+    },
+    {
+      "text": "Please refund my payment for Dover reference 969.",
+      "label": "refund",
+      "template_group": "refund:0"
+    },
+    {
+      "text": "Please refund my payment for Elm reference 469.",
+      "label": "refund",
+      "template_group": "refund:0"
+    },
+    {
+      "text": "Please refund my payment for Fern reference 392.",
+      "label": "refund",
+      "template_group": "refund:0"
+    },
+    {
+      "text": "I would like my money back for Aster reference 914.",
+      "label": "refund",
+      "template_group": "refund:1"
+    },
+    {
+      "text": "I would like my money back for Birch reference 433.",
+      "label": "refund",
+      "template_group": "refund:1"
+    },
+    {
+      "text": "I would like my money back for Cedar reference 168.",
+      "label": "refund",
+      "template_group": "refund:1"
+    },
+    {
+      "text": "I would like my money back for Dover reference 522.",
+      "label": "refund",
+      "template_group": "refund:1"
+    },
+    {
+      "text": "I would like my money back for Elm reference 815.",
+      "label": "refund",
+      "template_group": "refund:1"
+    },
+    {
+      "text": "I would like my money back for Fern reference 270.",
+      "label": "refund",
+      "template_group": "refund:1"
+    },
+    {
+      "text": "Cancel my order and issue a refund for Aster reference 516.",
+      "label": "refund",
+      "template_group": "refund:2"
+    },
+    {
+      "text": "Cancel my order and issue a refund for Birch reference 216.",
+      "label": "refund",
+      "template_group": "refund:2"
+    },
+    {
+      "text": "Cancel my order and issue a refund for Cedar reference 717.",
+      "label": "refund",
+      "template_group": "refund:2"
+    },
+    {
+      "text": "Cancel my order and issue a refund for Dover reference 527.",
+      "label": "refund",
+      "template_group": "refund:2"
+    },
+    {
+      "text": "Cancel my order and issue a refund for Elm reference 396.",
+      "label": "refund",
+      "template_group": "refund:2"
+    },
+    {
+      "text": "Cancel my order and issue a refund for Fern reference 303.",
+      "label": "refund",
+      "template_group": "refund:2"
+    },
+    {
+      "text": "When will the refund reach my bank for Aster reference 607.",
+      "label": "refund",
+      "template_group": "refund:3"
+    },
+    {
+      "text": "When will the refund reach my bank for Birch reference 702.",
+      "label": "refund",
+      "template_group": "refund:3"
+    },
+    {
+      "text": "When will the refund reach my bank for Cedar reference 945.",
+      "label": "refund",
+      "template_group": "refund:3"
+    },
+    {
+      "text": "When will the refund reach my bank for Dover reference 492.",
+      "label": "refund",
+      "template_group": "refund:3"
+    },
+    {
+      "text": "When will the refund reach my bank for Elm reference 244.",
+      "label": "refund",
+      "template_group": "refund:3"
+    },
+    {
+      "text": "When will the refund reach my bank for Fern reference 848.",
+      "label": "refund",
+      "template_group": "refund:3"
+    },
+    {
+      "text": "Please reimburse the duplicate charge for Aster reference 666.",
+      "label": "refund",
+      "template_group": "refund:4"
+    },
+    {
+      "text": "Please reimburse the duplicate charge for Birch reference 729.",
+      "label": "refund",
+      "template_group": "refund:4"
+    },
+    {
+      "text": "Please reimburse the duplicate charge for Cedar reference 187.",
+      "label": "refund",
+      "template_group": "refund:4"
+    },
+    {
+      "text": "Please reimburse the duplicate charge for Dover reference 380.",
+      "label": "refund",
+      "template_group": "refund:4"
+    },
+    {
+      "text": "Please reimburse the duplicate charge for Elm reference 790.",
+      "label": "refund",
+      "template_group": "refund:4"
+    },
+    {
+      "text": "Please reimburse the duplicate charge for Fern reference 848.",
+      "label": "refund",
+      "template_group": "refund:4"
+    },
+    {
+      "text": "I request a full refund for Aster reference 491.",
+      "label": "refund",
+      "template_group": "refund:5"
+    },
+    {
+      "text": "I request a full refund for Birch reference 823.",
+      "label": "refund",
+      "template_group": "refund:5"
+    },
+    {
+      "text": "I request a full refund for Cedar reference 856.",
+      "label": "refund",
+      "template_group": "refund:5"
+    },
+    {
+      "text": "I request a full refund for Dover reference 448.",
+      "label": "refund",
+      "template_group": "refund:5"
+    },
+    {
+      "text": "I request a full refund for Elm reference 907.",
+      "label": "refund",
+      "template_group": "refund:5"
+    },
+    {
+      "text": "I request a full refund for Fern reference 359.",
+      "label": "refund",
+      "template_group": "refund:5"
+    },
+    {
+      "text": "Return the money for my cancelled order for Aster reference 315.",
+      "label": "refund",
+      "template_group": "refund:6"
+    },
+    {
+      "text": "Return the money for my cancelled order for Birch reference 713.",
+      "label": "refund",
+      "template_group": "refund:6"
+    },
+    {
+      "text": "Return the money for my cancelled order for Cedar reference 672.",
+      "label": "refund",
+      "template_group": "refund:6"
+    },
+    {
+      "text": "Return the money for my cancelled order for Dover reference 225.",
+      "label": "refund",
+      "template_group": "refund:6"
+    },
+    {
+      "text": "Return the money for my cancelled order for Elm reference 848.",
+      "label": "refund",
+      "template_group": "refund:6"
+    },
+    {
+      "text": "Return the money for my cancelled order for Fern reference 279.",
+      "label": "refund",
+      "template_group": "refund:6"
+    },
+    {
+      "text": "Could you process my reimbursement for Aster reference 823.",
+      "label": "refund",
+      "template_group": "refund:7"
+    },
+    {
+      "text": "Could you process my reimbursement for Birch reference 106.",
+      "label": "refund",
+      "template_group": "refund:7"
+    },
+    {
+      "text": "Could you process my reimbursement for Cedar reference 816.",
+      "label": "refund",
+      "template_group": "refund:7"
+    },
+    {
+      "text": "Could you process my reimbursement for Dover reference 807.",
+      "label": "refund",
+      "template_group": "refund:7"
+    },
+    {
+      "text": "Could you process my reimbursement for Elm reference 801.",
+      "label": "refund",
+      "template_group": "refund:7"
+    },
+    {
+      "text": "Could you process my reimbursement for Fern reference 697.",
+      "label": "refund",
+      "template_group": "refund:7"
+    },
+    {
+      "text": "Please send a copy of the invoice for Aster reference 495.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:0"
+    },
+    {
+      "text": "Please send a copy of the invoice for Birch reference 700.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:0"
+    },
+    {
+      "text": "Please send a copy of the invoice for Cedar reference 688.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:0"
+    },
+    {
+      "text": "Please send a copy of the invoice for Dover reference 523.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:0"
+    },
+    {
+      "text": "Please send a copy of the invoice for Elm reference 868.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:0"
+    },
+    {
+      "text": "Please send a copy of the invoice for Fern reference 608.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:0"
+    },
+    {
+      "text": "What is the invoice due date for Aster reference 171.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:1"
+    },
+    {
+      "text": "What is the invoice due date for Birch reference 787.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:1"
+    },
+    {
+      "text": "What is the invoice due date for Cedar reference 616.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:1"
+    },
+    {
+      "text": "What is the invoice due date for Dover reference 670.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:1"
+    },
+    {
+      "text": "What is the invoice due date for Elm reference 608.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:1"
+    },
+    {
+      "text": "What is the invoice due date for Fern reference 597.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:1"
+    },
+    {
+      "text": "Can you explain this invoice tax for Aster reference 181.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:2"
+    },
+    {
+      "text": "Can you explain this invoice tax for Birch reference 602.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:2"
+    },
+    {
+      "text": "Can you explain this invoice tax for Cedar reference 814.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:2"
+    },
+    {
+      "text": "Can you explain this invoice tax for Dover reference 373.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:2"
+    },
+    {
+      "text": "Can you explain this invoice tax for Elm reference 641.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:2"
+    },
+    {
+      "text": "Can you explain this invoice tax for Fern reference 127.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:2"
+    },
+    {
+      "text": "I have a question about bill number for Aster reference 412.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:3"
+    },
+    {
+      "text": "I have a question about bill number for Birch reference 492.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:3"
+    },
+    {
+      "text": "I have a question about bill number for Cedar reference 983.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:3"
+    },
+    {
+      "text": "I have a question about bill number for Dover reference 292.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:3"
+    },
+    {
+      "text": "I have a question about bill number for Elm reference 348.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:3"
+    },
+    {
+      "text": "I have a question about bill number for Fern reference 467.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:3"
+    },
+    {
+      "text": "The invoice total needs clarification for Aster reference 992.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:4"
+    },
+    {
+      "text": "The invoice total needs clarification for Birch reference 867.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:4"
+    },
+    {
+      "text": "The invoice total needs clarification for Cedar reference 131.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:4"
+    },
+    {
+      "text": "The invoice total needs clarification for Dover reference 310.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:4"
+    },
+    {
+      "text": "The invoice total needs clarification for Elm reference 838.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:4"
+    },
+    {
+      "text": "The invoice total needs clarification for Fern reference 152.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:4"
+    },
+    {
+      "text": "Please confirm the billing amount for Aster reference 869.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:5"
+    },
+    {
+      "text": "Please confirm the billing amount for Birch reference 352.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:5"
+    },
+    {
+      "text": "Please confirm the billing amount for Cedar reference 924.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:5"
+    },
+    {
+      "text": "Please confirm the billing amount for Dover reference 363.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:5"
+    },
+    {
+      "text": "Please confirm the billing amount for Elm reference 490.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:5"
+    },
+    {
+      "text": "Please confirm the billing amount for Fern reference 695.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:5"
+    },
+    {
+      "text": "Where can I download my invoice for Aster reference 213.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:6"
+    },
+    {
+      "text": "Where can I download my invoice for Birch reference 600.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:6"
+    },
+    {
+      "text": "Where can I download my invoice for Cedar reference 554.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:6"
+    },
+    {
+      "text": "Where can I download my invoice for Dover reference 804.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:6"
+    },
+    {
+      "text": "Where can I download my invoice for Elm reference 995.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:6"
+    },
+    {
+      "text": "Where can I download my invoice for Fern reference 697.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:6"
+    },
+    {
+      "text": "Could you correct the invoice address for Aster reference 467.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:7"
+    },
+    {
+      "text": "Could you correct the invoice address for Birch reference 465.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:7"
+    },
+    {
+      "text": "Could you correct the invoice address for Cedar reference 475.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:7"
+    },
+    {
+      "text": "Could you correct the invoice address for Dover reference 831.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:7"
+    },
+    {
+      "text": "Could you correct the invoice address for Elm reference 388.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:7"
+    },
+    {
+      "text": "Could you correct the invoice address for Fern reference 250.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:7"
+    },
+    {
+      "text": "We are your supplier confirming shipment for Aster reference 943.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:0"
+    },
+    {
+      "text": "We are your supplier confirming shipment for Birch reference 236.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:0"
+    },
+    {
+      "text": "We are your supplier confirming shipment for Cedar reference 547.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:0"
+    },
+    {
+      "text": "We are your supplier confirming shipment for Dover reference 725.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:0"
+    },
+    {
+      "text": "We are your supplier confirming shipment for Elm reference 545.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:0"
+    },
+    {
+      "text": "We are your supplier confirming shipment for Fern reference 501.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:0"
+    },
+    {
+      "text": "Our vendor contract is ready for renewal for Aster reference 249.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:1"
+    },
+    {
+      "text": "Our vendor contract is ready for renewal for Birch reference 442.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:1"
+    },
+    {
+      "text": "Our vendor contract is ready for renewal for Cedar reference 314.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:1"
+    },
+    {
+      "text": "Our vendor contract is ready for renewal for Dover reference 371.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:1"
+    },
+    {
+      "text": "Our vendor contract is ready for renewal for Elm reference 714.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:1"
+    },
+    {
+      "text": "Our vendor contract is ready for renewal for Fern reference 666.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:1"
+    },
+    {
+      "text": "Please find our supplier quotation for Aster reference 645.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:2"
+    },
+    {
+      "text": "Please find our supplier quotation for Birch reference 425.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:2"
+    },
+    {
+      "text": "Please find our supplier quotation for Cedar reference 962.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:2"
+    },
+    {
+      "text": "Please find our supplier quotation for Dover reference 178.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:2"
+    },
+    {
+      "text": "Please find our supplier quotation for Elm reference 407.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:2"
+    },
+    {
+      "text": "Please find our supplier quotation for Fern reference 206.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:2"
+    },
+    {
+      "text": "We can supply the requested materials for Aster reference 404.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:3"
+    },
+    {
+      "text": "We can supply the requested materials for Birch reference 964.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:3"
+    },
+    {
+      "text": "We can supply the requested materials for Cedar reference 429.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:3"
+    },
+    {
+      "text": "We can supply the requested materials for Dover reference 916.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:3"
+    },
+    {
+      "text": "We can supply the requested materials for Elm reference 545.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:3"
+    },
+    {
+      "text": "We can supply the requested materials for Fern reference 729.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:3"
+    },
+    {
+      "text": "Our manufacturing delivery schedule is attached for Aster reference 511.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:4"
+    },
+    {
+      "text": "Our manufacturing delivery schedule is attached for Birch reference 339.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:4"
+    },
+    {
+      "text": "Our manufacturing delivery schedule is attached for Cedar reference 787.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:4"
+    },
+    {
+      "text": "Our manufacturing delivery schedule is attached for Dover reference 971.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:4"
+    },
+    {
+      "text": "Our manufacturing delivery schedule is attached for Elm reference 336.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:4"
+    },
+    {
+      "text": "Our manufacturing delivery schedule is attached for Fern reference 800.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:4"
+    },
+    {
+      "text": "Please update our vendor bank information for Aster reference 334.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:5"
+    },
+    {
+      "text": "Please update our vendor bank information for Birch reference 744.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:5"
+    },
+    {
+      "text": "Please update our vendor bank information for Cedar reference 809.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:5"
+    },
+    {
+      "text": "Please update our vendor bank information for Dover reference 503.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:5"
+    },
+    {
+      "text": "Please update our vendor bank information for Elm reference 762.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:5"
+    },
+    {
+      "text": "Please update our vendor bank information for Fern reference 344.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:5"
+    },
+    {
+      "text": "We confirm your purchase order as supplier for Aster reference 171.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:6"
+    },
+    {
+      "text": "We confirm your purchase order as supplier for Birch reference 186.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:6"
+    },
+    {
+      "text": "We confirm your purchase order as supplier for Cedar reference 501.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:6"
+    },
+    {
+      "text": "We confirm your purchase order as supplier for Dover reference 911.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:6"
+    },
+    {
+      "text": "We confirm your purchase order as supplier for Elm reference 214.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:6"
+    },
+    {
+      "text": "We confirm your purchase order as supplier for Fern reference 509.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:6"
+    },
+    {
+      "text": "Our procurement quotation has been revised for Aster reference 732.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:7"
+    },
+    {
+      "text": "Our procurement quotation has been revised for Birch reference 281.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:7"
+    },
+    {
+      "text": "Our procurement quotation has been revised for Cedar reference 748.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:7"
+    },
+    {
+      "text": "Our procurement quotation has been revised for Dover reference 375.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:7"
+    },
+    {
+      "text": "Our procurement quotation has been revised for Elm reference 826.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:7"
+    },
+    {
+      "text": "Our procurement quotation has been revised for Fern reference 620.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:7"
+    },
+    {
+      "text": "How do I reset my password for Aster reference 226.",
+      "label": "general_support",
+      "template_group": "general_support:0"
+    },
+    {
+      "text": "How do I reset my password for Birch reference 625.",
+      "label": "general_support",
+      "template_group": "general_support:0"
+    },
+    {
+      "text": "How do I reset my password for Cedar reference 185.",
+      "label": "general_support",
+      "template_group": "general_support:0"
+    },
+    {
+      "text": "How do I reset my password for Dover reference 684.",
+      "label": "general_support",
+      "template_group": "general_support:0"
+    },
+    {
+      "text": "How do I reset my password for Elm reference 665.",
+      "label": "general_support",
+      "template_group": "general_support:0"
+    },
+    {
+      "text": "How do I reset my password for Fern reference 175.",
+      "label": "general_support",
+      "template_group": "general_support:0"
+    },
+    {
+      "text": "Can you help me access the portal for Aster reference 780.",
+      "label": "general_support",
+      "template_group": "general_support:1"
+    },
+    {
+      "text": "Can you help me access the portal for Birch reference 473.",
+      "label": "general_support",
+      "template_group": "general_support:1"
+    },
+    {
+      "text": "Can you help me access the portal for Cedar reference 807.",
+      "label": "general_support",
+      "template_group": "general_support:1"
+    },
+    {
+      "text": "Can you help me access the portal for Dover reference 137.",
+      "label": "general_support",
+      "template_group": "general_support:1"
+    },
+    {
+      "text": "Can you help me access the portal for Elm reference 261.",
+      "label": "general_support",
+      "template_group": "general_support:1"
+    },
+    {
+      "text": "Can you help me access the portal for Fern reference 544.",
+      "label": "general_support",
+      "template_group": "general_support:1"
+    },
+    {
+      "text": "Where can I find your opening hours for Aster reference 269.",
+      "label": "general_support",
+      "template_group": "general_support:2"
+    },
+    {
+      "text": "Where can I find your opening hours for Birch reference 396.",
+      "label": "general_support",
+      "template_group": "general_support:2"
+    },
+    {
+      "text": "Where can I find your opening hours for Cedar reference 693.",
+      "label": "general_support",
+      "template_group": "general_support:2"
+    },
+    {
+      "text": "Where can I find your opening hours for Dover reference 229.",
+      "label": "general_support",
+      "template_group": "general_support:2"
+    },
+    {
+      "text": "Where can I find your opening hours for Elm reference 709.",
+      "label": "general_support",
+      "template_group": "general_support:2"
+    },
+    {
+      "text": "Where can I find your opening hours for Fern reference 192.",
+      "label": "general_support",
+      "template_group": "general_support:2"
+    },
+    {
+      "text": "Please help me update my account for Aster reference 257.",
+      "label": "general_support",
+      "template_group": "general_support:3"
+    },
+    {
+      "text": "Please help me update my account for Birch reference 628.",
+      "label": "general_support",
+      "template_group": "general_support:3"
+    },
+    {
+      "text": "Please help me update my account for Cedar reference 813.",
+      "label": "general_support",
+      "template_group": "general_support:3"
+    },
+    {
+      "text": "Please help me update my account for Dover reference 253.",
+      "label": "general_support",
+      "template_group": "general_support:3"
+    },
+    {
+      "text": "Please help me update my account for Elm reference 369.",
+      "label": "general_support",
+      "template_group": "general_support:3"
+    },
+    {
+      "text": "Please help me update my account for Fern reference 931.",
+      "label": "general_support",
+      "template_group": "general_support:3"
+    },
+    {
+      "text": "I need assistance using your website for Aster reference 989.",
+      "label": "general_support",
+      "template_group": "general_support:4"
+    },
+    {
+      "text": "I need assistance using your website for Birch reference 622.",
+      "label": "general_support",
+      "template_group": "general_support:4"
+    },
+    {
+      "text": "I need assistance using your website for Cedar reference 501.",
+      "label": "general_support",
+      "template_group": "general_support:4"
+    },
+    {
+      "text": "I need assistance using your website for Dover reference 411.",
+      "label": "general_support",
+      "template_group": "general_support:4"
+    },
+    {
+      "text": "I need assistance using your website for Elm reference 650.",
+      "label": "general_support",
+      "template_group": "general_support:4"
+    },
+    {
+      "text": "I need assistance using your website for Fern reference 631.",
+      "label": "general_support",
+      "template_group": "general_support:4"
+    },
+    {
+      "text": "How can I contact technical support for Aster reference 364.",
+      "label": "general_support",
+      "template_group": "general_support:5"
+    },
+    {
+      "text": "How can I contact technical support for Birch reference 120.",
+      "label": "general_support",
+      "template_group": "general_support:5"
+    },
+    {
+      "text": "How can I contact technical support for Cedar reference 236.",
+      "label": "general_support",
+      "template_group": "general_support:5"
+    },
+    {
+      "text": "How can I contact technical support for Dover reference 961.",
+      "label": "general_support",
+      "template_group": "general_support:5"
+    },
+    {
+      "text": "How can I contact technical support for Elm reference 475.",
+      "label": "general_support",
+      "template_group": "general_support:5"
+    },
+    {
+      "text": "How can I contact technical support for Fern reference 533.",
+      "label": "general_support",
+      "template_group": "general_support:5"
+    },
+    {
+      "text": "Can you explain how this service works for Aster reference 519.",
+      "label": "general_support",
+      "template_group": "general_support:6"
+    },
+    {
+      "text": "Can you explain how this service works for Birch reference 803.",
+      "label": "general_support",
+      "template_group": "general_support:6"
+    },
+    {
+      "text": "Can you explain how this service works for Cedar reference 158.",
+      "label": "general_support",
+      "template_group": "general_support:6"
+    },
+    {
+      "text": "Can you explain how this service works for Dover reference 174.",
+      "label": "general_support",
+      "template_group": "general_support:6"
+    },
+    {
+      "text": "Can you explain how this service works for Elm reference 347.",
+      "label": "general_support",
+      "template_group": "general_support:6"
+    },
+    {
+      "text": "Can you explain how this service works for Fern reference 537.",
+      "label": "general_support",
+      "template_group": "general_support:6"
+    },
+    {
+      "text": "I cannot sign into my account for Aster reference 703.",
+      "label": "general_support",
+      "template_group": "general_support:7"
+    },
+    {
+      "text": "I cannot sign into my account for Birch reference 541.",
+      "label": "general_support",
+      "template_group": "general_support:7"
+    },
+    {
+      "text": "I cannot sign into my account for Cedar reference 496.",
+      "label": "general_support",
+      "template_group": "general_support:7"
+    },
+    {
+      "text": "I cannot sign into my account for Dover reference 943.",
+      "label": "general_support",
+      "template_group": "general_support:7"
+    },
+    {
+      "text": "I cannot sign into my account for Elm reference 244.",
+      "label": "general_support",
+      "template_group": "general_support:7"
+    },
+    {
+      "text": "I cannot sign into my account for Fern reference 613.",
+      "label": "general_support",
+      "template_group": "general_support:7"
+    }
+  ],
+  "test": [
+    {
+      "text": "Your team ignored my complaint for Aster reference 709.",
+      "label": "complaint",
+      "template_group": "complaint:8"
+    },
+    {
+      "text": "Your team ignored my complaint for Birch reference 799.",
+      "label": "complaint",
+      "template_group": "complaint:8"
+    },
+    {
+      "text": "Your team ignored my complaint for Cedar reference 783.",
+      "label": "complaint",
+      "template_group": "complaint:8"
+    },
+    {
+      "text": "Your team ignored my complaint for Dover reference 274.",
+      "label": "complaint",
+      "template_group": "complaint:8"
+    },
+    {
+      "text": "Your team ignored my complaint for Elm reference 427.",
+      "label": "complaint",
+      "template_group": "complaint:8"
+    },
+    {
+      "text": "Your team ignored my complaint for Fern reference 519.",
+      "label": "complaint",
+      "template_group": "complaint:8"
+    },
+    {
+      "text": "I wish to report terrible service for Aster reference 547.",
+      "label": "complaint",
+      "template_group": "complaint:9"
+    },
+    {
+      "text": "I wish to report terrible service for Birch reference 139.",
+      "label": "complaint",
+      "template_group": "complaint:9"
+    },
+    {
+      "text": "I wish to report terrible service for Cedar reference 591.",
+      "label": "complaint",
+      "template_group": "complaint:9"
+    },
+    {
+      "text": "I wish to report terrible service for Dover reference 238.",
+      "label": "complaint",
+      "template_group": "complaint:9"
+    },
+    {
+      "text": "I wish to report terrible service for Elm reference 768.",
+      "label": "complaint",
+      "template_group": "complaint:9"
+    },
+    {
+      "text": "I wish to report terrible service for Fern reference 714.",
+      "label": "complaint",
+      "template_group": "complaint:9"
+    },
+    {
+      "text": "I need the refund status for Aster reference 523.",
+      "label": "refund",
+      "template_group": "refund:8"
+    },
+    {
+      "text": "I need the refund status for Birch reference 733.",
+      "label": "refund",
+      "template_group": "refund:8"
+    },
+    {
+      "text": "I need the refund status for Cedar reference 349.",
+      "label": "refund",
+      "template_group": "refund:8"
+    },
+    {
+      "text": "I need the refund status for Dover reference 801.",
+      "label": "refund",
+      "template_group": "refund:8"
+    },
+    {
+      "text": "I need the refund status for Elm reference 599.",
+      "label": "refund",
+      "template_group": "refund:8"
+    },
+    {
+      "text": "I need the refund status for Fern reference 512.",
+      "label": "refund",
+      "template_group": "refund:8"
+    },
+    {
+      "text": "Please reverse the charge and refund me for Aster reference 554.",
+      "label": "refund",
+      "template_group": "refund:9"
+    },
+    {
+      "text": "Please reverse the charge and refund me for Birch reference 611.",
+      "label": "refund",
+      "template_group": "refund:9"
+    },
+    {
+      "text": "Please reverse the charge and refund me for Cedar reference 133.",
+      "label": "refund",
+      "template_group": "refund:9"
+    },
+    {
+      "text": "Please reverse the charge and refund me for Dover reference 225.",
+      "label": "refund",
+      "template_group": "refund:9"
+    },
+    {
+      "text": "Please reverse the charge and refund me for Elm reference 320.",
+      "label": "refund",
+      "template_group": "refund:9"
+    },
+    {
+      "text": "Please reverse the charge and refund me for Fern reference 202.",
+      "label": "refund",
+      "template_group": "refund:9"
+    },
+    {
+      "text": "Is the attached bill already paid for Aster reference 400.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:8"
+    },
+    {
+      "text": "Is the attached bill already paid for Birch reference 120.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:8"
+    },
+    {
+      "text": "Is the attached bill already paid for Cedar reference 195.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:8"
+    },
+    {
+      "text": "Is the attached bill already paid for Dover reference 180.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:8"
+    },
+    {
+      "text": "Is the attached bill already paid for Elm reference 793.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:8"
+    },
+    {
+      "text": "Is the attached bill already paid for Fern reference 749.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:8"
+    },
+    {
+      "text": "I need an invoice breakdown for Aster reference 726.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:9"
+    },
+    {
+      "text": "I need an invoice breakdown for Birch reference 515.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:9"
+    },
+    {
+      "text": "I need an invoice breakdown for Cedar reference 744.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:9"
+    },
+    {
+      "text": "I need an invoice breakdown for Dover reference 244.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:9"
+    },
+    {
+      "text": "I need an invoice breakdown for Elm reference 909.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:9"
+    },
+    {
+      "text": "I need an invoice breakdown for Fern reference 550.",
+      "label": "invoice_inquiry",
+      "template_group": "invoice_inquiry:9"
+    },
+    {
+      "text": "Our supplier certification is attached for Aster reference 591.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:8"
+    },
+    {
+      "text": "Our supplier certification is attached for Birch reference 258.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:8"
+    },
+    {
+      "text": "Our supplier certification is attached for Cedar reference 516.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:8"
+    },
+    {
+      "text": "Our supplier certification is attached for Dover reference 870.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:8"
+    },
+    {
+      "text": "Our supplier certification is attached for Elm reference 117.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:8"
+    },
+    {
+      "text": "Our supplier certification is attached for Fern reference 781.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:8"
+    },
+    {
+      "text": "We propose new vendor delivery terms for Aster reference 542.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:9"
+    },
+    {
+      "text": "We propose new vendor delivery terms for Birch reference 746.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:9"
+    },
+    {
+      "text": "We propose new vendor delivery terms for Cedar reference 696.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:9"
+    },
+    {
+      "text": "We propose new vendor delivery terms for Dover reference 488.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:9"
+    },
+    {
+      "text": "We propose new vendor delivery terms for Elm reference 377.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:9"
+    },
+    {
+      "text": "We propose new vendor delivery terms for Fern reference 663.",
+      "label": "supplier_communication",
+      "template_group": "supplier_communication:9"
+    },
+    {
+      "text": "Please guide me through the setup for Aster reference 587.",
+      "label": "general_support",
+      "template_group": "general_support:8"
+    },
+    {
+      "text": "Please guide me through the setup for Birch reference 525.",
+      "label": "general_support",
+      "template_group": "general_support:8"
+    },
+    {
+      "text": "Please guide me through the setup for Cedar reference 826.",
+      "label": "general_support",
+      "template_group": "general_support:8"
+    },
+    {
+      "text": "Please guide me through the setup for Dover reference 340.",
+      "label": "general_support",
+      "template_group": "general_support:8"
+    },
+    {
+      "text": "Please guide me through the setup for Elm reference 957.",
+      "label": "general_support",
+      "template_group": "general_support:8"
+    },
+    {
+      "text": "Please guide me through the setup for Fern reference 398.",
+      "label": "general_support",
+      "template_group": "general_support:8"
+    },
+    {
+      "text": "I need help with the application for Aster reference 589.",
+      "label": "general_support",
+      "template_group": "general_support:9"
+    },
+    {
+      "text": "I need help with the application for Birch reference 568.",
+      "label": "general_support",
+      "template_group": "general_support:9"
+    },
+    {
+      "text": "I need help with the application for Cedar reference 863.",
+      "label": "general_support",
+      "template_group": "general_support:9"
+    },
+    {
+      "text": "I need help with the application for Dover reference 494.",
+      "label": "general_support",
+      "template_group": "general_support:9"
+    },
+    {
+      "text": "I need help with the application for Elm reference 355.",
+      "label": "general_support",
+      "template_group": "general_support:9"
+    },
+    {
+      "text": "I need help with the application for Fern reference 119.",
+      "label": "general_support",
+      "template_group": "general_support:9"
+    }
+  ]
+}

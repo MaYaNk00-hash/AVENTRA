@@ -1,0 +1,2055 @@
+{
+  "started_at": "2026-11-02T18:42:01.279058+00:00",
+  "input_provenance": "Synthetic inference examples; not training or evaluation results",
+  "checks": [
+    {
+      "expected_model": "intent_parser",
+      "passed": true,
+      "run": {
+        "id": "e1fd43b6-8259-44c1-b8a7-b36c4e8a840e",
+        "goal": "Classify the supplied prompt using the local intent_parser artifact",
+        "status": "COMPLETED",
+        "events": [
+          {
+            "timestamp": "2026-11-02T18:42:01.798956+00:00",
+            "tool": "model.intent_parser",
+            "message": "Computed task classification using the trained local artifact; this prediction does not grant permissions",
+            "details": {
+              "component": "local_ml",
+              "model": "intent_parser",
+              "version": "1.0.0",
+              "implementation": "TF-IDF + Logistic Regression",
+              "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+              "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+              "duration_ms": 52.422,
+              "input": {
+                "prompt": "Classify the supplied prompt using the local intent_parser artifact"
+              },
+              "input_features": {
+                "prompt": "Classify the supplied prompt using the local intent_parser artifact"
+              },
+              "output": {
+                "prediction": "RESOLVE_DUPLICATES",
+                "score": 0.41952136355388675,
+                "class_probabilities": {
+                  "AUDIT_INSPECTION": 0.08182850799705084,
+                  "DETECT_ANOMALIES": 0.10736802065548486,
+                  "MAP_SCHEMA": 0.0832531130030332,
+                  "ONBOARD_CUSTOMER": 0.13439367426838766,
+                  "RECONCILE_INVOICE": 0.09683040577736429,
+                  "RESOLVE_DUPLICATES": 0.41952136355388675,
+                  "SYSTEM_HEALTH_CHECK": 0.07680491474479251
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "security_blocked": false,
+                "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:01.802167+00:00",
+            "tool": "planner.gemini.request",
+            "message": "Requesting a language-to-tool plan using approved schema metadata; client rows are excluded",
+            "details": {
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:04.218403+00:00",
+            "tool": "planner.gemini.validated",
+            "message": "Validated Gemini's selection of an allowlisted local model; input values remain in the backend",
+            "details": {
+              "model": "gemini-3.5-flash-lite",
+              "plan": {
+                "action": "analyze",
+                "query": "",
+                "source_id": "",
+                "resource": "",
+                "record_key": "",
+                "changes": [],
+                "explanation": "Running the intent_parser local model on the supplied input.",
+                "analysis_model": "intent_parser"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:04.222139+00:00",
+            "tool": "model.intent_parser",
+            "message": "Executed the existing artifact locally without retraining; no enterprise tools or writes executed",
+            "details": {
+              "component": "local_ml",
+              "model": "intent_parser",
+              "version": "1.0.0",
+              "implementation": "TF-IDF + Logistic Regression",
+              "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+              "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+              "duration_ms": 2.688,
+              "input": {
+                "prompt": "Review unusual supplier transactions for anomalies"
+              },
+              "input_features": {
+                "prompt": "Review unusual supplier transactions for anomalies"
+              },
+              "output": {
+                "prediction": "DETECT_ANOMALIES",
+                "score": 0.7646346112635897,
+                "class_probabilities": {
+                  "AUDIT_INSPECTION": 0.04129959052876727,
+                  "DETECT_ANOMALIES": 0.7646346112635897,
+                  "MAP_SCHEMA": 0.023364435323319638,
+                  "ONBOARD_CUSTOMER": 0.05537436941811096,
+                  "RECONCILE_INVOICE": 0.03568189159823388,
+                  "RESOLVE_DUPLICATES": 0.061651537195110094,
+                  "SYSTEM_HEALTH_CHECK": 0.017993564672868726
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "security_blocked": false,
+                "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:04.223349+00:00",
+            "tool": "complete",
+            "message": "Hybrid Gemini selection and local artifact inference completed",
+            "details": {}
+          }
+        ],
+        "evidence": {
+          "model_input": {
+            "prompt": "Review unusual supplier transactions for anomalies"
+          }
+        },
+        "proposal": {},
+        "result": {
+          "type": "ml_analysis",
+          "summary": "Completed local intent parser inference. Result is advisory; no enterprise write performed.",
+          "analysis": {
+            "component": "local_ml",
+            "model": "intent_parser",
+            "version": "1.0.0",
+            "implementation": "TF-IDF + Logistic Regression",
+            "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+            "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+            "duration_ms": 2.688,
+            "input": {
+              "prompt": "Review unusual supplier transactions for anomalies"
+            },
+            "input_features": {
+              "prompt": "Review unusual supplier transactions for anomalies"
+            },
+            "output": {
+              "prediction": "DETECT_ANOMALIES",
+              "score": 0.7646346112635897,
+              "class_probabilities": {
+                "AUDIT_INSPECTION": 0.04129959052876727,
+                "DETECT_ANOMALIES": 0.7646346112635897,
+                "MAP_SCHEMA": 0.023364435323319638,
+                "ONBOARD_CUSTOMER": 0.05537436941811096,
+                "RECONCILE_INVOICE": 0.03568189159823388,
+                "RESOLVE_DUPLICATES": 0.061651537195110094,
+                "SYSTEM_HEALTH_CHECK": 0.017993564672868726
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "security_blocked": false,
+              "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+            },
+            "evaluation_metrics": null
+          },
+          "local_intent": {
+            "component": "local_ml",
+            "model": "intent_parser",
+            "version": "1.0.0",
+            "implementation": "TF-IDF + Logistic Regression",
+            "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+            "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+            "duration_ms": 52.422,
+            "input": {
+              "prompt": "Classify the supplied prompt using the local intent_parser artifact"
+            },
+            "input_features": {
+              "prompt": "Classify the supplied prompt using the local intent_parser artifact"
+            },
+            "output": {
+              "prediction": "RESOLVE_DUPLICATES",
+              "score": 0.41952136355388675,
+              "class_probabilities": {
+                "AUDIT_INSPECTION": 0.08182850799705084,
+                "DETECT_ANOMALIES": 0.10736802065548486,
+                "MAP_SCHEMA": 0.0832531130030332,
+                "ONBOARD_CUSTOMER": 0.13439367426838766,
+                "RECONCILE_INVOICE": 0.09683040577736429,
+                "RESOLVE_DUPLICATES": 0.41952136355388675,
+                "SYSTEM_HEALTH_CHECK": 0.07680491474479251
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "security_blocked": false,
+              "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+            },
+            "evaluation_metrics": null
+          },
+          "execution": {
+            "input": {
+              "request": "Classify the supplied prompt using the local intent_parser artifact",
+              "source_ids": []
+            },
+            "planner": "gemini",
+            "provider": "google",
+            "model": "gemini-3.5-flash-lite",
+            "duration_ms": 2488.2,
+            "local_model": "intent_parser",
+            "local_version": "1.0.0",
+            "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5"
+          }
+        }
+      }
+    },
+    {
+      "expected_model": "workflow_planner",
+      "passed": true,
+      "run": {
+        "id": "c8efc79f-0c9f-4699-98b2-ab8f0cd1ff11",
+        "goal": "Inspect the saved workflow_planner template for the supplied intent_type; do not execute its tools",
+        "status": "COMPLETED",
+        "events": [
+          {
+            "timestamp": "2026-11-02T18:42:04.242024+00:00",
+            "tool": "model.intent_parser",
+            "message": "Computed task classification using the trained local artifact; this prediction does not grant permissions",
+            "details": {
+              "component": "local_ml",
+              "model": "intent_parser",
+              "version": "1.0.0",
+              "implementation": "TF-IDF + Logistic Regression",
+              "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+              "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+              "duration_ms": 1.58,
+              "input": {
+                "prompt": "Inspect the saved workflow_planner template for the supplied intent_type; do not execute its tools"
+              },
+              "input_features": {
+                "prompt": "Inspect the saved workflow_planner template for the supplied intent_type; do not execute its tools"
+              },
+              "output": {
+                "prediction": "RESOLVE_DUPLICATES",
+                "score": 0.4178905221347602,
+                "class_probabilities": {
+                  "AUDIT_INSPECTION": 0.14783458622918608,
+                  "DETECT_ANOMALIES": 0.09654285809861726,
+                  "MAP_SCHEMA": 0.06859519332122421,
+                  "ONBOARD_CUSTOMER": 0.10321467922378737,
+                  "RECONCILE_INVOICE": 0.08705105406563089,
+                  "RESOLVE_DUPLICATES": 0.4178905221347602,
+                  "SYSTEM_HEALTH_CHECK": 0.07887110692679399
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "security_blocked": false,
+                "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:04.243143+00:00",
+            "tool": "planner.gemini.request",
+            "message": "Requesting a language-to-tool plan using approved schema metadata; client rows are excluded",
+            "details": {
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:06.135219+00:00",
+            "tool": "planner.gemini.validated",
+            "message": "Validated Gemini's selection of an allowlisted local model; input values remain in the backend",
+            "details": {
+              "model": "gemini-3.5-flash-lite",
+              "plan": {
+                "action": "analyze",
+                "query": "",
+                "source_id": "",
+                "resource": "",
+                "record_key": "",
+                "changes": [],
+                "explanation": "Run workflow_planner analysis model on the supplied structured input.",
+                "analysis_model": "workflow_planner"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:06.138951+00:00",
+            "tool": "model.workflow_planner",
+            "message": "Executed the existing artifact locally without retraining; no enterprise tools or writes executed",
+            "details": {
+              "component": "local_template",
+              "model": "workflow_planner",
+              "version": "1.0.0",
+              "implementation": "Deterministic saved templates; not a learned estimator",
+              "artifact_path": "ml\\models\\workflow_planner\\artifacts\\workflow_planner.pkl",
+              "artifact_sha256": "23abe3f5c24a3a5d15e1f6ea547cc095a3ef1021a38b44e4afd6177e87134cd0",
+              "duration_ms": 2.588,
+              "input": {
+                "intent_type": "DETECT_ANOMALIES"
+              },
+              "input_features": {
+                "intent_type": "DETECT_ANOMALIES"
+              },
+              "output": {
+                "nodes": [
+                  {
+                    "id": "n1",
+                    "label": "Transaction Batch Trigger",
+                    "type": "trigger",
+                    "tool": "erp_connector.search_records",
+                    "position": {
+                      "x": 50,
+                      "y": 150
+                    }
+                  },
+                  {
+                    "id": "n2",
+                    "label": "Isolation Forest Anomaly Scan",
+                    "type": "ml_node",
+                    "tool": "anomaly_detector.evaluate",
+                    "position": {
+                      "x": 280,
+                      "y": 150
+                    }
+                  },
+                  {
+                    "id": "n3",
+                    "label": "Anomaly Review Gate",
+                    "type": "approval_gate",
+                    "tool": "approval_gate.request_authorization",
+                    "position": {
+                      "x": 510,
+                      "y": 150
+                    }
+                  },
+                  {
+                    "id": "n4",
+                    "label": "Tamper-Evident Audit Entry",
+                    "type": "audit",
+                    "tool": "audit_ledger.append_entry",
+                    "position": {
+                      "x": 740,
+                      "y": 150
+                    }
+                  }
+                ],
+                "edges": [
+                  {
+                    "id": "e1-2",
+                    "source": "n1",
+                    "target": "n2"
+                  },
+                  {
+                    "id": "e2-3",
+                    "source": "n2",
+                    "target": "n3"
+                  },
+                  {
+                    "id": "e3-4",
+                    "source": "n3",
+                    "target": "n4"
+                  }
+                ],
+                "intent_type": "DETECT_ANOMALIES",
+                "validation": {
+                  "is_valid_dag": true,
+                  "has_cycle": false,
+                  "cycle_details": [],
+                  "node_count": 4,
+                  "edge_count": 3
+                },
+                "score": null,
+                "score_type": "No probability: deterministic template lookup",
+                "tools_executed": false
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:06.140144+00:00",
+            "tool": "complete",
+            "message": "Hybrid Gemini selection and local artifact inference completed",
+            "details": {}
+          }
+        ],
+        "evidence": {
+          "model_input": {
+            "intent_type": "DETECT_ANOMALIES"
+          }
+        },
+        "proposal": {},
+        "result": {
+          "type": "ml_analysis",
+          "summary": "Completed local workflow planner inference. Result is advisory; no enterprise write performed.",
+          "analysis": {
+            "component": "local_template",
+            "model": "workflow_planner",
+            "version": "1.0.0",
+            "implementation": "Deterministic saved templates; not a learned estimator",
+            "artifact_path": "ml\\models\\workflow_planner\\artifacts\\workflow_planner.pkl",
+            "artifact_sha256": "23abe3f5c24a3a5d15e1f6ea547cc095a3ef1021a38b44e4afd6177e87134cd0",
+            "duration_ms": 2.588,
+            "input": {
+              "intent_type": "DETECT_ANOMALIES"
+            },
+            "input_features": {
+              "intent_type": "DETECT_ANOMALIES"
+            },
+            "output": {
+              "nodes": [
+                {
+                  "id": "n1",
+                  "label": "Transaction Batch Trigger",
+                  "type": "trigger",
+                  "tool": "erp_connector.search_records",
+                  "position": {
+                    "x": 50,
+                    "y": 150
+                  }
+                },
+                {
+                  "id": "n2",
+                  "label": "Isolation Forest Anomaly Scan",
+                  "type": "ml_node",
+                  "tool": "anomaly_detector.evaluate",
+                  "position": {
+                    "x": 280,
+                    "y": 150
+                  }
+                },
+                {
+                  "id": "n3",
+                  "label": "Anomaly Review Gate",
+                  "type": "approval_gate",
+                  "tool": "approval_gate.request_authorization",
+                  "position": {
+                    "x": 510,
+                    "y": 150
+                  }
+                },
+                {
+                  "id": "n4",
+                  "label": "Tamper-Evident Audit Entry",
+                  "type": "audit",
+                  "tool": "audit_ledger.append_entry",
+                  "position": {
+                    "x": 740,
+                    "y": 150
+                  }
+                }
+              ],
+              "edges": [
+                {
+                  "id": "e1-2",
+                  "source": "n1",
+                  "target": "n2"
+                },
+                {
+                  "id": "e2-3",
+                  "source": "n2",
+                  "target": "n3"
+                },
+                {
+                  "id": "e3-4",
+                  "source": "n3",
+                  "target": "n4"
+                }
+              ],
+              "intent_type": "DETECT_ANOMALIES",
+              "validation": {
+                "is_valid_dag": true,
+                "has_cycle": false,
+                "cycle_details": [],
+                "node_count": 4,
+                "edge_count": 3
+              },
+              "score": null,
+              "score_type": "No probability: deterministic template lookup",
+              "tools_executed": false
+            },
+            "evaluation_metrics": null
+          },
+          "local_intent": {
+            "component": "local_ml",
+            "model": "intent_parser",
+            "version": "1.0.0",
+            "implementation": "TF-IDF + Logistic Regression",
+            "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+            "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+            "duration_ms": 1.58,
+            "input": {
+              "prompt": "Inspect the saved workflow_planner template for the supplied intent_type; do not execute its tools"
+            },
+            "input_features": {
+              "prompt": "Inspect the saved workflow_planner template for the supplied intent_type; do not execute its tools"
+            },
+            "output": {
+              "prediction": "RESOLVE_DUPLICATES",
+              "score": 0.4178905221347602,
+              "class_probabilities": {
+                "AUDIT_INSPECTION": 0.14783458622918608,
+                "DETECT_ANOMALIES": 0.09654285809861726,
+                "MAP_SCHEMA": 0.06859519332122421,
+                "ONBOARD_CUSTOMER": 0.10321467922378737,
+                "RECONCILE_INVOICE": 0.08705105406563089,
+                "RESOLVE_DUPLICATES": 0.4178905221347602,
+                "SYSTEM_HEALTH_CHECK": 0.07887110692679399
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "security_blocked": false,
+              "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+            },
+            "evaluation_metrics": null
+          },
+          "execution": {
+            "input": {
+              "request": "Inspect the saved workflow_planner template for the supplied intent_type; do not execute its tools",
+              "source_ids": []
+            },
+            "planner": "gemini",
+            "provider": "google",
+            "model": "gemini-3.5-flash-lite",
+            "duration_ms": 1900.81,
+            "local_model": "workflow_planner",
+            "local_version": "1.0.0",
+            "artifact_sha256": "23abe3f5c24a3a5d15e1f6ea547cc095a3ef1021a38b44e4afd6177e87134cd0"
+          }
+        }
+      }
+    },
+    {
+      "expected_model": "semantic_schema_mapper",
+      "passed": true,
+      "run": {
+        "id": "1667eb04-3b52-4f98-a01f-5c2b3c5b6c9a",
+        "goal": "Map the supplied field definitions using the local semantic_schema_mapper classifier",
+        "status": "COMPLETED",
+        "events": [
+          {
+            "timestamp": "2026-11-02T18:42:06.153724+00:00",
+            "tool": "model.intent_parser",
+            "message": "Computed task classification using the trained local artifact; this prediction does not grant permissions",
+            "details": {
+              "component": "local_ml",
+              "model": "intent_parser",
+              "version": "1.0.0",
+              "implementation": "TF-IDF + Logistic Regression",
+              "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+              "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+              "duration_ms": 1.606,
+              "input": {
+                "prompt": "Map the supplied field definitions using the local semantic_schema_mapper classifier"
+              },
+              "input_features": {
+                "prompt": "Map the supplied field definitions using the local semantic_schema_mapper classifier"
+              },
+              "output": {
+                "prediction": "MAP_SCHEMA",
+                "score": 0.37711199343186314,
+                "class_probabilities": {
+                  "AUDIT_INSPECTION": 0.061785073110836176,
+                  "DETECT_ANOMALIES": 0.0800173216755144,
+                  "MAP_SCHEMA": 0.37711199343186314,
+                  "ONBOARD_CUSTOMER": 0.09633109934975513,
+                  "RECONCILE_INVOICE": 0.0729042818902992,
+                  "RESOLVE_DUPLICATES": 0.25376924488536967,
+                  "SYSTEM_HEALTH_CHECK": 0.05808098565636238
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "security_blocked": false,
+                "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:06.154757+00:00",
+            "tool": "planner.gemini.request",
+            "message": "Requesting a language-to-tool plan using approved schema metadata; client rows are excluded",
+            "details": {
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:07.814722+00:00",
+            "tool": "planner.gemini.validated",
+            "message": "Validated Gemini's selection of an allowlisted local model; input values remain in the backend",
+            "details": {
+              "model": "gemini-3.5-flash-lite",
+              "plan": {
+                "action": "analyze",
+                "query": "",
+                "source_id": "",
+                "resource": "",
+                "record_key": "",
+                "changes": [],
+                "explanation": "Running semantic_schema_mapper local analysis model on the supplied structured input.",
+                "analysis_model": "semantic_schema_mapper"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:07.869428+00:00",
+            "tool": "model.semantic_schema_mapper",
+            "message": "Executed the existing artifact locally without retraining; no enterprise tools or writes executed",
+            "details": {
+              "component": "local_ml",
+              "model": "semantic_schema_mapper",
+              "version": "1.1.0",
+              "implementation": "TF-IDF + Logistic Regression",
+              "artifact_path": "ml\\models\\semantic_schema_mapper\\artifacts\\schema_mapper.pkl",
+              "artifact_sha256": "214adbe4bef8e24e3b1ec0ebf88c2b76f96c11a42165219de575373fdeb06cba",
+              "duration_ms": 53.104,
+              "input": {
+                "fields": [
+                  {
+                    "field_name": "billing_total",
+                    "description": "Total invoice amount",
+                    "datatype": "number"
+                  }
+                ]
+              },
+              "input_features": {
+                "field_texts": [
+                  "billing total Total invoice amount"
+                ]
+              },
+              "output": {
+                "mappings": [
+                  {
+                    "field_name": "billing_total",
+                    "prediction": "total_amount",
+                    "score": 0.997444730670188,
+                    "class_probabilities": {
+                      "billing_address": 0.002162799813882136,
+                      "contact_email": 4.3553870038520444e-05,
+                      "contact_phone": 2.8248160254522283e-05,
+                      "currency": 1.2271931960228879e-05,
+                      "customer_id": 5.414710292014192e-06,
+                      "customer_name": 5.642727508657331e-05,
+                      "invoice_date": 0.00013715886522986377,
+                      "invoice_number": 6.177202266927582e-05,
+                      "shipping_address": 7.968219108741254e-06,
+                      "tax_identifier": 2.4785882164179444e-05,
+                      "total_amount": 0.997444730670188,
+                      "vendor_id": 2.8012207892303183e-06,
+                      "vendor_name": 1.2067358336825685e-05
+                    },
+                    "score_type": "estimator class probability; calibration not independently verified"
+                  }
+                ]
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:07.870674+00:00",
+            "tool": "complete",
+            "message": "Hybrid Gemini selection and local artifact inference completed",
+            "details": {}
+          }
+        ],
+        "evidence": {
+          "model_input": {
+            "fields": [
+              {
+                "field_name": "billing_total",
+                "description": "Total invoice amount",
+                "datatype": "number"
+              }
+            ]
+          }
+        },
+        "proposal": {},
+        "result": {
+          "type": "ml_analysis",
+          "summary": "Completed local semantic schema mapper inference. Result is advisory; no enterprise write performed.",
+          "analysis": {
+            "component": "local_ml",
+            "model": "semantic_schema_mapper",
+            "version": "1.1.0",
+            "implementation": "TF-IDF + Logistic Regression",
+            "artifact_path": "ml\\models\\semantic_schema_mapper\\artifacts\\schema_mapper.pkl",
+            "artifact_sha256": "214adbe4bef8e24e3b1ec0ebf88c2b76f96c11a42165219de575373fdeb06cba",
+            "duration_ms": 53.104,
+            "input": {
+              "fields": [
+                {
+                  "field_name": "billing_total",
+                  "description": "Total invoice amount",
+                  "datatype": "number"
+                }
+              ]
+            },
+            "input_features": {
+              "field_texts": [
+                "billing total Total invoice amount"
+              ]
+            },
+            "output": {
+              "mappings": [
+                {
+                  "field_name": "billing_total",
+                  "prediction": "total_amount",
+                  "score": 0.997444730670188,
+                  "class_probabilities": {
+                    "billing_address": 0.002162799813882136,
+                    "contact_email": 4.3553870038520444e-05,
+                    "contact_phone": 2.8248160254522283e-05,
+                    "currency": 1.2271931960228879e-05,
+                    "customer_id": 5.414710292014192e-06,
+                    "customer_name": 5.642727508657331e-05,
+                    "invoice_date": 0.00013715886522986377,
+                    "invoice_number": 6.177202266927582e-05,
+                    "shipping_address": 7.968219108741254e-06,
+                    "tax_identifier": 2.4785882164179444e-05,
+                    "total_amount": 0.997444730670188,
+                    "vendor_id": 2.8012207892303183e-06,
+                    "vendor_name": 1.2067358336825685e-05
+                  },
+                  "score_type": "estimator class probability; calibration not independently verified"
+                }
+              ]
+            },
+            "evaluation_metrics": null
+          },
+          "local_intent": {
+            "component": "local_ml",
+            "model": "intent_parser",
+            "version": "1.0.0",
+            "implementation": "TF-IDF + Logistic Regression",
+            "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+            "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+            "duration_ms": 1.606,
+            "input": {
+              "prompt": "Map the supplied field definitions using the local semantic_schema_mapper classifier"
+            },
+            "input_features": {
+              "prompt": "Map the supplied field definitions using the local semantic_schema_mapper classifier"
+            },
+            "output": {
+              "prediction": "MAP_SCHEMA",
+              "score": 0.37711199343186314,
+              "class_probabilities": {
+                "AUDIT_INSPECTION": 0.061785073110836176,
+                "DETECT_ANOMALIES": 0.0800173216755144,
+                "MAP_SCHEMA": 0.37711199343186314,
+                "ONBOARD_CUSTOMER": 0.09633109934975513,
+                "RECONCILE_INVOICE": 0.0729042818902992,
+                "RESOLVE_DUPLICATES": 0.25376924488536967,
+                "SYSTEM_HEALTH_CHECK": 0.05808098565636238
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "security_blocked": false,
+              "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+            },
+            "evaluation_metrics": null
+          },
+          "execution": {
+            "input": {
+              "request": "Map the supplied field definitions using the local semantic_schema_mapper classifier",
+              "source_ids": []
+            },
+            "planner": "gemini",
+            "provider": "google",
+            "model": "gemini-3.5-flash-lite",
+            "duration_ms": 1719.24,
+            "local_model": "semantic_schema_mapper",
+            "local_version": "1.1.0",
+            "artifact_sha256": "214adbe4bef8e24e3b1ec0ebf88c2b76f96c11a42165219de575373fdeb06cba"
+          }
+        }
+      }
+    },
+    {
+      "expected_model": "invoice_reconciliation",
+      "passed": true,
+      "run": {
+        "id": "51ae0d07-48b2-4a73-8b2e-aaee495bff9a",
+        "goal": "Classify the supplied invoice comparison features using the local invoice_reconciliation classifier",
+        "status": "COMPLETED",
+        "events": [
+          {
+            "timestamp": "2026-11-02T18:42:07.882220+00:00",
+            "tool": "model.intent_parser",
+            "message": "Computed task classification using the trained local artifact; this prediction does not grant permissions",
+            "details": {
+              "component": "local_ml",
+              "model": "intent_parser",
+              "version": "1.0.0",
+              "implementation": "TF-IDF + Logistic Regression",
+              "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+              "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+              "duration_ms": 1.688,
+              "input": {
+                "prompt": "Classify the supplied invoice comparison features using the local invoice_reconciliation classifier"
+              },
+              "input_features": {
+                "prompt": "Classify the supplied invoice comparison features using the local invoice_reconciliation classifier"
+              },
+              "output": {
+                "prediction": "RECONCILE_INVOICE",
+                "score": 0.360740909719467,
+                "class_probabilities": {
+                  "AUDIT_INSPECTION": 0.06054148132268008,
+                  "DETECT_ANOMALIES": 0.07971298566285355,
+                  "MAP_SCHEMA": 0.06336502594377566,
+                  "ONBOARD_CUSTOMER": 0.095680298967757,
+                  "RECONCILE_INVOICE": 0.360740909719467,
+                  "RESOLVE_DUPLICATES": 0.28214478512113483,
+                  "SYSTEM_HEALTH_CHECK": 0.057814513262332064
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "security_blocked": false,
+                "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:07.883245+00:00",
+            "tool": "planner.gemini.request",
+            "message": "Requesting a language-to-tool plan using approved schema metadata; client rows are excluded",
+            "details": {
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:09.334978+00:00",
+            "tool": "planner.gemini.validated",
+            "message": "Validated Gemini's selection of an allowlisted local model; input values remain in the backend",
+            "details": {
+              "model": "gemini-3.5-flash-lite",
+              "plan": {
+                "action": "analyze",
+                "query": "",
+                "source_id": "",
+                "resource": "",
+                "record_key": "",
+                "changes": [],
+                "explanation": "Classify the supplied invoice comparison features using the local invoice_reconciliation classifier.",
+                "analysis_model": "invoice_reconciliation"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:09.347429+00:00",
+            "tool": "model.invoice_reconciliation",
+            "message": "Executed the existing artifact locally without retraining; no enterprise tools or writes executed",
+            "details": {
+              "component": "local_ml",
+              "model": "invoice_reconciliation",
+              "version": "1.0.0",
+              "implementation": "Decision Tree feature classifier",
+              "artifact_path": "ml\\models\\invoice_reconciliation\\artifacts\\reconciliation_calibrator.pkl",
+              "artifact_sha256": "68db8c6a5399626bbf9de0f8ee1a3d461ce4619cca4eb8028a9580f75a909fda",
+              "duration_ms": 11.191,
+              "input": {
+                "po_total": 1200,
+                "inv_total": 1260,
+                "price_variance": 60,
+                "qty_variance": 0,
+                "tax_diff": 0,
+                "has_exceptions": 1
+              },
+              "input_features": {
+                "po_total": 1200.0,
+                "inv_total": 1260.0,
+                "price_variance": 60.0,
+                "qty_variance": 0.0,
+                "tax_diff": 0.0,
+                "has_exceptions": 1.0
+              },
+              "output": {
+                "prediction": "2",
+                "score": 1.0,
+                "class_probabilities": {
+                  "0": 0.0,
+                  "1": 0.0,
+                  "2": 1.0
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "label_definition": "Training-rule exceptions with price variance > 50",
+                "limitation": "Feature classifier trained on generated rule labels; not proof of an invoice's validity or payment authorization.",
+                "recommendation": "Advisory classification only; human approval is required for any enterprise write."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:09.348547+00:00",
+            "tool": "complete",
+            "message": "Hybrid Gemini selection and local artifact inference completed",
+            "details": {}
+          }
+        ],
+        "evidence": {
+          "model_input": {
+            "po_total": 1200,
+            "inv_total": 1260,
+            "price_variance": 60,
+            "qty_variance": 0,
+            "tax_diff": 0,
+            "has_exceptions": 1
+          }
+        },
+        "proposal": {},
+        "result": {
+          "type": "ml_analysis",
+          "summary": "Completed local invoice reconciliation inference. Result is advisory; no enterprise write performed.",
+          "analysis": {
+            "component": "local_ml",
+            "model": "invoice_reconciliation",
+            "version": "1.0.0",
+            "implementation": "Decision Tree feature classifier",
+            "artifact_path": "ml\\models\\invoice_reconciliation\\artifacts\\reconciliation_calibrator.pkl",
+            "artifact_sha256": "68db8c6a5399626bbf9de0f8ee1a3d461ce4619cca4eb8028a9580f75a909fda",
+            "duration_ms": 11.191,
+            "input": {
+              "po_total": 1200,
+              "inv_total": 1260,
+              "price_variance": 60,
+              "qty_variance": 0,
+              "tax_diff": 0,
+              "has_exceptions": 1
+            },
+            "input_features": {
+              "po_total": 1200.0,
+              "inv_total": 1260.0,
+              "price_variance": 60.0,
+              "qty_variance": 0.0,
+              "tax_diff": 0.0,
+              "has_exceptions": 1.0
+            },
+            "output": {
+              "prediction": "2",
+              "score": 1.0,
+              "class_probabilities": {
+                "0": 0.0,
+                "1": 0.0,
+                "2": 1.0
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "label_definition": "Training-rule exceptions with price variance > 50",
+              "limitation": "Feature classifier trained on generated rule labels; not proof of an invoice's validity or payment authorization.",
+              "recommendation": "Advisory classification only; human approval is required for any enterprise write."
+            },
+            "evaluation_metrics": null
+          },
+          "local_intent": {
+            "component": "local_ml",
+            "model": "intent_parser",
+            "version": "1.0.0",
+            "implementation": "TF-IDF + Logistic Regression",
+            "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+            "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+            "duration_ms": 1.688,
+            "input": {
+              "prompt": "Classify the supplied invoice comparison features using the local invoice_reconciliation classifier"
+            },
+            "input_features": {
+              "prompt": "Classify the supplied invoice comparison features using the local invoice_reconciliation classifier"
+            },
+            "output": {
+              "prediction": "RECONCILE_INVOICE",
+              "score": 0.360740909719467,
+              "class_probabilities": {
+                "AUDIT_INSPECTION": 0.06054148132268008,
+                "DETECT_ANOMALIES": 0.07971298566285355,
+                "MAP_SCHEMA": 0.06336502594377566,
+                "ONBOARD_CUSTOMER": 0.095680298967757,
+                "RECONCILE_INVOICE": 0.360740909719467,
+                "RESOLVE_DUPLICATES": 0.28214478512113483,
+                "SYSTEM_HEALTH_CHECK": 0.057814513262332064
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "security_blocked": false,
+              "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+            },
+            "evaluation_metrics": null
+          },
+          "execution": {
+            "input": {
+              "request": "Classify the supplied invoice comparison features using the local invoice_reconciliation classifier",
+              "source_ids": []
+            },
+            "planner": "gemini",
+            "provider": "google",
+            "model": "gemini-3.5-flash-lite",
+            "duration_ms": 1468.75,
+            "local_model": "invoice_reconciliation",
+            "local_version": "1.0.0",
+            "artifact_sha256": "68db8c6a5399626bbf9de0f8ee1a3d461ce4619cca4eb8028a9580f75a909fda"
+          }
+        }
+      }
+    },
+    {
+      "expected_model": "adaptation_recommender",
+      "passed": true,
+      "run": {
+        "id": "2884019d-fb9d-40ec-9398-2be19b3017c1",
+        "goal": "Classify the supplied breaking-change features using the local adaptation_recommender",
+        "status": "COMPLETED",
+        "events": [
+          {
+            "timestamp": "2026-11-02T18:42:09.364720+00:00",
+            "tool": "model.intent_parser",
+            "message": "Computed task classification using the trained local artifact; this prediction does not grant permissions",
+            "details": {
+              "component": "local_ml",
+              "model": "intent_parser",
+              "version": "1.0.0",
+              "implementation": "TF-IDF + Logistic Regression",
+              "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+              "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+              "duration_ms": 1.979,
+              "input": {
+                "prompt": "Classify the supplied breaking-change features using the local adaptation_recommender"
+              },
+              "input_features": {
+                "prompt": "Classify the supplied breaking-change features using the local adaptation_recommender"
+              },
+              "output": {
+                "prediction": "RESOLVE_DUPLICATES",
+                "score": 0.41952136355388675,
+                "class_probabilities": {
+                  "AUDIT_INSPECTION": 0.08182850799705084,
+                  "DETECT_ANOMALIES": 0.10736802065548486,
+                  "MAP_SCHEMA": 0.0832531130030332,
+                  "ONBOARD_CUSTOMER": 0.13439367426838766,
+                  "RECONCILE_INVOICE": 0.09683040577736429,
+                  "RESOLVE_DUPLICATES": 0.41952136355388675,
+                  "SYSTEM_HEALTH_CHECK": 0.07680491474479251
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "security_blocked": false,
+                "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:09.366264+00:00",
+            "tool": "planner.gemini.request",
+            "message": "Requesting a language-to-tool plan using approved schema metadata; client rows are excluded",
+            "details": {
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:10.942855+00:00",
+            "tool": "planner.gemini.validated",
+            "message": "Validated Gemini's selection of an allowlisted local model; input values remain in the backend",
+            "details": {
+              "model": "gemini-3.5-flash-lite",
+              "plan": {
+                "action": "analyze",
+                "query": "",
+                "source_id": "",
+                "resource": "",
+                "record_key": "",
+                "changes": [],
+                "explanation": "Running adaptation_recommender local model on supplied input.",
+                "analysis_model": "adaptation_recommender"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:10.944645+00:00",
+            "tool": "model.adaptation_recommender",
+            "message": "Executed the existing artifact locally without retraining; no enterprise tools or writes executed",
+            "details": {
+              "component": "local_ml",
+              "model": "adaptation_recommender",
+              "version": "1.0.0",
+              "implementation": "Decision Tree breaking-change classifier",
+              "artifact_path": "ml\\models\\adaptation_recommender\\artifacts\\adaptation_recommender.pkl",
+              "artifact_sha256": "1edd66d5f86d9b7185c79478636690d203a3a0baab4cdad911680a70460e7800",
+              "duration_ms": 0.759,
+              "input": {
+                "semantic_similarity": 0.82,
+                "has_type_shift": 1
+              },
+              "input_features": {
+                "semantic_similarity": 0.82,
+                "has_type_shift": 1.0
+              },
+              "output": {
+                "prediction": "1",
+                "score": 1.0,
+                "class_probabilities": {
+                  "0": 0.0,
+                  "1": 1.0
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "label_definition": "Breaking change",
+                "recommendation": "Advisory classification only; human approval is required for any enterprise write."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:10.945618+00:00",
+            "tool": "complete",
+            "message": "Hybrid Gemini selection and local artifact inference completed",
+            "details": {}
+          }
+        ],
+        "evidence": {
+          "model_input": {
+            "semantic_similarity": 0.82,
+            "has_type_shift": 1
+          }
+        },
+        "proposal": {},
+        "result": {
+          "type": "ml_analysis",
+          "summary": "Completed local adaptation recommender inference. Result is advisory; no enterprise write performed.",
+          "analysis": {
+            "component": "local_ml",
+            "model": "adaptation_recommender",
+            "version": "1.0.0",
+            "implementation": "Decision Tree breaking-change classifier",
+            "artifact_path": "ml\\models\\adaptation_recommender\\artifacts\\adaptation_recommender.pkl",
+            "artifact_sha256": "1edd66d5f86d9b7185c79478636690d203a3a0baab4cdad911680a70460e7800",
+            "duration_ms": 0.759,
+            "input": {
+              "semantic_similarity": 0.82,
+              "has_type_shift": 1
+            },
+            "input_features": {
+              "semantic_similarity": 0.82,
+              "has_type_shift": 1.0
+            },
+            "output": {
+              "prediction": "1",
+              "score": 1.0,
+              "class_probabilities": {
+                "0": 0.0,
+                "1": 1.0
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "label_definition": "Breaking change",
+              "recommendation": "Advisory classification only; human approval is required for any enterprise write."
+            },
+            "evaluation_metrics": null
+          },
+          "local_intent": {
+            "component": "local_ml",
+            "model": "intent_parser",
+            "version": "1.0.0",
+            "implementation": "TF-IDF + Logistic Regression",
+            "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+            "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+            "duration_ms": 1.979,
+            "input": {
+              "prompt": "Classify the supplied breaking-change features using the local adaptation_recommender"
+            },
+            "input_features": {
+              "prompt": "Classify the supplied breaking-change features using the local adaptation_recommender"
+            },
+            "output": {
+              "prediction": "RESOLVE_DUPLICATES",
+              "score": 0.41952136355388675,
+              "class_probabilities": {
+                "AUDIT_INSPECTION": 0.08182850799705084,
+                "DETECT_ANOMALIES": 0.10736802065548486,
+                "MAP_SCHEMA": 0.0832531130030332,
+                "ONBOARD_CUSTOMER": 0.13439367426838766,
+                "RECONCILE_INVOICE": 0.09683040577736429,
+                "RESOLVE_DUPLICATES": 0.41952136355388675,
+                "SYSTEM_HEALTH_CHECK": 0.07680491474479251
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "security_blocked": false,
+              "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+            },
+            "evaluation_metrics": null
+          },
+          "execution": {
+            "input": {
+              "request": "Classify the supplied breaking-change features using the local adaptation_recommender",
+              "source_ids": []
+            },
+            "planner": "gemini",
+            "provider": "google",
+            "model": "gemini-3.5-flash-lite",
+            "duration_ms": 1584.31,
+            "local_model": "adaptation_recommender",
+            "local_version": "1.0.0",
+            "artifact_sha256": "1edd66d5f86d9b7185c79478636690d203a3a0baab4cdad911680a70460e7800"
+          }
+        }
+      }
+    },
+    {
+      "expected_model": "document_intelligence",
+      "passed": true,
+      "run": {
+        "id": "00479ac7-6c32-4694-a0f2-2dd6fa71df50",
+        "goal": "Extract the supplied invoice text and compute the document_intelligence regression score",
+        "status": "COMPLETED",
+        "events": [
+          {
+            "timestamp": "2026-11-02T18:42:10.958368+00:00",
+            "tool": "model.intent_parser",
+            "message": "Computed task classification using the trained local artifact; this prediction does not grant permissions",
+            "details": {
+              "component": "local_ml",
+              "model": "intent_parser",
+              "version": "1.0.0",
+              "implementation": "TF-IDF + Logistic Regression",
+              "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+              "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+              "duration_ms": 1.979,
+              "input": {
+                "prompt": "Extract the supplied invoice text and compute the document_intelligence regression score"
+              },
+              "input_features": {
+                "prompt": "Extract the supplied invoice text and compute the document_intelligence regression score"
+              },
+              "output": {
+                "prediction": "RECONCILE_INVOICE",
+                "score": 0.30044512863723943,
+                "class_probabilities": {
+                  "AUDIT_INSPECTION": 0.06518668266805873,
+                  "DETECT_ANOMALIES": 0.13083310423475514,
+                  "MAP_SCHEMA": 0.057122946441764536,
+                  "ONBOARD_CUSTOMER": 0.0928855349548147,
+                  "RECONCILE_INVOICE": 0.30044512863723943,
+                  "RESOLVE_DUPLICATES": 0.27289913529738374,
+                  "SYSTEM_HEALTH_CHECK": 0.08062746776598374
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "security_blocked": false,
+                "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:10.959345+00:00",
+            "tool": "planner.gemini.request",
+            "message": "Requesting a language-to-tool plan using approved schema metadata; client rows are excluded",
+            "details": {
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:12.429482+00:00",
+            "tool": "planner.gemini.validated",
+            "message": "Validated Gemini's selection of an allowlisted local model; input values remain in the backend",
+            "details": {
+              "model": "gemini-3.5-flash-lite",
+              "plan": {
+                "action": "analyze",
+                "query": "",
+                "source_id": "",
+                "resource": "",
+                "record_key": "",
+                "changes": [],
+                "explanation": "Running document_intelligence local ml model on supplied invoice text.",
+                "analysis_model": "document_intelligence"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:12.433384+00:00",
+            "tool": "model.document_intelligence",
+            "message": "Executed the existing artifact locally without retraining; no enterprise tools or writes executed",
+            "details": {
+              "component": "local_ml",
+              "model": "document_intelligence",
+              "version": "1.0.0",
+              "implementation": "Ridge extraction-score regressor + deterministic parsing",
+              "artifact_path": "ml\\models\\document_intelligence\\artifacts\\document_extractor.pkl",
+              "artifact_sha256": "d7c0f650e8b72efc66eddf367713d5da583c512e7ccbb7e3081408d3250da6a2",
+              "duration_ms": 2.422,
+              "input": {
+                "document_text": "Invoice Number: HYBRID-001\nSubtotal: $1200.00\nTax: $96.00\nTotal Amount: $1296.00",
+                "filename": "synthetic-example.txt"
+              },
+              "input_features": {
+                "total_amount": 1296.0,
+                "subtotal": 1200.0,
+                "tax_amount": 96.0,
+                "extracted_fields_count": 5
+              },
+              "output": {
+                "extracted_fields": {
+                  "invoice_number": "HYBRID-001",
+                  "po_number": null,
+                  "invoice_date": null,
+                  "subtotal": 1200.0,
+                  "total_amount": 1296.0,
+                  "tax_amount": 96.0,
+                  "line_items": []
+                },
+                "regression_score": 0.9371000000000004,
+                "score_type": "Ridge score for extraction features; not calibrated correctness probability",
+                "extraction_method": "Deterministic field parsing; Ridge artifact supplies the separate regression score"
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:12.434150+00:00",
+            "tool": "complete",
+            "message": "Hybrid Gemini selection and local artifact inference completed",
+            "details": {}
+          }
+        ],
+        "evidence": {
+          "model_input": {
+            "document_text": "Invoice Number: HYBRID-001\nSubtotal: $1200.00\nTax: $96.00\nTotal Amount: $1296.00",
+            "filename": "synthetic-example.txt"
+          }
+        },
+        "proposal": {},
+        "result": {
+          "type": "ml_analysis",
+          "summary": "Completed local document intelligence inference. Result is advisory; no enterprise write performed.",
+          "analysis": {
+            "component": "local_ml",
+            "model": "document_intelligence",
+            "version": "1.0.0",
+            "implementation": "Ridge extraction-score regressor + deterministic parsing",
+            "artifact_path": "ml\\models\\document_intelligence\\artifacts\\document_extractor.pkl",
+            "artifact_sha256": "d7c0f650e8b72efc66eddf367713d5da583c512e7ccbb7e3081408d3250da6a2",
+            "duration_ms": 2.422,
+            "input": {
+              "document_text": "Invoice Number: HYBRID-001\nSubtotal: $1200.00\nTax: $96.00\nTotal Amount: $1296.00",
+              "filename": "synthetic-example.txt"
+            },
+            "input_features": {
+              "total_amount": 1296.0,
+              "subtotal": 1200.0,
+              "tax_amount": 96.0,
+              "extracted_fields_count": 5
+            },
+            "output": {
+              "extracted_fields": {
+                "invoice_number": "HYBRID-001",
+                "po_number": null,
+                "invoice_date": null,
+                "subtotal": 1200.0,
+                "total_amount": 1296.0,
+                "tax_amount": 96.0,
+                "line_items": []
+              },
+              "regression_score": 0.9371000000000004,
+              "score_type": "Ridge score for extraction features; not calibrated correctness probability",
+              "extraction_method": "Deterministic field parsing; Ridge artifact supplies the separate regression score"
+            },
+            "evaluation_metrics": null
+          },
+          "local_intent": {
+            "component": "local_ml",
+            "model": "intent_parser",
+            "version": "1.0.0",
+            "implementation": "TF-IDF + Logistic Regression",
+            "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+            "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+            "duration_ms": 1.979,
+            "input": {
+              "prompt": "Extract the supplied invoice text and compute the document_intelligence regression score"
+            },
+            "input_features": {
+              "prompt": "Extract the supplied invoice text and compute the document_intelligence regression score"
+            },
+            "output": {
+              "prediction": "RECONCILE_INVOICE",
+              "score": 0.30044512863723943,
+              "class_probabilities": {
+                "AUDIT_INSPECTION": 0.06518668266805873,
+                "DETECT_ANOMALIES": 0.13083310423475514,
+                "MAP_SCHEMA": 0.057122946441764536,
+                "ONBOARD_CUSTOMER": 0.0928855349548147,
+                "RECONCILE_INVOICE": 0.30044512863723943,
+                "RESOLVE_DUPLICATES": 0.27289913529738374,
+                "SYSTEM_HEALTH_CHECK": 0.08062746776598374
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "security_blocked": false,
+              "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+            },
+            "evaluation_metrics": null
+          },
+          "execution": {
+            "input": {
+              "request": "Extract the supplied invoice text and compute the document_intelligence regression score",
+              "source_ids": []
+            },
+            "planner": "gemini",
+            "provider": "google",
+            "model": "gemini-3.5-flash-lite",
+            "duration_ms": 1478.99,
+            "local_model": "document_intelligence",
+            "local_version": "1.0.0",
+            "artifact_sha256": "d7c0f650e8b72efc66eddf367713d5da583c512e7ccbb7e3081408d3250da6a2"
+          }
+        }
+      }
+    },
+    {
+      "expected_model": "anomaly_detection",
+      "passed": true,
+      "run": {
+        "id": "8f7cb821-e999-4444-8ef3-933a84eb6088",
+        "goal": "Analyze the supplied transaction with the local anomaly_detection Isolation Forest",
+        "status": "COMPLETED",
+        "events": [
+          {
+            "timestamp": "2026-11-02T18:42:12.445458+00:00",
+            "tool": "model.intent_parser",
+            "message": "Computed task classification using the trained local artifact; this prediction does not grant permissions",
+            "details": {
+              "component": "local_ml",
+              "model": "intent_parser",
+              "version": "1.0.0",
+              "implementation": "TF-IDF + Logistic Regression",
+              "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+              "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+              "duration_ms": 1.782,
+              "input": {
+                "prompt": "Analyze the supplied transaction with the local anomaly_detection Isolation Forest"
+              },
+              "input_features": {
+                "prompt": "Analyze the supplied transaction with the local anomaly_detection Isolation Forest"
+              },
+              "output": {
+                "prediction": "DETECT_ANOMALIES",
+                "score": 0.596807179560244,
+                "class_probabilities": {
+                  "AUDIT_INSPECTION": 0.03908954528967297,
+                  "DETECT_ANOMALIES": 0.596807179560244,
+                  "MAP_SCHEMA": 0.05241585396918561,
+                  "ONBOARD_CUSTOMER": 0.09578864353313597,
+                  "RECONCILE_INVOICE": 0.06114191241695509,
+                  "RESOLVE_DUPLICATES": 0.11659445478581175,
+                  "SYSTEM_HEALTH_CHECK": 0.038162410444994584
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "security_blocked": false,
+                "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:12.446597+00:00",
+            "tool": "planner.gemini.request",
+            "message": "Requesting a language-to-tool plan using approved schema metadata; client rows are excluded",
+            "details": {
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:14.135741+00:00",
+            "tool": "planner.gemini.validated",
+            "message": "Validated Gemini's selection of an allowlisted local model; input values remain in the backend",
+            "details": {
+              "model": "gemini-3.5-flash-lite",
+              "plan": {
+                "action": "analyze",
+                "query": "",
+                "source_id": "",
+                "resource": "",
+                "record_key": "",
+                "changes": [],
+                "explanation": "Running local anomaly detection model on the supplied transaction input.",
+                "analysis_model": "anomaly_detection"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:14.177768+00:00",
+            "tool": "model.anomaly_detection",
+            "message": "Executed the existing artifact locally without retraining; no enterprise tools or writes executed",
+            "details": {
+              "component": "local_ml",
+              "model": "anomaly_detection",
+              "version": "1.0.0",
+              "implementation": "Isolation Forest",
+              "artifact_path": "ml\\models\\anomaly_detection\\artifacts\\isolation_forest.pkl",
+              "artifact_sha256": "f1db2421cdcb867fe6bcaf271d4a80885df9d2d9581291d05a4162216c186a50",
+              "duration_ms": 40.742,
+              "input": {
+                "transaction_id": "HYBRID-T1",
+                "vendor_id": "DEMO-V1",
+                "amount": 19000,
+                "historical_avg_amount": 1200,
+                "historical_std_amount": 250,
+                "vendor_age_days": 4,
+                "transactions_last_24h": 9,
+                "is_weekend": true,
+                "payment_terms_days": 30
+              },
+              "input_features": {
+                "amount": 19000.0,
+                "amount_ratio": 15.833333333333334,
+                "z_score": 71.2,
+                "new_vendor_flag": 1.0,
+                "velocity": 9.0,
+                "weekend_flag": 1.0,
+                "terms_difference": 0.0
+              },
+              "output": {
+                "is_anomaly": true,
+                "raw_anomaly_score": -0.7626194689742632,
+                "decision_function": -0.17148349101838245,
+                "review_recommendation": "Human review recommended",
+                "score": null,
+                "score_type": "Uncalibrated Isolation Forest scores; not fraud probabilities"
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:14.178951+00:00",
+            "tool": "complete",
+            "message": "Hybrid Gemini selection and local artifact inference completed",
+            "details": {}
+          }
+        ],
+        "evidence": {
+          "model_input": {
+            "transaction_id": "HYBRID-T1",
+            "vendor_id": "DEMO-V1",
+            "amount": 19000,
+            "historical_avg_amount": 1200,
+            "historical_std_amount": 250,
+            "vendor_age_days": 4,
+            "transactions_last_24h": 9,
+            "is_weekend": true,
+            "payment_terms_days": 30
+          }
+        },
+        "proposal": {},
+        "result": {
+          "type": "ml_analysis",
+          "summary": "Completed local anomaly detection inference. Result is advisory; no enterprise write performed.",
+          "analysis": {
+            "component": "local_ml",
+            "model": "anomaly_detection",
+            "version": "1.0.0",
+            "implementation": "Isolation Forest",
+            "artifact_path": "ml\\models\\anomaly_detection\\artifacts\\isolation_forest.pkl",
+            "artifact_sha256": "f1db2421cdcb867fe6bcaf271d4a80885df9d2d9581291d05a4162216c186a50",
+            "duration_ms": 40.742,
+            "input": {
+              "transaction_id": "HYBRID-T1",
+              "vendor_id": "DEMO-V1",
+              "amount": 19000,
+              "historical_avg_amount": 1200,
+              "historical_std_amount": 250,
+              "vendor_age_days": 4,
+              "transactions_last_24h": 9,
+              "is_weekend": true,
+              "payment_terms_days": 30
+            },
+            "input_features": {
+              "amount": 19000.0,
+              "amount_ratio": 15.833333333333334,
+              "z_score": 71.2,
+              "new_vendor_flag": 1.0,
+              "velocity": 9.0,
+              "weekend_flag": 1.0,
+              "terms_difference": 0.0
+            },
+            "output": {
+              "is_anomaly": true,
+              "raw_anomaly_score": -0.7626194689742632,
+              "decision_function": -0.17148349101838245,
+              "review_recommendation": "Human review recommended",
+              "score": null,
+              "score_type": "Uncalibrated Isolation Forest scores; not fraud probabilities"
+            },
+            "evaluation_metrics": null
+          },
+          "local_intent": {
+            "component": "local_ml",
+            "model": "intent_parser",
+            "version": "1.0.0",
+            "implementation": "TF-IDF + Logistic Regression",
+            "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+            "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+            "duration_ms": 1.782,
+            "input": {
+              "prompt": "Analyze the supplied transaction with the local anomaly_detection Isolation Forest"
+            },
+            "input_features": {
+              "prompt": "Analyze the supplied transaction with the local anomaly_detection Isolation Forest"
+            },
+            "output": {
+              "prediction": "DETECT_ANOMALIES",
+              "score": 0.596807179560244,
+              "class_probabilities": {
+                "AUDIT_INSPECTION": 0.03908954528967297,
+                "DETECT_ANOMALIES": 0.596807179560244,
+                "MAP_SCHEMA": 0.05241585396918561,
+                "ONBOARD_CUSTOMER": 0.09578864353313597,
+                "RECONCILE_INVOICE": 0.06114191241695509,
+                "RESOLVE_DUPLICATES": 0.11659445478581175,
+                "SYSTEM_HEALTH_CHECK": 0.038162410444994584
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "security_blocked": false,
+              "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+            },
+            "evaluation_metrics": null
+          },
+          "execution": {
+            "input": {
+              "request": "Analyze the supplied transaction with the local anomaly_detection Isolation Forest",
+              "source_ids": []
+            },
+            "planner": "gemini",
+            "provider": "google",
+            "model": "gemini-3.5-flash-lite",
+            "duration_ms": 1736.13,
+            "local_model": "anomaly_detection",
+            "local_version": "1.0.0",
+            "artifact_sha256": "f1db2421cdcb867fe6bcaf271d4a80885df9d2d9581291d05a4162216c186a50"
+          }
+        }
+      }
+    },
+    {
+      "expected_model": "entity_resolution",
+      "passed": true,
+      "run": {
+        "id": "d452b25c-ba41-41d9-8ba4-5ad530ac2a13",
+        "goal": "Match the supplied business query and candidates using the local entity_resolution artifact",
+        "status": "COMPLETED",
+        "events": [
+          {
+            "timestamp": "2026-11-02T18:42:14.189444+00:00",
+            "tool": "model.intent_parser",
+            "message": "Computed task classification using the trained local artifact; this prediction does not grant permissions",
+            "details": {
+              "component": "local_ml",
+              "model": "intent_parser",
+              "version": "1.0.0",
+              "implementation": "TF-IDF + Logistic Regression",
+              "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+              "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+              "duration_ms": 1.371,
+              "input": {
+                "prompt": "Match the supplied business query and candidates using the local entity_resolution artifact"
+              },
+              "input_features": {
+                "prompt": "Match the supplied business query and candidates using the local entity_resolution artifact"
+              },
+              "output": {
+                "prediction": "RESOLVE_DUPLICATES",
+                "score": 0.431833840190354,
+                "class_probabilities": {
+                  "AUDIT_INSPECTION": 0.06921269698063551,
+                  "DETECT_ANOMALIES": 0.0772962752455039,
+                  "MAP_SCHEMA": 0.05982559933537549,
+                  "ONBOARD_CUSTOMER": 0.09651222372484182,
+                  "RECONCILE_INVOICE": 0.10258147239305113,
+                  "RESOLVE_DUPLICATES": 0.431833840190354,
+                  "SYSTEM_HEALTH_CHECK": 0.1627378921302383
+                },
+                "score_type": "estimator class probability; calibration not independently verified",
+                "security_blocked": false,
+                "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:14.190230+00:00",
+            "tool": "planner.gemini.request",
+            "message": "Requesting a language-to-tool plan using approved schema metadata; client rows are excluded",
+            "details": {
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:15.598136+00:00",
+            "tool": "planner.gemini.validated",
+            "message": "Validated Gemini's selection of an allowlisted local model; input values remain in the backend",
+            "details": {
+              "model": "gemini-3.5-flash-lite",
+              "plan": {
+                "action": "analyze",
+                "query": "",
+                "source_id": "",
+                "resource": "",
+                "record_key": "",
+                "changes": [],
+                "explanation": "Run the entity_resolution model on the provided input.",
+                "analysis_model": "entity_resolution"
+              }
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:15.617497+00:00",
+            "tool": "model.entity_resolution",
+            "message": "Executed the existing artifact locally without retraining; no enterprise tools or writes executed",
+            "details": {
+              "component": "local_ml",
+              "model": "entity_resolution",
+              "version": "1.2.0",
+              "implementation": "LightGBM classifier",
+              "artifact_path": "ml\\models\\entity_resolution\\artifacts\\matching_lgb_model.pkl",
+              "artifact_sha256": "62e49e4e016316d85a17ce5521594d35744e2210ae3bd8011863cd4d7c9d1191",
+              "duration_ms": 17.627,
+              "input": {
+                "query": {
+                  "entity_id": "DEMO-A",
+                  "business_name": "Synthetic Cedar Components",
+                  "business_address": "12 Fictional Road Pune",
+                  "country": "IN",
+                  "source_system": "CRM"
+                },
+                "candidates": [
+                  {
+                    "entity_id": "DEMO-B",
+                    "business_name": "Synthetic Cedar Components Ltd",
+                    "business_address": "12 Fictional Road Pune",
+                    "country": "IN",
+                    "source_system": "ERP"
+                  }
+                ]
+              },
+              "input_features": {
+                "query": {
+                  "entity_id": "DEMO-A",
+                  "business_name": "Synthetic Cedar Components",
+                  "business_address": "12 Fictional Road Pune",
+                  "country": "IN",
+                  "source_system": "CRM"
+                },
+                "candidates": [
+                  {
+                    "entity_id": "DEMO-B",
+                    "business_name": "Synthetic Cedar Components Ltd",
+                    "business_address": "12 Fictional Road Pune",
+                    "country": "IN",
+                    "source_system": "ERP"
+                  }
+                ]
+              },
+              "output": {
+                "decision": "DUPLICATE_IDENTIFIED",
+                "top_match_probability": 0.9967,
+                "matches": [
+                  {
+                    "target_entity_id": "DEMO-B",
+                    "target_business_name": "Synthetic Cedar Components Ltd",
+                    "target_business_address": "12 Fictional Road Pune",
+                    "source_system": "ERP",
+                    "match_probability": 0.9967,
+                    "evidence": {
+                      "token_overlap": [
+                        "components",
+                        "cedar",
+                        "synthetic"
+                      ],
+                      "jaccard_similarity": 0.75,
+                      "address_number_match": true,
+                      "raw_features": {
+                        "name_ratio": 0.929,
+                        "name_jw": 0.973,
+                        "addr_jw": 1.0
+                      }
+                    },
+                    "status": "HIGH_CONFIDENCE_MATCH"
+                  }
+                ],
+                "golden_record_recommendation": {
+                  "primary_entity_id": "DEMO-A",
+                  "linked_entity_id": "DEMO-B",
+                  "suggested_canonical_name": "Synthetic Cedar Components",
+                  "confidence": 0.9967,
+                  "action_required": "LINK_OR_MERGE"
+                },
+                "requires_approval": true
+              },
+              "evaluation_metrics": null
+            }
+          },
+          {
+            "timestamp": "2026-11-02T18:42:15.619128+00:00",
+            "tool": "complete",
+            "message": "Hybrid Gemini selection and local artifact inference completed",
+            "details": {}
+          }
+        ],
+        "evidence": {
+          "model_input": {
+            "query": {
+              "entity_id": "DEMO-A",
+              "business_name": "Synthetic Cedar Components",
+              "business_address": "12 Fictional Road Pune",
+              "country": "IN",
+              "source_system": "CRM"
+            },
+            "candidates": [
+              {
+                "entity_id": "DEMO-B",
+                "business_name": "Synthetic Cedar Components Ltd",
+                "business_address": "12 Fictional Road Pune",
+                "country": "IN",
+                "source_system": "ERP"
+              }
+            ]
+          }
+        },
+        "proposal": {},
+        "result": {
+          "type": "ml_analysis",
+          "summary": "Completed local entity resolution inference. Result is advisory; no enterprise write performed.",
+          "analysis": {
+            "component": "local_ml",
+            "model": "entity_resolution",
+            "version": "1.2.0",
+            "implementation": "LightGBM classifier",
+            "artifact_path": "ml\\models\\entity_resolution\\artifacts\\matching_lgb_model.pkl",
+            "artifact_sha256": "62e49e4e016316d85a17ce5521594d35744e2210ae3bd8011863cd4d7c9d1191",
+            "duration_ms": 17.627,
+            "input": {
+              "query": {
+                "entity_id": "DEMO-A",
+                "business_name": "Synthetic Cedar Components",
+                "business_address": "12 Fictional Road Pune",
+                "country": "IN",
+                "source_system": "CRM"
+              },
+              "candidates": [
+                {
+                  "entity_id": "DEMO-B",
+                  "business_name": "Synthetic Cedar Components Ltd",
+                  "business_address": "12 Fictional Road Pune",
+                  "country": "IN",
+                  "source_system": "ERP"
+                }
+              ]
+            },
+            "input_features": {
+              "query": {
+                "entity_id": "DEMO-A",
+                "business_name": "Synthetic Cedar Components",
+                "business_address": "12 Fictional Road Pune",
+                "country": "IN",
+                "source_system": "CRM"
+              },
+              "candidates": [
+                {
+                  "entity_id": "DEMO-B",
+                  "business_name": "Synthetic Cedar Components Ltd",
+                  "business_address": "12 Fictional Road Pune",
+                  "country": "IN",
+                  "source_system": "ERP"
+                }
+              ]
+            },
+            "output": {
+              "decision": "DUPLICATE_IDENTIFIED",
+              "top_match_probability": 0.9967,
+              "matches": [
+                {
+                  "target_entity_id": "DEMO-B",
+                  "target_business_name": "Synthetic Cedar Components Ltd",
+                  "target_business_address": "12 Fictional Road Pune",
+                  "source_system": "ERP",
+                  "match_probability": 0.9967,
+                  "evidence": {
+                    "token_overlap": [
+                      "components",
+                      "cedar",
+                      "synthetic"
+                    ],
+                    "jaccard_similarity": 0.75,
+                    "address_number_match": true,
+                    "raw_features": {
+                      "name_ratio": 0.929,
+                      "name_jw": 0.973,
+                      "addr_jw": 1.0
+                    }
+                  },
+                  "status": "HIGH_CONFIDENCE_MATCH"
+                }
+              ],
+              "golden_record_recommendation": {
+                "primary_entity_id": "DEMO-A",
+                "linked_entity_id": "DEMO-B",
+                "suggested_canonical_name": "Synthetic Cedar Components",
+                "confidence": 0.9967,
+                "action_required": "LINK_OR_MERGE"
+              },
+              "requires_approval": true
+            },
+            "evaluation_metrics": null
+          },
+          "local_intent": {
+            "component": "local_ml",
+            "model": "intent_parser",
+            "version": "1.0.0",
+            "implementation": "TF-IDF + Logistic Regression",
+            "artifact_path": "ml\\models\\intent_parser\\artifacts\\intent_model.pkl",
+            "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+            "duration_ms": 1.371,
+            "input": {
+              "prompt": "Match the supplied business query and candidates using the local entity_resolution artifact"
+            },
+            "input_features": {
+              "prompt": "Match the supplied business query and candidates using the local entity_resolution artifact"
+            },
+            "output": {
+              "prediction": "RESOLVE_DUPLICATES",
+              "score": 0.431833840190354,
+              "class_probabilities": {
+                "AUDIT_INSPECTION": 0.06921269698063551,
+                "DETECT_ANOMALIES": 0.0772962752455039,
+                "MAP_SCHEMA": 0.05982559933537549,
+                "ONBOARD_CUSTOMER": 0.09651222372484182,
+                "RECONCILE_INVOICE": 0.10258147239305113,
+                "RESOLVE_DUPLICATES": 0.431833840190354,
+                "SYSTEM_HEALTH_CHECK": 0.1627378921302383
+              },
+              "score_type": "estimator class probability; calibration not independently verified",
+              "security_blocked": false,
+              "security_note": "Injection pattern check is deterministic; the classifier never authorizes writes."
+            },
+            "evaluation_metrics": null
+          },
+          "execution": {
+            "input": {
+              "request": "Match the supplied business query and candidates using the local entity_resolution artifact",
+              "source_ids": []
+            },
+            "planner": "gemini",
+            "provider": "google",
+            "model": "gemini-3.5-flash-lite",
+            "duration_ms": 1431.37,
+            "local_model": "entity_resolution",
+            "local_version": "1.2.0",
+            "artifact_sha256": "62e49e4e016316d85a17ce5521594d35744e2210ae3bd8011863cd4d7c9d1191"
+          }
+        }
+      }
+    }
+  ],
+  "artifact_sha256_before": {
+    "ml\\models\\adaptation_recommender\\artifacts\\adaptation_recommender.pkl": "1edd66d5f86d9b7185c79478636690d203a3a0baab4cdad911680a70460e7800",
+    "ml\\models\\anomaly_detection\\artifacts\\isolation_forest.pkl": "f1db2421cdcb867fe6bcaf271d4a80885df9d2d9581291d05a4162216c186a50",
+    "ml\\models\\document_intelligence\\artifacts\\document_extractor.pkl": "d7c0f650e8b72efc66eddf367713d5da583c512e7ccbb7e3081408d3250da6a2",
+    "ml\\models\\entity_resolution\\artifacts\\matching_lgb_model.pkl": "62e49e4e016316d85a17ce5521594d35744e2210ae3bd8011863cd4d7c9d1191",
+    "ml\\models\\intent_parser\\artifacts\\intent_model.pkl": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+    "ml\\models\\invoice_reconciliation\\artifacts\\reconciliation_calibrator.pkl": "68db8c6a5399626bbf9de0f8ee1a3d461ce4619cca4eb8028a9580f75a909fda",
+    "ml\\models\\semantic_schema_mapper\\artifacts\\schema_mapper.pkl": "214adbe4bef8e24e3b1ec0ebf88c2b76f96c11a42165219de575373fdeb06cba",
+    "ml\\models\\workflow_planner\\artifacts\\workflow_planner.pkl": "23abe3f5c24a3a5d15e1f6ea547cc095a3ef1021a38b44e4afd6177e87134cd0"
+  },
+  "inventory": {
+    "models": [
+      {
+        "id": "entity_resolution",
+        "version": "1.2.0",
+        "implementation": "LightGBM classifier",
+        "artifact_path": "ml/models/entity_resolution/artifacts/matching_lgb_model.pkl",
+        "evaluation_metrics": null,
+        "evaluation_note": "No held-out evaluation report verified by this adapter; configured constants are not measured metrics.",
+        "training_provenance": "Existing artifact. Repository training scripts use generated scenarios for several models; no retraining performed.",
+        "status": "loaded",
+        "artifact_sha256": "62e49e4e016316d85a17ce5521594d35744e2210ae3bd8011863cd4d7c9d1191"
+      },
+      {
+        "id": "semantic_schema_mapper",
+        "version": "1.1.0",
+        "implementation": "TF-IDF + Logistic Regression",
+        "artifact_path": "ml/models/semantic_schema_mapper/artifacts/schema_mapper.pkl",
+        "evaluation_metrics": null,
+        "evaluation_note": "No held-out evaluation report verified by this adapter; configured constants are not measured metrics.",
+        "training_provenance": "Existing artifact. Repository training scripts use generated scenarios for several models; no retraining performed.",
+        "status": "loaded",
+        "artifact_sha256": "214adbe4bef8e24e3b1ec0ebf88c2b76f96c11a42165219de575373fdeb06cba",
+        "declared_training_samples": null
+      },
+      {
+        "id": "intent_parser",
+        "version": "1.0.0",
+        "implementation": "TF-IDF + Logistic Regression",
+        "artifact_path": "ml/models/intent_parser/artifacts/intent_model.pkl",
+        "evaluation_metrics": null,
+        "evaluation_note": "No held-out evaluation report verified by this adapter; configured constants are not measured metrics.",
+        "training_provenance": "Existing artifact. Repository training scripts use generated scenarios for several models; no retraining performed.",
+        "status": "loaded",
+        "artifact_sha256": "0fd5eea4532eb3f81a75e109b90dc186a71565b8f8e5dcebaaffd40f01a75fe5",
+        "declared_training_samples": null
+      },
+      {
+        "id": "workflow_planner",
+        "version": "1.0.0",
+        "implementation": "Deterministic saved templates; not a learned estimator",
+        "artifact_path": "ml/models/workflow_planner/artifacts/workflow_planner.pkl",
+        "evaluation_metrics": null,
+        "evaluation_note": "No held-out evaluation report verified by this adapter; configured constants are not measured metrics.",
+        "training_provenance": "Existing artifact. Repository training scripts use generated scenarios for several models; no retraining performed.",
+        "status": "loaded",
+        "artifact_sha256": "23abe3f5c24a3a5d15e1f6ea547cc095a3ef1021a38b44e4afd6177e87134cd0",
+        "declared_training_samples": 6000
+      },
+      {
+        "id": "invoice_reconciliation",
+        "version": "1.0.0",
+        "implementation": "Decision Tree feature classifier",
+        "artifact_path": "ml/models/invoice_reconciliation/artifacts/reconciliation_calibrator.pkl",
+        "evaluation_metrics": null,
+        "evaluation_note": "No held-out evaluation report verified by this adapter; configured constants are not measured metrics.",
+        "training_provenance": "Existing artifact. Repository training scripts use generated scenarios for several models; no retraining performed.",
+        "status": "loaded",
+        "artifact_sha256": "68db8c6a5399626bbf9de0f8ee1a3d461ce4619cca4eb8028a9580f75a909fda",
+        "declared_training_samples": 6000
+      },
+      {
+        "id": "adaptation_recommender",
+        "version": "1.0.0",
+        "implementation": "Decision Tree breaking-change classifier",
+        "artifact_path": "ml/models/adaptation_recommender/artifacts/adaptation_recommender.pkl",
+        "evaluation_metrics": null,
+        "evaluation_note": "No held-out evaluation report verified by this adapter; configured constants are not measured metrics.",
+        "training_provenance": "Existing artifact. Repository training scripts use generated scenarios for several models; no retraining performed.",
+        "status": "loaded",
+        "artifact_sha256": "1edd66d5f86d9b7185c79478636690d203a3a0baab4cdad911680a70460e7800",
+        "declared_training_samples": 6000
+      },
+      {
+        "id": "document_intelligence",
+        "version": "1.0.0",
+        "implementation": "Ridge extraction-score regressor + deterministic parsing",
+        "artifact_path": "ml/models/document_intelligence/artifacts/document_extractor.pkl",
+        "evaluation_metrics": null,
+        "evaluation_note": "No held-out evaluation report verified by this adapter; configured constants are not measured metrics.",
+        "training_provenance": "Existing artifact. Repository training scripts use generated scenarios for several models; no retraining performed.",
+        "status": "loaded",
+        "artifact_sha256": "d7c0f650e8b72efc66eddf367713d5da583c512e7ccbb7e3081408d3250da6a2",
+        "declared_training_samples": 6000
+      },
+      {
+        "id": "anomaly_detection",
+        "version": "1.0.0",
+        "implementation": "Isolation Forest",
+        "artifact_path": "ml/models/anomaly_detection/artifacts/isolation_forest.pkl",
+        "evaluation_metrics": null,
+        "evaluation_note": "No held-out evaluation report verified by this adapter; configured constants are not measured metrics.",
+        "training_provenance": "Existing artifact. Repository training scripts use generated scenarios for several models; no retraining performed.",
+        "status": "loaded",
+        "artifact_sha256": "f1db2421cdcb867fe6bcaf271d4a80885df9d2d9581291d05a4162216c186a50"
+      }
+    ],
+    "policy": "Gemini selects tools; local artifacts compute predictions; backend permissions and human approval control writes."
+  },
+  "artifacts_unchanged": true,
+  "all_checks_passed": true
+}

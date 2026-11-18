@@ -1,0 +1,17 @@
+{
+  "title": "Open company directory — public-data prototype",
+  "publisher_url": "https://github.com/datasets/s-and-p-500-companies",
+  "download_url": "https://raw.githubusercontent.com/datasets/s-and-p-500-companies/main/data/constituents.csv",
+  "upstream": "Wikipedia company directory, distributed by datasets/DataHub",
+  "license": "ODC-PDDL-1.0 (publisher declaration)",
+  "retrieved_at": "2026-11-02T17:22:01.596053+00:00",
+  "sha256": "941ec91edb922f802b7b9c14a4a006ac65606f74a2882ea57cabd5e0ff825ebc",
+  "source_rows": 503,
+  "imported_rows": 200,
+  "sampling": "First 200 source rows in publisher order; not a representative sample",
+  "unit": "listed security; companies may have multiple share classes",
+  "synthetic_fields": "review_state is local demo workflow state, initialized to unreviewed; not publisher data",
+  "derived_tables": "sector_counts is calculated from the imported sample",
+  "database_relative_path": "open_company_demo/20261102T172201Z-a56e246e/companies.sqlite",
+  "training": "No model training or evaluation is performed by this importer"
+}

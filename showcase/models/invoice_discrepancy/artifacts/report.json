@@ -1,0 +1,56 @@
+{
+  "name": "invoice_discrepancy",
+  "version": "1.0.0",
+  "provenance": "Synthetic showcase data generated locally; no customer records or real-world validation. Text templates authored for this showcase; numeric labels from simulated adjudication with noise; anomaly test includes deliberate synthetic injections.",
+  "split": "Held-out template groups (text); stratified independent rows (invoice); normal-only train with held-out normals + injections (anomaly)",
+  "train_count": 1200,
+  "test_count": 400,
+  "seed": 42,
+  "metrics": {
+    "accuracy": 0.96,
+    "macro_f1": 0.9463069230511092,
+    "per_class": {
+      "0": {
+        "precision": 0.9680851063829787,
+        "recall": 0.875,
+        "f1-score": 0.9191919191919192,
+        "support": 104.0
+      },
+      "1": {
+        "precision": 0.9575163398692811,
+        "recall": 0.9898648648648649,
+        "f1-score": 0.973421926910299,
+        "support": 296.0
+      },
+      "accuracy": 0.96,
+      "macro avg": {
+        "precision": 0.96280072312613,
+        "recall": 0.9324324324324325,
+        "f1-score": 0.9463069230511092,
+        "support": 400.0
+      },
+      "weighted avg": {
+        "precision": 0.9602642191628425,
+        "recall": 0.96,
+        "f1-score": 0.9593221249035203,
+        "support": 400.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        91,
+        13
+      ],
+      [
+        3,
+        293
+      ]
+    ],
+    "classes": [
+      0,
+      1
+    ]
+  },
+  "artifact_sha256": "058f4a976d40d8891c9d9975c2e414e048c1cd2414299846a5d2a246b929ae1e",
+  "dataset_sha256": "b72da59f7e451b0813b955b52e26c09ea92d3202106b5716eb6bc22aca2c9777"
+}

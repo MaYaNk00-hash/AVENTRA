@@ -1,0 +1,13 @@
+{
+  "name": "invoice_discrepancy",
+  "version": "1.0.0",
+  "seed": 42,
+  "features": [
+    "invoice_amount",
+    "po_amount",
+    "quantity_difference",
+    "tax_difference",
+    "supplier_incident_rate"
+  ],
+  "shared_implementation": "showcase/core.py"
+}

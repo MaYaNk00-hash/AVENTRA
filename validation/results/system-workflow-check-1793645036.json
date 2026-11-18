@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "goal": "Show all records across the connected systems",
+      "source_count": 5,
+      "status": "FAILED",
+      "summary": null,
+      "error": "Gemini could not map this request to the supported tools. Rephrase with one explicit retrieval, summary, comparison or field update",
+      "duration_ms": 1794.38,
+      "run_id": "a02f23cc-91bc-4c7c-8d52-61834dbeef72"
+    },
+    {
+      "goal": "Summarize the connected systems and count their records",
+      "source_count": 5,
+      "status": "COMPLETED",
+      "summary": "Summarized 5228 live records from 7 resources. Numeric sums use source units; currencies are not inferred.",
+      "error": null,
+      "duration_ms": 2061.64,
+      "run_id": "cfc8ac9d-58bd-44bf-aca8-222026b02898"
+    },
+    {
+      "goal": "Compare the connected businesses and find duplicates",
+      "source_count": 2,
+      "status": "COMPLETED",
+      "summary": "Compared current records across 2 resources; 1 candidate links need review. No records were merged.",
+      "error": null,
+      "duration_ms": 2156.64,
+      "run_id": "1940d301-ace5-4ba9-9d76-a16e42ddeb61"
+    }
+  ]
+}

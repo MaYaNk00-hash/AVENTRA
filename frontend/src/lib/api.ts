@@ -94,6 +94,103 @@ export const api = {
       body: JSON.stringify({ fields }),
     }),
 
+  // Enterprise Dynamic Connections
+  getConnectionTemplates: () => fetchJson("/api/connections/templates"),
+  listConnections: (connector_type?: string, provider?: string) => {
+    const params = new URLSearchParams();
+    if (connector_type) params.append("connector_type", connector_type);
+    if (provider) params.append("provider", provider);
+    const qs = params.toString();
+    return fetchJson(`/api/connections${qs ? `?${qs}` : ""}`);
+  },
+  getConnection: (id: string) => fetchJson(`/api/connections/${id}`),
+  createConnection: (data: any) =>
+    fetchJson("/api/connections", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+  updateConnection: (id: string, data: any) =>
+    fetchJson(`/api/connections/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(data),
+    }),
+  deleteConnection: (id: string) =>
+    fetchJson(`/api/connections/${id}`, {
+      method: "DELETE",
+    }),
+  testConnection: (id: string) =>
+    fetchJson(`/api/connections/${id}/test`, {
+      method: "POST",
+    }),
+  testPreflightConnection: (data: any) =>
+    fetchJson("/api/connections/test-preflight", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+  toggleConnection: (id: string, enabled: boolean) =>
+    fetchJson(`/api/connections/${id}/toggle?enabled=${enabled}`, {
+      method: "POST",
+    }),
+  discoverConnectionSchema: (id: string) => fetchJson(`/api/connections/${id}/discover`),
+
+  // Enterprise CRM Integration (Stage 6)
+  listCrmAccounts: (adapter = "COMPANY_A_CRM", search?: string, limit = 50, cursor?: string, incremental_since?: string) => {
+    const params = new URLSearchParams({ adapter, limit: limit.toString() });
+    if (search) params.append("search", search);
+    if (cursor) params.append("cursor", cursor);
+    if (incremental_since) params.append("incremental_since", incremental_since);
+    return fetchJson(`/api/crm/accounts?${params.toString()}`);
+  },
+  getCrmAccount: (id: string, adapter = "COMPANY_A_CRM") =>
+    fetchJson(`/api/crm/accounts/${id}?adapter=${adapter}`),
+  createCrmAccount: (data: any) =>
+    fetchJson("/api/crm/accounts", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+  updateCrmAccount: (id: string, data: any, adapter = "COMPANY_A_CRM") =>
+    fetchJson(`/api/crm/accounts/${id}?adapter=${adapter}`, {
+      method: "PUT",
+      body: JSON.stringify(data),
+    }),
+  listCrmContacts: (adapter = "COMPANY_A_CRM", search?: string, limit = 50) => {
+    const params = new URLSearchParams({ adapter, limit: limit.toString() });
+    if (search) params.append("search", search);
+    return fetchJson(`/api/crm/contacts?${params.toString()}`);
+  },
+  createCrmContact: (data: any) =>
+    fetchJson("/api/crm/contacts", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+  listCrmLeads: (adapter = "COMPANY_A_CRM", search?: string, limit = 50) => {
+    const params = new URLSearchParams({ adapter, limit: limit.toString() });
+    if (search) params.append("search", search);
+    return fetchJson(`/api/crm/leads?${params.toString()}`);
+  },
+  createCrmLead: (data: any) =>
+    fetchJson("/api/crm/leads", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+  scanCrmDuplicates: (record: any, threshold = 0.85) =>
+    fetchJson("/api/crm/duplicates/scan", {
+      method: "POST",
+      body: JSON.stringify({ record, threshold }),
+    }),
+  requestCrmMerge: (data: { execution_id: string; source_record_id: string; target_record_id: string; match_probability: number; proposed_canonical_name: string }) =>
+    fetchJson("/api/crm/duplicates/request-merge", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+  executeCrmMerge: (data: { approval_id: string; reviewer_name: string; reviewer_role: string; canonical_id?: string }) =>
+    fetchJson("/api/crm/duplicates/execute-merge", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
+  incrementalCrmSync: (watermark: string, adapter = "COMPANY_A_CRM") =>
+    fetchJson(`/api/crm/sync/incremental?watermark=${encodeURIComponent(watermark)}&adapter=${adapter}`),
+
   // Audit Ledger
   getAuditLedger: (limit = 50, offset = 0) =>
     fetchJson(`/api/audit/ledger?limit=${limit}&offset=${offset}`),

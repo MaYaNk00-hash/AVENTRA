@@ -1,0 +1,9 @@
+{
+  "name": "email_classification",
+  "version": "1.0.0",
+  "seed": 42,
+  "features": [
+    "text"
+  ],
+  "shared_implementation": "showcase/core.py"
+}

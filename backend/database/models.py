@@ -125,3 +125,32 @@ class SchemaMapping(Base):
     approved_by = Column(String(50), nullable=True)
     updated_at = Column(DateTime, default=datetime.datetime.utcnow)
 
+
+class EnterpriseConnection(Base):
+    """
+    Dynamic Enterprise Connection model.
+    Stores connection metadata, resilience parameters, least-privilege policies,
+    and encrypted credentials for CRM, ERP, Database, and Email systems.
+    """
+    __tablename__ = "enterprise_connections"
+
+    id = Column(String(50), primary_key=True)  # e.g., conn-crm-01 or uuid
+    name = Column(String(100), nullable=False)
+    connector_type = Column(String(30), nullable=False, index=True)  # CRM, ERP, DATABASE, EMAIL
+    provider = Column(String(50), nullable=False, index=True)  # salesforce, hubspot, custom_crm, sap, netsuite, postgresql, mysql, sqlite, oracle, gmail, ms_365, imap
+    description = Column(Text, default="")
+    environment = Column(String(30), default="PRODUCTION")  # PRODUCTION, STAGING, DEVELOPMENT
+    tenant_id = Column(String(50), default="default-enterprise")
+    status = Column(String(30), default="CONNECTED", index=True)  # CONNECTED, DEGRADED, DISCONNECTED, AUTHENTICATION_FAILED, RATE_LIMITED, DISABLED
+    is_enabled = Column(Boolean, default=True)
+    read_only = Column(Boolean, default=False)
+    allowed_operations = Column(JSON, default=list)  # ["READ", "SEARCH", "CREATE", "UPDATE", "DELETE"]
+    allowed_entities = Column(JSON, default=list)  # ["accounts", "contacts", "invoices", "orders", etc.]
+    encrypted_secrets = Column(Text, nullable=False)  # Encrypted using AES-256 PBKDF2 vault
+    config = Column(JSON, default=dict)  # endpoint, host, port, db_name, timeout_seconds, max_retries, rate_limit_per_minute
+    last_health_check = Column(JSON, default=dict)  # latency_ms, last_checked_at, message, error_code
+    metrics = Column(JSON, default=dict)  # total_requests, successful_requests, failed_requests, consecutive_failures, rate_limited_count
+    created_at = Column(DateTime, default=datetime.datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
+
+

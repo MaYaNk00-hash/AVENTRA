@@ -1,0 +1,18 @@
+{
+  "focused_tests": "37 passed; provider transport mocked, underlying client/DB integration real",
+  "typescript": "passed",
+  "frontend_build": "passed",
+  "live_backend_planner_status": {
+    "configured": false,
+    "model": "gemini-3.8-flash",
+    "provider": "gemini",
+    "context": "User request and approved schema metadata only; no retrieved rows",
+    "live_connection_verified": false
+  },
+  "live_local_run": {
+    "status": "COMPLETED",
+    "type": "summary",
+    "resource_count": 3
+  },
+  "live_gemini_verified": false
+}

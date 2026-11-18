@@ -1,0 +1,578 @@
+{
+  "tests": "11 passed",
+  "ui": "HTTP delivery and JavaScript syntax passed; interactive browser unavailable (Work settings)",
+  "configuration": {
+    "showcase_mode": true,
+    "local_ml_enabled": true,
+    "external_ai_enabled": false,
+    "provider": "google",
+    "model": "gemini-3.8-flash",
+    "key_configured": false
+  },
+  "models": [
+    {
+      "name": "workflow_intent",
+      "status": "loaded",
+      "error": null,
+      "version": "1.0.0",
+      "provenance": "Synthetic showcase data generated locally; no customer records or real-world validation. Text templates authored for this showcase; numeric labels from simulated adjudication with noise; anomaly test includes deliberate synthetic injections.",
+      "split": "Held-out template groups (text); stratified independent rows (invoice); normal-only train with held-out normals + injections (anomaly)",
+      "train_count": 240,
+      "test_count": 60,
+      "seed": 42,
+      "metrics": {
+        "accuracy": 0.6,
+        "macro_f1": 0.58,
+        "per_class": {
+          "customer_onboarding": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 12.0
+          },
+          "customer_support": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1-score": 0.5,
+            "support": 12.0
+          },
+          "invoice_processing": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 12.0
+          },
+          "payment_approval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 12.0
+          },
+          "supplier_management": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 12.0
+          },
+          "accuracy": 0.6,
+          "macro avg": {
+            "precision": 0.5666666666666667,
+            "recall": 0.6,
+            "f1-score": 0.58,
+            "support": 60.0
+          },
+          "weighted avg": {
+            "precision": 0.5666666666666667,
+            "recall": 0.6,
+            "f1-score": 0.58,
+            "support": 60.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            12,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            6,
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            12
+          ]
+        ],
+        "classes": [
+          "customer_onboarding",
+          "customer_support",
+          "invoice_processing",
+          "payment_approval",
+          "supplier_management"
+        ]
+      },
+      "artifact_sha256": "1f3055f9cac1bb070a1024939f5480eec89b7e8853da7297ab0272fb8e58e061",
+      "dataset_sha256": "95b669d3d746458ad213b36d165c257de039d0a25ad44982e145c358fa273c67"
+    },
+    {
+      "name": "invoice_discrepancy",
+      "status": "loaded",
+      "error": null,
+      "version": "1.0.0",
+      "provenance": "Synthetic showcase data generated locally; no customer records or real-world validation. Text templates authored for this showcase; numeric labels from simulated adjudication with noise; anomaly test includes deliberate synthetic injections.",
+      "split": "Held-out template groups (text); stratified independent rows (invoice); normal-only train with held-out normals + injections (anomaly)",
+      "train_count": 1200,
+      "test_count": 400,
+      "seed": 42,
+      "metrics": {
+        "accuracy": 0.96,
+        "macro_f1": 0.9463069230511092,
+        "per_class": {
+          "0": {
+            "precision": 0.9680851063829787,
+            "recall": 0.875,
+            "f1-score": 0.9191919191919192,
+            "support": 104.0
+          },
+          "1": {
+            "precision": 0.9575163398692811,
+            "recall": 0.9898648648648649,
+            "f1-score": 0.973421926910299,
+            "support": 296.0
+          },
+          "accuracy": 0.96,
+          "macro avg": {
+            "precision": 0.96280072312613,
+            "recall": 0.9324324324324325,
+            "f1-score": 0.9463069230511092,
+            "support": 400.0
+          },
+          "weighted avg": {
+            "precision": 0.9602642191628425,
+            "recall": 0.96,
+            "f1-score": 0.9593221249035203,
+            "support": 400.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            91,
+            13
+          ],
+          [
+            3,
+            293
+          ]
+        ],
+        "classes": [
+          0,
+          1
+        ]
+      },
+      "artifact_sha256": "058f4a976d40d8891c9d9975c2e414e048c1cd2414299846a5d2a246b929ae1e",
+      "dataset_sha256": "b72da59f7e451b0813b955b52e26c09ea92d3202106b5716eb6bc22aca2c9777"
+    },
+    {
+      "name": "transaction_anomaly",
+      "status": "loaded",
+      "error": null,
+      "version": "1.0.0",
+      "provenance": "Synthetic showcase data generated locally; no customer records or real-world validation. Text templates authored for this showcase; numeric labels from simulated adjudication with noise; anomaly test includes deliberate synthetic injections.",
+      "split": "Held-out template groups (text); stratified independent rows (invoice); normal-only train with held-out normals + injections (anomaly)",
+      "train_count": 1050,
+      "test_count": 550,
+      "seed": 42,
+      "metrics": {
+        "roc_auc_synthetic_injections": 1.0,
+        "classification_report_at_fitted_threshold": {
+          "0": {
+            "precision": 1.0,
+            "recall": 0.9571428571428572,
+            "f1-score": 0.9781021897810219,
+            "support": 350.0
+          },
+          "1": {
+            "precision": 0.9302325581395349,
+            "recall": 1.0,
+            "f1-score": 0.963855421686747,
+            "support": 200.0
+          },
+          "accuracy": 0.9727272727272728,
+          "macro avg": {
+            "precision": 0.9651162790697674,
+            "recall": 0.9785714285714286,
+            "f1-score": 0.9709788057338844,
+            "support": 550.0
+          },
+          "weighted avg": {
+            "precision": 0.974630021141649,
+            "recall": 0.9727272727272728,
+            "f1-score": 0.9729215468376492,
+            "support": 550.0
+          }
+        },
+        "normal_false_positive_rate": 0.04285714285714286
+      },
+      "artifact_sha256": "d00d9aa63f323c092badcebe41c3c43d37d02ca829c6b7f3ddbfca242a837b9a",
+      "dataset_sha256": "e641e48b82c7d7bdbee0566c6f6cd9a337a35b65628891c6322f2338eea61b76"
+    },
+    {
+      "name": "email_classification",
+      "status": "loaded",
+      "error": null,
+      "version": "1.0.0",
+      "provenance": "Synthetic showcase data generated locally; no customer records or real-world validation. Text templates authored for this showcase; numeric labels from simulated adjudication with noise; anomaly test includes deliberate synthetic injections.",
+      "split": "Held-out template groups (text); stratified independent rows (invoice); normal-only train with held-out normals + injections (anomaly)",
+      "train_count": 240,
+      "test_count": 60,
+      "seed": 42,
+      "metrics": {
+        "accuracy": 0.9,
+        "macro_f1": 0.8933333333333333,
+        "per_class": {
+          "complaint": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1-score": 0.8,
+            "support": 12.0
+          },
+          "general_support": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1-score": 0.6666666666666666,
+            "support": 12.0
+          },
+          "invoice_inquiry": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 12.0
+          },
+          "refund": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 12.0
+          },
+          "supplier_communication": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 12.0
+          },
+          "accuracy": 0.9,
+          "macro avg": {
+            "precision": 0.9333333333333332,
+            "recall": 0.9,
+            "f1-score": 0.8933333333333333,
+            "support": 60.0
+          },
+          "weighted avg": {
+            "precision": 0.9333333333333333,
+            "recall": 0.9,
+            "f1-score": 0.8933333333333333,
+            "support": 60.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            12,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            6,
+            6,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            12
+          ]
+        ],
+        "classes": [
+          "complaint",
+          "general_support",
+          "invoice_inquiry",
+          "refund",
+          "supplier_communication"
+        ]
+      },
+      "artifact_sha256": "a4cc2f58a37180a3fd1264ab175ff10593289ecd7e9effb7268f0ba10bd1a298",
+      "dataset_sha256": "13abfccb58d5a2b25de8fd7f283402b7ded3fb3523d253eebc33676980069fd4"
+    },
+    {
+      "name": "entity_resolution",
+      "status": "loaded",
+      "error": null,
+      "version": "1.2.0",
+      "provenance": "Existing original artifact loaded read-only. No retraining. Evaluation not recomputed in showcase.",
+      "metrics": null,
+      "artifact_path": "C:\\Hackathons\\Gwalior\\AVENTRA\\ml\\models\\entity_resolution\\artifacts\\matching_lgb_model.pkl"
+    }
+  ],
+  "live_unseen_predictions": [
+    {
+      "component": "local_ml",
+      "model": "workflow_intent",
+      "version": "1.0.0",
+      "artifact_sha256": "1f3055f9cac1bb070a1024939f5480eec89b7e8853da7297ab0272fb8e58e061",
+      "duration_ms": 26.8,
+      "input_features": [
+        "verify the new customer identity for aster reference 132."
+      ],
+      "output": {
+        "prediction": "customer_onboarding",
+        "probabilities": {
+          "customer_onboarding": 0.48796568085888,
+          "customer_support": 0.15280795669475492,
+          "invoice_processing": 0.11412405074257959,
+          "payment_approval": 0.11128903110419568,
+          "supplier_management": 0.13381328059958975
+        },
+        "model_score": 0.48796568085888,
+        "score_meaning": "Uncalibrated classifier probability; not a guarantee"
+      }
+    },
+    {
+      "component": "local_ml",
+      "model": "invoice_discrepancy",
+      "version": "1.0.0",
+      "artifact_sha256": "058f4a976d40d8891c9d9975c2e414e048c1cd2414299846a5d2a246b929ae1e",
+      "duration_ms": 49.218,
+      "input_features": [
+        {
+          "invoice_amount": 18223.98,
+          "po_amount": 18836.23,
+          "quantity_difference": 1.0,
+          "tax_difference": -15.57,
+          "supplier_incident_rate": 0.21611362029472725,
+          "amount_difference_ratio": -0.03250385029276028,
+          "supplier_tier": "established"
+        }
+      ],
+      "output": {
+        "prediction": "1",
+        "probabilities": {
+          "0": 0.039267914103440424,
+          "1": 0.9607320858965596
+        },
+        "model_score": 0.9607320858965596,
+        "score_meaning": "Uncalibrated classifier probability; not a guarantee"
+      }
+    },
+    {
+      "component": "local_ml",
+      "model": "transaction_anomaly",
+      "version": "1.0.0",
+      "artifact_sha256": "d00d9aa63f323c092badcebe41c3c43d37d02ca829c6b7f3ddbfca242a837b9a",
+      "duration_ms": 29.189,
+      "input_features": [
+        {
+          "amount": 581.9604826638424,
+          "hour": 11.0,
+          "account_age_days": 2388.8218030073594,
+          "daily_count": 1.0,
+          "international": 1.0
+        }
+      ],
+      "output": {
+        "anomaly": false,
+        "raw_anomaly_score": -0.5869942625194511,
+        "decision_function": 0.010033804587218031,
+        "review_recommendation": "No anomaly flagged; normal controls still apply",
+        "score_meaning": "Lower raw scores are more unusual; not a fraud probability"
+      }
+    },
+    {
+      "component": "local_ml",
+      "model": "email_classification",
+      "version": "1.0.0",
+      "artifact_sha256": "a4cc2f58a37180a3fd1264ab175ff10593289ecd7e9effb7268f0ba10bd1a298",
+      "duration_ms": 0.879,
+      "input_features": [
+        "your team ignored my complaint for aster reference 132."
+      ],
+      "output": {
+        "prediction": "complaint",
+        "probabilities": {
+          "complaint": 0.48227700743425483,
+          "general_support": 0.1511989961661352,
+          "invoice_inquiry": 0.10138385374212887,
+          "refund": 0.14654124841408603,
+          "supplier_communication": 0.11859889424339526
+        },
+        "model_score": 0.48227700743425483,
+        "score_meaning": "Uncalibrated classifier probability; not a guarantee",
+        "recommended_routing": "Service escalation"
+      }
+    }
+  ],
+  "completed_workflow": {
+    "id": "f8afa521-f215-4efa-aba0-6faebca02650",
+    "state": "COMPLETED",
+    "routing": "deterministic mapping of local classifier output; human review required",
+    "route": "customer_onboarding",
+    "request": "Register a new customer account for Meridian Robotics",
+    "retrieved_records": [
+      {
+        "entity_id": "C1",
+        "business_name": "Narmada Precision Tools",
+        "business_address": "12 Industrial Estate Gwalior",
+        "country": "IN",
+        "source_system": "CRM"
+      },
+      {
+        "entity_id": "V1",
+        "business_name": "Narmada Precision Tools Pvt Ltd",
+        "business_address": "12 Industrial Estate Gwalior",
+        "country": "IN",
+        "source_system": "ERP"
+      }
+    ],
+    "results": [
+      {
+        "component": "local_ml",
+        "model": "workflow_intent",
+        "version": "1.0.0",
+        "artifact_sha256": "1f3055f9cac1bb070a1024939f5480eec89b7e8853da7297ab0272fb8e58e061",
+        "duration_ms": 0.84,
+        "input_features": [
+          "register a new customer account for meridian robotics"
+        ],
+        "output": {
+          "prediction": "customer_onboarding",
+          "probabilities": {
+            "customer_onboarding": 0.7415817149199397,
+            "customer_support": 0.07467635524454401,
+            "invoice_processing": 0.04428676723626398,
+            "payment_approval": 0.04604822512300805,
+            "supplier_management": 0.09340693747624425
+          },
+          "model_score": 0.7415817149199397,
+          "score_meaning": "Uncalibrated classifier probability; not a guarantee"
+        }
+      },
+      {
+        "component": "local_ml",
+        "model": "entity_resolution",
+        "version": "1.2.0",
+        "artifact_sha256": "1c7303332f8821191d3a536fc2f7b0e7c0635f557cbf562a5e5589f49b1afda0",
+        "duration_ms": 5.089700000098674,
+        "input_features": {
+          "query": {
+            "entity_id": "C1",
+            "business_name": "Narmada Precision Tools",
+            "business_address": "12 Industrial Estate Gwalior",
+            "country": "IN",
+            "source_system": "CRM"
+          },
+          "candidates": [
+            {
+              "entity_id": "V1",
+              "business_name": "Narmada Precision Tools Pvt Ltd",
+              "business_address": "12 Industrial Estate Gwalior",
+              "country": "IN",
+              "source_system": "ERP"
+            }
+          ]
+        },
+        "output": {
+          "model_identifier": "entity_resolution",
+          "model_version": "1.2.0",
+          "prediction": {
+            "decision": "DUPLICATE_IDENTIFIED",
+            "top_match_probability": 0.9999,
+            "matches": [
+              {
+                "target_entity_id": "V1",
+                "target_business_name": "Narmada Precision Tools Pvt Ltd",
+                "target_business_address": "12 Industrial Estate Gwalior",
+                "source_system": "ERP",
+                "match_probability": 0.9999,
+                "evidence": {
+                  "token_overlap": [
+                    "tools",
+                    "precision",
+                    "narmada"
+                  ],
+                  "jaccard_similarity": 0.6,
+                  "address_number_match": true,
+                  "raw_features": {
+                    "name_ratio": 0.852,
+                    "name_jw": 0.948,
+                    "addr_jw": 1.0
+                  }
+                },
+                "status": "HIGH_CONFIDENCE_MATCH"
+              }
+            ],
+            "golden_record_recommendation": {
+              "primary_entity_id": "C1",
+              "linked_entity_id": "V1",
+              "suggested_canonical_name": "Narmada Precision Tools",
+              "confidence": 0.9999,
+              "action_required": "LINK_OR_MERGE"
+            },
+            "requires_approval": true
+          },
+          "confidence": 0.9999,
+          "supporting_evidence": {
+            "candidate_count": 1,
+            "top_candidate_evidence": {
+              "token_overlap": [
+                "tools",
+                "precision",
+                "narmada"
+              ],
+              "jaccard_similarity": 0.6,
+              "address_number_match": true,
+              "raw_features": {
+                "name_ratio": 0.852,
+                "name_jw": 0.948,
+                "addr_jw": 1.0
+              }
+            }
+          },
+          "execution_status": "SUCCESS",
+          "error_details": null,
+          "processing_metadata": {
+            "duration_ms": 3.9238929748535156
+          }
+        }
+      }
+    ],
+    "operation": "Create isolated simulated enterprise review task; no real payment, email or production update",
+    "decision": {
+      "approve": true,
+      "reviewer": "Showcase verification",
+      "reason": "Verified local models and isolated simulation"
+    },
+    "simulation": true
+  },
+  "original_snapshot_files_unchanged": 232,
+  "changed_original_files": []
+}

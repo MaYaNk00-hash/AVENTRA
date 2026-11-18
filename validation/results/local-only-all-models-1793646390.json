@@ -1,0 +1,58 @@
+[
+  {
+    "model": "intent_parser",
+    "passed": true,
+    "status": "COMPLETED",
+    "duration_ms": 5.639,
+    "run_id": "97155c73-91ea-4481-829f-89deabb303f7"
+  },
+  {
+    "model": "workflow_planner",
+    "passed": true,
+    "status": "COMPLETED",
+    "duration_ms": 2.288,
+    "run_id": "4b1e41c1-017b-4c3c-b99a-e4a5e88582c6"
+  },
+  {
+    "model": "semantic_schema_mapper",
+    "passed": true,
+    "status": "COMPLETED",
+    "duration_ms": 2.663,
+    "run_id": "b2282241-bea7-422d-9342-f8257585387f"
+  },
+  {
+    "model": "invoice_reconciliation",
+    "passed": true,
+    "status": "COMPLETED",
+    "duration_ms": 1.207,
+    "run_id": "aadcc744-ab52-48e1-b4d4-4afd9edae552"
+  },
+  {
+    "model": "adaptation_recommender",
+    "passed": true,
+    "status": "COMPLETED",
+    "duration_ms": 0.979,
+    "run_id": "5d92b017-f558-4ea0-a746-84f41615375c"
+  },
+  {
+    "model": "document_intelligence",
+    "passed": true,
+    "status": "COMPLETED",
+    "duration_ms": 0.901,
+    "run_id": "2b808480-7677-420f-a80a-d83af831d5b7"
+  },
+  {
+    "model": "anomaly_detection",
+    "passed": true,
+    "status": "COMPLETED",
+    "duration_ms": 24.281,
+    "run_id": "9ee7001f-14c8-4fd3-8838-771209451716"
+  },
+  {
+    "model": "entity_resolution",
+    "passed": true,
+    "status": "COMPLETED",
+    "duration_ms": 29.68,
+    "run_id": "d5a164da-c510-4858-b20e-c67eb2180426"
+  }
+]

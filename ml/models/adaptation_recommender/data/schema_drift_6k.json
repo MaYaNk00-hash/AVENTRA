@@ -1,0 +1,902 @@
+[
+  {
+    "scenario_id": "DRIFT-00000",
+    "old_field": "billing_address_0",
+    "new_field": "invoicing_street_address_0",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00001",
+    "old_field": "phone_1",
+    "new_field": "contact_phone_number_1",
+    "semantic_similarity": 0.9827586206896551,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00002",
+    "old_field": "tax_id",
+    "new_field": "tax_identifier_code",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00003",
+    "old_field": "credit_limit_3",
+    "new_field": "authorized_credit_ceiling_3",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00004",
+    "old_field": "created_at_4",
+    "new_field": "record_creation_timestamp_4",
+    "semantic_similarity": 0.7115384615384615,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00005",
+    "old_field": "billing_address_5",
+    "new_field": "invoicing_street_address_5",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00006",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00007",
+    "old_field": "credit_limit_7",
+    "new_field": "authorized_credit_ceiling_7",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00008",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00009",
+    "old_field": "status",
+    "new_field": "account_lifecycle_state",
+    "semantic_similarity": 0.2758620689655173,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00010",
+    "old_field": "company_name",
+    "new_field": "organization_legal_name",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00011",
+    "old_field": "tax_id",
+    "new_field": "tax_identifier_code",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00012",
+    "old_field": "email_12",
+    "new_field": "primary_contact_email_12",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00013",
+    "old_field": "customer_id",
+    "new_field": "client_uuid",
+    "semantic_similarity": 0.8045454545454546,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00014",
+    "old_field": "email_14",
+    "new_field": "primary_contact_email_14",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00015",
+    "old_field": "created_at_15",
+    "new_field": "record_creation_timestamp_15",
+    "semantic_similarity": 0.7378048780487805,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00016",
+    "old_field": "email",
+    "new_field": "primary_contact_email",
+    "semantic_similarity": 0.6346153846153846,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00017",
+    "old_field": "company_name",
+    "new_field": "organization_legal_name",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00018",
+    "old_field": "credit_limit_18",
+    "new_field": "authorized_credit_ceiling_18",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00019",
+    "old_field": "created_at_19",
+    "new_field": "record_creation_timestamp_19",
+    "semantic_similarity": 0.7378048780487805,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00020",
+    "old_field": "phone",
+    "new_field": "contact_phone_number",
+    "semantic_similarity": 0.65,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00021",
+    "old_field": "shipping_loc",
+    "new_field": "fulfillment_delivery_address",
+    "semantic_similarity": 0.55,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00022",
+    "old_field": "email",
+    "new_field": "primary_contact_email",
+    "semantic_similarity": 0.6346153846153846,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00023",
+    "old_field": "billing_address_23",
+    "new_field": "invoicing_street_address_23",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00024",
+    "old_field": "customer_id",
+    "new_field": "client_uuid",
+    "semantic_similarity": 0.8045454545454546,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00025",
+    "old_field": "billing_address",
+    "new_field": "invoicing_street_address",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00026",
+    "old_field": "billing_address",
+    "new_field": "invoicing_street_address",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00027",
+    "old_field": "status",
+    "new_field": "account_lifecycle_state",
+    "semantic_similarity": 0.2758620689655173,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00028",
+    "old_field": "email_28",
+    "new_field": "primary_contact_email_28",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00029",
+    "old_field": "email_29",
+    "new_field": "primary_contact_email_29",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00030",
+    "old_field": "phone",
+    "new_field": "contact_phone_number",
+    "semantic_similarity": 0.65,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00031",
+    "old_field": "billing_address",
+    "new_field": "invoicing_street_address",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00032",
+    "old_field": "tax_id",
+    "new_field": "tax_identifier_code",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00033",
+    "old_field": "customer_id_33",
+    "new_field": "client_uuid_33",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00034",
+    "old_field": "created_at_34",
+    "new_field": "record_creation_timestamp_34",
+    "semantic_similarity": 0.7378048780487805,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00035",
+    "old_field": "credit_limit_35",
+    "new_field": "authorized_credit_ceiling_35",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00036",
+    "old_field": "email",
+    "new_field": "primary_contact_email",
+    "semantic_similarity": 0.6346153846153846,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00037",
+    "old_field": "company_name_37",
+    "new_field": "organization_legal_name_37",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00038",
+    "old_field": "company_name",
+    "new_field": "organization_legal_name",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00039",
+    "old_field": "created_at_39",
+    "new_field": "record_creation_timestamp_39",
+    "semantic_similarity": 0.7378048780487805,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00040",
+    "old_field": "customer_id",
+    "new_field": "client_uuid",
+    "semantic_similarity": 0.8045454545454546,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00041",
+    "old_field": "shipping_loc",
+    "new_field": "fulfillment_delivery_address",
+    "semantic_similarity": 0.55,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00042",
+    "old_field": "email_42",
+    "new_field": "primary_contact_email_42",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00043",
+    "old_field": "status",
+    "new_field": "account_lifecycle_state",
+    "semantic_similarity": 0.2758620689655173,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00044",
+    "old_field": "status_44",
+    "new_field": "account_lifecycle_state_44",
+    "semantic_similarity": 0.65,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00045",
+    "old_field": "tax_id_45",
+    "new_field": "tax_identifier_code_45",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00046",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00047",
+    "old_field": "shipping_loc",
+    "new_field": "fulfillment_delivery_address",
+    "semantic_similarity": 0.55,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00048",
+    "old_field": "shipping_loc",
+    "new_field": "fulfillment_delivery_address",
+    "semantic_similarity": 0.55,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00049",
+    "old_field": "customer_id",
+    "new_field": "client_uuid",
+    "semantic_similarity": 0.8045454545454546,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00050",
+    "old_field": "tax_id",
+    "new_field": "tax_identifier_code",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00051",
+    "old_field": "billing_address",
+    "new_field": "invoicing_street_address",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00052",
+    "old_field": "billing_address_2",
+    "new_field": "invoicing_street_address_2",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00053",
+    "old_field": "tax_id",
+    "new_field": "tax_identifier_code",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00054",
+    "old_field": "created_at",
+    "new_field": "record_creation_timestamp",
+    "semantic_similarity": 0.4,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00055",
+    "old_field": "created_at",
+    "new_field": "record_creation_timestamp",
+    "semantic_similarity": 0.4,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00056",
+    "old_field": "status",
+    "new_field": "account_lifecycle_state",
+    "semantic_similarity": 0.2758620689655173,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00057",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00058",
+    "old_field": "company_name",
+    "new_field": "organization_legal_name",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00059",
+    "old_field": "billing_address",
+    "new_field": "invoicing_street_address",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00060",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00061",
+    "old_field": "email_11",
+    "new_field": "primary_contact_email_11",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00062",
+    "old_field": "created_at_12",
+    "new_field": "record_creation_timestamp_12",
+    "semantic_similarity": 0.7378048780487805,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00063",
+    "old_field": "company_name",
+    "new_field": "organization_legal_name",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00064",
+    "old_field": "phone",
+    "new_field": "contact_phone_number",
+    "semantic_similarity": 0.65,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00065",
+    "old_field": "tax_id",
+    "new_field": "tax_identifier_code",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00066",
+    "old_field": "billing_address",
+    "new_field": "invoicing_street_address",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00067",
+    "old_field": "phone",
+    "new_field": "contact_phone_number",
+    "semantic_similarity": 0.65,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00068",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00069",
+    "old_field": "tax_id",
+    "new_field": "tax_identifier_code",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00070",
+    "old_field": "tax_id",
+    "new_field": "tax_identifier_code",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00071",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00072",
+    "old_field": "shipping_loc",
+    "new_field": "fulfillment_delivery_address",
+    "semantic_similarity": 0.55,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00073",
+    "old_field": "company_name_23",
+    "new_field": "organization_legal_name_23",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00074",
+    "old_field": "email",
+    "new_field": "primary_contact_email",
+    "semantic_similarity": 0.6346153846153846,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00075",
+    "old_field": "phone_25",
+    "new_field": "contact_phone_number_25",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00076",
+    "old_field": "customer_id",
+    "new_field": "client_uuid",
+    "semantic_similarity": 0.8045454545454546,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00077",
+    "old_field": "billing_address_27",
+    "new_field": "invoicing_street_address_27",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00078",
+    "old_field": "status",
+    "new_field": "account_lifecycle_state",
+    "semantic_similarity": 0.2758620689655173,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00079",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00080",
+    "old_field": "tax_id",
+    "new_field": "tax_identifier_code",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00081",
+    "old_field": "credit_limit_31",
+    "new_field": "authorized_credit_ceiling_31",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00082",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00083",
+    "old_field": "created_at",
+    "new_field": "record_creation_timestamp",
+    "semantic_similarity": 0.4,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00084",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00085",
+    "old_field": "customer_id",
+    "new_field": "client_uuid",
+    "semantic_similarity": 0.8045454545454546,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00086",
+    "old_field": "created_at",
+    "new_field": "record_creation_timestamp",
+    "semantic_similarity": 0.4,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00087",
+    "old_field": "email",
+    "new_field": "primary_contact_email",
+    "semantic_similarity": 0.6346153846153846,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00088",
+    "old_field": "credit_limit",
+    "new_field": "authorized_credit_ceiling",
+    "semantic_similarity": 0.7364864864864865,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00089",
+    "old_field": "customer_id_39",
+    "new_field": "client_uuid_39",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00090",
+    "old_field": "email_40",
+    "new_field": "primary_contact_email_40",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00091",
+    "old_field": "credit_limit_41",
+    "new_field": "authorized_credit_ceiling_41",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00092",
+    "old_field": "customer_id_42",
+    "new_field": "client_uuid_42",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00093",
+    "old_field": "company_name_43",
+    "new_field": "organization_legal_name_43",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00094",
+    "old_field": "company_name",
+    "new_field": "organization_legal_name",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00095",
+    "old_field": "billing_address",
+    "new_field": "invoicing_street_address",
+    "semantic_similarity": 1.0,
+    "has_type_shift": 0,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00096",
+    "old_field": "phone",
+    "new_field": "contact_phone_number",
+    "semantic_similarity": 0.65,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00097",
+    "old_field": "customer_id",
+    "new_field": "client_uuid",
+    "semantic_similarity": 0.8045454545454546,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  },
+  {
+    "scenario_id": "DRIFT-00098",
+    "old_field": "shipping_loc",
+    "new_field": "fulfillment_delivery_address",
+    "semantic_similarity": 0.55,
+    "has_type_shift": 0,
+    "is_breaking": 0,
+    "is_renamed": 0
+  },
+  {
+    "scenario_id": "DRIFT-00099",
+    "old_field": "customer_id",
+    "new_field": "client_uuid",
+    "semantic_similarity": 0.8045454545454546,
+    "has_type_shift": 1,
+    "is_breaking": 1,
+    "is_renamed": 1
+  }
+]

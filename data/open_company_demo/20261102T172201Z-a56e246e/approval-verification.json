@@ -1,0 +1,3598 @@
+{
+  "record_key": "A",
+  "before": "unreviewed",
+  "after": "reviewed",
+  "proposal": {
+    "id": "7693a263-753e-4042-8a44-c9f354282b20",
+    "goal": "Update companies record A: review_state = reviewed",
+    "status": "AWAITING_APPROVAL",
+    "events": [
+      {
+        "timestamp": "2026-11-02T17:27:45.985518+00:00",
+        "tool": "planner",
+        "message": "Grounded local planner selected tools from approved client capabilities",
+        "details": {
+          "strategy": "retrieve_records",
+          "sources": [
+            "Open company demo 941ec91e a56e246e"
+          ],
+          "planner": "local constrained tool planner"
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:45.990248+00:00",
+        "tool": "schema_guard",
+        "message": "Verified the current client schema against the approved fingerprint",
+        "details": {
+          "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+          "schema_sha256": "55468cae5f6f71834d366d22067cbfe2895688911ae0ffc9e53312534835884d"
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:45.998975+00:00",
+        "tool": "client.read",
+        "message": "Retrieved 200 current records from Open company demo 941ec91e a56e246e · companies",
+        "details": {
+          "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+          "resource": "companies",
+          "domain": "CRM",
+          "response_sha256": "c0f474d494c9a87a14878cd46ddafdced2e8358c56888523edca489c964bd8aa"
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:46.004976+00:00",
+        "tool": "client.read",
+        "message": "Retrieved 11 current records from Open company demo 941ec91e a56e246e · sector_counts",
+        "details": {
+          "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+          "resource": "sector_counts",
+          "domain": "CRM",
+          "response_sha256": "bae3b74354da2cadbf446278bd4b8b2492db5f961fd4e2ed4e5df2d57b1da2ed"
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:46.009178+00:00",
+        "tool": "approval_gate",
+        "message": "Prepared exact before/after field changes; waiting for authenticated approval",
+        "details": {
+          "changes": {
+            "review_state": "reviewed"
+          },
+          "client_write_performed": false
+        }
+      }
+    ],
+    "evidence": {
+      "resources": [
+        {
+          "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+          "source_name": "Open company demo 941ec91e a56e246e",
+          "domain": "CRM",
+          "resource": "companies",
+          "key_field": "symbol",
+          "bindings": {
+            "name": "company_name",
+            "address": "headquarters"
+          },
+          "writable_fields": [
+            "review_state"
+          ],
+          "schema_sha256": "55468cae5f6f71834d366d22067cbfe2895688911ae0ffc9e53312534835884d",
+          "rows": [
+            {
+              "symbol": "MMM",
+              "company_name": "3M",
+              "sector": "Industrials",
+              "headquarters": "Saint Paul, Minnesota",
+              "sub_industry": "Industrial Conglomerates",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AOS",
+              "company_name": "A. O. Smith",
+              "sector": "Industrials",
+              "headquarters": "Milwaukee, Wisconsin",
+              "sub_industry": "Building Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ABT",
+              "company_name": "Abbott Laboratories",
+              "sector": "Health Care",
+              "headquarters": "North Chicago, Illinois",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ABBV",
+              "company_name": "AbbVie",
+              "sector": "Health Care",
+              "headquarters": "North Chicago, Illinois",
+              "sub_industry": "Biotechnology",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ACN",
+              "company_name": "Accenture",
+              "sector": "Information Technology",
+              "headquarters": "Dublin, Ireland",
+              "sub_industry": "IT Consulting & Other Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ADBE",
+              "company_name": "Adobe Inc.",
+              "sector": "Information Technology",
+              "headquarters": "San Jose, California",
+              "sub_industry": "Application Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMD",
+              "company_name": "Advanced Micro Devices",
+              "sector": "Information Technology",
+              "headquarters": "Santa Clara, California",
+              "sub_industry": "Semiconductors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AES",
+              "company_name": "AES Corporation",
+              "sector": "Utilities",
+              "headquarters": "Arlington, Virginia",
+              "sub_industry": "Independent Power Producers & Energy Traders",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AFL",
+              "company_name": "Aflac",
+              "sector": "Financials",
+              "headquarters": "Columbus, Georgia",
+              "sub_industry": "Life & Health Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "A",
+              "company_name": "Agilent Technologies",
+              "sector": "Health Care",
+              "headquarters": "Santa Clara, California",
+              "sub_industry": "Life Sciences Tools & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APD",
+              "company_name": "Air Products",
+              "sector": "Materials",
+              "headquarters": "Upper Macungie Township, Pennsylvania",
+              "sub_industry": "Industrial Gases",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ABNB",
+              "company_name": "Airbnb",
+              "sector": "Consumer Discretionary",
+              "headquarters": "San Francisco, California",
+              "sub_industry": "Hotels, Resorts & Cruise Lines",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AKAM",
+              "company_name": "Akamai Technologies",
+              "sector": "Information Technology",
+              "headquarters": "Cambridge, Massachusetts",
+              "sub_industry": "Internet Services & Infrastructure",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ALB",
+              "company_name": "Albemarle Corporation",
+              "sector": "Materials",
+              "headquarters": "Charlotte, North Carolina",
+              "sub_industry": "Specialty Chemicals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ARE",
+              "company_name": "Alexandria Real Estate Equities",
+              "sector": "Real Estate",
+              "headquarters": "Pasadena, California",
+              "sub_industry": "Office REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ALGN",
+              "company_name": "Align Technology",
+              "sector": "Health Care",
+              "headquarters": "Tempe, Arizona",
+              "sub_industry": "Health Care Supplies",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ALLE",
+              "company_name": "Allegion",
+              "sector": "Industrials",
+              "headquarters": "Dublin, Ireland",
+              "sub_industry": "Building Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "LNT",
+              "company_name": "Alliant Energy",
+              "sector": "Utilities",
+              "headquarters": "Madison, Wisconsin",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ALL",
+              "company_name": "Allstate",
+              "sector": "Financials",
+              "headquarters": "Northbrook, Illinois",
+              "sub_industry": "Property & Casualty Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "GOOGL",
+              "company_name": "Alphabet Inc. (Class A)",
+              "sector": "Communication Services",
+              "headquarters": "Mountain View, California",
+              "sub_industry": "Interactive Media & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "GOOG",
+              "company_name": "Alphabet Inc. (Class C)",
+              "sector": "Communication Services",
+              "headquarters": "Mountain View, California",
+              "sub_industry": "Interactive Media & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "MO",
+              "company_name": "Altria",
+              "sector": "Consumer Staples",
+              "headquarters": "Richmond, Virginia",
+              "sub_industry": "Tobacco",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMZN",
+              "company_name": "Amazon",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Seattle, Washington",
+              "sub_industry": "Broadline Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMCR",
+              "company_name": "Amcor",
+              "sector": "Materials",
+              "headquarters": "Warmley, Bristol, United Kingdom",
+              "sub_industry": "Paper & Plastic Packaging Products & Materials",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AEE",
+              "company_name": "Ameren",
+              "sector": "Utilities",
+              "headquarters": "St. Louis, Missouri",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AEP",
+              "company_name": "American Electric Power",
+              "sector": "Utilities",
+              "headquarters": "Columbus, Ohio",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AXP",
+              "company_name": "American Express",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Consumer Finance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AIG",
+              "company_name": "American International Group",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Multi-line Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMT",
+              "company_name": "American Tower",
+              "sector": "Real Estate",
+              "headquarters": "Boston, Massachusetts",
+              "sub_industry": "Telecom Tower REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AWK",
+              "company_name": "American Water Works",
+              "sector": "Utilities",
+              "headquarters": "Camden, New Jersey",
+              "sub_industry": "Water Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMP",
+              "company_name": "Ameriprise Financial",
+              "sector": "Financials",
+              "headquarters": "Minneapolis, Minnesota",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AME",
+              "company_name": "Ametek",
+              "sector": "Industrials",
+              "headquarters": "Berwyn, Pennsylvania",
+              "sub_industry": "Electrical Components & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMGN",
+              "company_name": "Amgen",
+              "sector": "Health Care",
+              "headquarters": "Thousand Oaks, California",
+              "sub_industry": "Biotechnology",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APH",
+              "company_name": "Amphenol",
+              "sector": "Information Technology",
+              "headquarters": "Wallingford, Connecticut",
+              "sub_industry": "Electronic Components",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ADI",
+              "company_name": "Analog Devices",
+              "sector": "Information Technology",
+              "headquarters": "Wilmington, Massachusetts",
+              "sub_industry": "Semiconductors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AON",
+              "company_name": "Aon plc",
+              "sector": "Financials",
+              "headquarters": "London, United Kingdom",
+              "sub_industry": "Insurance Brokers",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APA",
+              "company_name": "APA Corporation",
+              "sector": "Energy",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APO",
+              "company_name": "Apollo Global Management",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AAPL",
+              "company_name": "Apple Inc.",
+              "sector": "Information Technology",
+              "headquarters": "Cupertino, California",
+              "sub_industry": "Technology Hardware, Storage & Peripherals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMAT",
+              "company_name": "Applied Materials",
+              "sector": "Information Technology",
+              "headquarters": "Santa Clara, California",
+              "sub_industry": "Semiconductor Materials & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APP",
+              "company_name": "AppLovin",
+              "sector": "Communication Services",
+              "headquarters": "Palo Alto, California",
+              "sub_industry": "Advertising",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APTV",
+              "company_name": "Aptiv",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Schaffhausen, Switzerland",
+              "sub_industry": "Automotive Parts & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ACGL",
+              "company_name": "Arch Capital Group",
+              "sector": "Financials",
+              "headquarters": "Hamilton, Bermuda",
+              "sub_industry": "Property & Casualty Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ADM",
+              "company_name": "Archer Daniels Midland",
+              "sector": "Consumer Staples",
+              "headquarters": "Chicago, Illinois",
+              "sub_industry": "Agricultural Products & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ARES",
+              "company_name": "Ares Management",
+              "sector": "Financials",
+              "headquarters": "Los Angeles, California",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ANET",
+              "company_name": "Arista Networks",
+              "sector": "Information Technology",
+              "headquarters": "Santa Clara, California",
+              "sub_industry": "Communications Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AJG",
+              "company_name": "Arthur J. Gallagher & Co.",
+              "sector": "Financials",
+              "headquarters": "Rolling Meadows, Illinois",
+              "sub_industry": "Insurance Brokers",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AIZ",
+              "company_name": "Assurant",
+              "sector": "Financials",
+              "headquarters": "Atlanta, Georgia",
+              "sub_industry": "Multi-line Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "T",
+              "company_name": "AT&T",
+              "sector": "Communication Services",
+              "headquarters": "Dallas, Texas",
+              "sub_industry": "Integrated Telecommunication Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ATO",
+              "company_name": "Atmos Energy",
+              "sector": "Utilities",
+              "headquarters": "Dallas, Texas",
+              "sub_industry": "Gas Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ADSK",
+              "company_name": "Autodesk",
+              "sector": "Information Technology",
+              "headquarters": "San Francisco, California",
+              "sub_industry": "Application Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ADP",
+              "company_name": "Automatic Data Processing",
+              "sector": "Industrials",
+              "headquarters": "Roseland, New Jersey",
+              "sub_industry": "Human Resource & Employment Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AZO",
+              "company_name": "AutoZone",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Memphis, Tennessee",
+              "sub_industry": "Automotive Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AVY",
+              "company_name": "Avery Dennison",
+              "sector": "Materials",
+              "headquarters": "Mentor, Ohio",
+              "sub_industry": "Paper & Plastic Packaging Products & Materials",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AXON",
+              "company_name": "Axon Enterprise",
+              "sector": "Industrials",
+              "headquarters": "Scottsdale, Arizona",
+              "sub_industry": "Aerospace & Defense",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BKR",
+              "company_name": "Baker Hughes",
+              "sector": "Energy",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Oil & Gas Equipment & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BALL",
+              "company_name": "Ball Corporation",
+              "sector": "Materials",
+              "headquarters": "Broomfield, Colorado",
+              "sub_industry": "Metal, Glass & Plastic Containers",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BAC",
+              "company_name": "Bank of America",
+              "sector": "Financials",
+              "headquarters": "Charlotte, North Carolina",
+              "sub_industry": "Diversified Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BAX",
+              "company_name": "Baxter International",
+              "sector": "Health Care",
+              "headquarters": "Deerfield, Illinois",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BDX",
+              "company_name": "Becton Dickinson",
+              "sector": "Health Care",
+              "headquarters": "Franklin Lakes, New Jersey",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BRK.B",
+              "company_name": "Berkshire Hathaway",
+              "sector": "Financials",
+              "headquarters": "Omaha, Nebraska",
+              "sub_industry": "Multi-Sector Holdings",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BBY",
+              "company_name": "Best Buy",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Richfield, Minnesota",
+              "sub_industry": "Computer & Electronics Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "TECH",
+              "company_name": "Bio-Techne",
+              "sector": "Health Care",
+              "headquarters": "Minneapolis, Minnesota",
+              "sub_industry": "Life Sciences Tools & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BIIB",
+              "company_name": "Biogen",
+              "sector": "Health Care",
+              "headquarters": "Cambridge, Massachusetts",
+              "sub_industry": "Biotechnology",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BLK",
+              "company_name": "BlackRock",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BX",
+              "company_name": "Blackstone Inc.",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "XYZ",
+              "company_name": "Block, Inc.",
+              "sector": "Financials",
+              "headquarters": "none",
+              "sub_industry": "Transaction & Payment Processing Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BE",
+              "company_name": "Bloom Energy",
+              "sector": "Industrials",
+              "headquarters": "San Jose, California",
+              "sub_industry": "Electrical Components & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BNY",
+              "company_name": "BNY Mellon",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BA",
+              "company_name": "Boeing",
+              "sector": "Industrials",
+              "headquarters": "Arlington, Virginia",
+              "sub_industry": "Aerospace & Defense",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BKNG",
+              "company_name": "Booking Holdings",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Norwalk, Connecticut",
+              "sub_industry": "Hotels, Resorts & Cruise Lines",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BSX",
+              "company_name": "Boston Scientific",
+              "sector": "Health Care",
+              "headquarters": "Marlborough, Massachusetts",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BMY",
+              "company_name": "Bristol Myers Squibb",
+              "sector": "Health Care",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Pharmaceuticals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AVGO",
+              "company_name": "Broadcom",
+              "sector": "Information Technology",
+              "headquarters": "Palo Alto, California",
+              "sub_industry": "Semiconductors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BR",
+              "company_name": "Broadridge Financial Solutions",
+              "sector": "Industrials",
+              "headquarters": "Lake Success, New York",
+              "sub_industry": "Data Processing & Outsourced Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BRO",
+              "company_name": "Brown & Brown",
+              "sector": "Financials",
+              "headquarters": "Daytona Beach, Florida",
+              "sub_industry": "Insurance Brokers",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BF.B",
+              "company_name": "Brown–Forman",
+              "sector": "Consumer Staples",
+              "headquarters": "Louisville, Kentucky",
+              "sub_industry": "Distillers & Vintners",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BG",
+              "company_name": "Bunge Global",
+              "sector": "Consumer Staples",
+              "headquarters": "Chesterfield, Missouri",
+              "sub_industry": "Agricultural Products & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BXP",
+              "company_name": "BXP, Inc.",
+              "sector": "Real Estate",
+              "headquarters": "Boston, Massachusetts",
+              "sub_industry": "Office REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CHRW",
+              "company_name": "C.H. Robinson",
+              "sector": "Industrials",
+              "headquarters": "Eden Prairie, Minnesota",
+              "sub_industry": "Air Freight & Logistics",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CDNS",
+              "company_name": "Cadence Design Systems",
+              "sector": "Information Technology",
+              "headquarters": "San Jose, California",
+              "sub_industry": "Application Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CPT",
+              "company_name": "Camden Property Trust",
+              "sector": "Real Estate",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Multi-Family Residential REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COF",
+              "company_name": "Capital One",
+              "sector": "Financials",
+              "headquarters": "Tysons Corner, Virginia",
+              "sub_industry": "Consumer Finance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CAH",
+              "company_name": "Cardinal Health",
+              "sector": "Health Care",
+              "headquarters": "Dublin, Ohio",
+              "sub_industry": "Health Care Distributors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CCL",
+              "company_name": "Carnival Corporation",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Miami, Florida",
+              "sub_industry": "Hotels, Resorts & Cruise Lines",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CARR",
+              "company_name": "Carrier Global",
+              "sector": "Industrials",
+              "headquarters": "Palm Beach Gardens, Florida",
+              "sub_industry": "Building Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CVNA",
+              "company_name": "Carvana",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Tempe, Arizona",
+              "sub_industry": "Automotive Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CASY",
+              "company_name": "Casey's",
+              "sector": "Consumer Staples",
+              "headquarters": "Ankeny, Iowa",
+              "sub_industry": "Food Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CAT",
+              "company_name": "Caterpillar Inc.",
+              "sector": "Industrials",
+              "headquarters": "Irving, Texas",
+              "sub_industry": "Construction Machinery & Heavy Transportation Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CBOE",
+              "company_name": "Cboe Global Markets",
+              "sector": "Financials",
+              "headquarters": "Chicago, Illinois",
+              "sub_industry": "Financial Exchanges & Data",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CBRE",
+              "company_name": "CBRE Group",
+              "sector": "Real Estate",
+              "headquarters": "Dallas, Texas",
+              "sub_industry": "Real Estate Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CDW",
+              "company_name": "CDW Corporation",
+              "sector": "Information Technology",
+              "headquarters": "Vernon Hills, Illinois",
+              "sub_industry": "Technology Distributors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COR",
+              "company_name": "Cencora",
+              "sector": "Health Care",
+              "headquarters": "Conshohocken, Pennsylvania",
+              "sub_industry": "Health Care Distributors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CNC",
+              "company_name": "Centene Corporation",
+              "sector": "Health Care",
+              "headquarters": "St. Louis, Missouri",
+              "sub_industry": "Managed Health Care",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CNP",
+              "company_name": "CenterPoint Energy",
+              "sector": "Utilities",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CF",
+              "company_name": "CF Industries",
+              "sector": "Materials",
+              "headquarters": "Deerfield, Illinois",
+              "sub_industry": "Fertilizers & Agricultural Chemicals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CRL",
+              "company_name": "Charles River Laboratories",
+              "sector": "Health Care",
+              "headquarters": "Wilmington, Massachusetts",
+              "sub_industry": "Life Sciences Tools & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "SCHW",
+              "company_name": "Charles Schwab Corporation",
+              "sector": "Financials",
+              "headquarters": "Westlake, Texas",
+              "sub_industry": "Investment Banking & Brokerage",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CHTR",
+              "company_name": "Charter Communications",
+              "sector": "Communication Services",
+              "headquarters": "Stamford, Connecticut",
+              "sub_industry": "Cable & Satellite",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CVX",
+              "company_name": "Chevron Corporation",
+              "sector": "Energy",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Integrated Oil & Gas",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CMG",
+              "company_name": "Chipotle Mexican Grill",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Newport Beach, California",
+              "sub_industry": "Restaurants",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CB",
+              "company_name": "Chubb Limited",
+              "sector": "Financials",
+              "headquarters": "Zurich, Switzerland",
+              "sub_industry": "Property & Casualty Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CHD",
+              "company_name": "Church & Dwight",
+              "sector": "Consumer Staples",
+              "headquarters": "Ewing, New Jersey",
+              "sub_industry": "Household Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CIEN",
+              "company_name": "Ciena",
+              "sector": "Information Technology",
+              "headquarters": "Hanover, Maryland",
+              "sub_industry": "Communications Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CI",
+              "company_name": "Cigna",
+              "sector": "Health Care",
+              "headquarters": "Bloomfield, Connecticut",
+              "sub_industry": "Health Care Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CINF",
+              "company_name": "Cincinnati Financial",
+              "sector": "Financials",
+              "headquarters": "Fairfield, Ohio",
+              "sub_industry": "Property & Casualty Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CTAS",
+              "company_name": "Cintas",
+              "sector": "Industrials",
+              "headquarters": "Mason, Ohio",
+              "sub_industry": "Diversified Support Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CSCO",
+              "company_name": "Cisco",
+              "sector": "Information Technology",
+              "headquarters": "San Jose, California",
+              "sub_industry": "Communications Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "C",
+              "company_name": "Citigroup",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Diversified Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CFG",
+              "company_name": "Citizens Financial Group",
+              "sector": "Financials",
+              "headquarters": "Providence, Rhode Island",
+              "sub_industry": "Regional Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CLX",
+              "company_name": "Clorox",
+              "sector": "Consumer Staples",
+              "headquarters": "Oakland, California",
+              "sub_industry": "Household Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CME",
+              "company_name": "CME Group",
+              "sector": "Financials",
+              "headquarters": "Chicago, Illinois",
+              "sub_industry": "Financial Exchanges & Data",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CMS",
+              "company_name": "CMS Energy",
+              "sector": "Utilities",
+              "headquarters": "Jackson, Michigan",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "KO",
+              "company_name": "Coca-Cola Company (The)",
+              "sector": "Consumer Staples",
+              "headquarters": "Atlanta, Georgia",
+              "sub_industry": "Soft Drinks & Non-alcoholic Beverages",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CTSH",
+              "company_name": "Cognizant",
+              "sector": "Information Technology",
+              "headquarters": "Teaneck, New Jersey",
+              "sub_industry": "IT Consulting & Other Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COHR",
+              "company_name": "Coherent Corp.",
+              "sector": "Information Technology",
+              "headquarters": "Saxonburg, Pennsylvania",
+              "sub_industry": "Electronic Components",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COIN",
+              "company_name": "Coinbase",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Financial Exchanges & Data",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CL",
+              "company_name": "Colgate-Palmolive",
+              "sector": "Consumer Staples",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Household Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CMCSA",
+              "company_name": "Comcast",
+              "sector": "Communication Services",
+              "headquarters": "Philadelphia, Pennsylvania",
+              "sub_industry": "Cable & Satellite",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FIX",
+              "company_name": "Comfort Systems USA",
+              "sector": "Industrials",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Construction & Engineering",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COP",
+              "company_name": "ConocoPhillips",
+              "sector": "Energy",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ED",
+              "company_name": "Consolidated Edison",
+              "sector": "Utilities",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "STZ",
+              "company_name": "Constellation Brands",
+              "sector": "Consumer Staples",
+              "headquarters": "Rochester, New York",
+              "sub_industry": "Distillers & Vintners",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CEG",
+              "company_name": "Constellation Energy",
+              "sector": "Utilities",
+              "headquarters": "Baltimore, Maryland",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COO",
+              "company_name": "Cooper Companies (The)",
+              "sector": "Health Care",
+              "headquarters": "San Ramon, California",
+              "sub_industry": "Health Care Supplies",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CPRT",
+              "company_name": "Copart",
+              "sector": "Industrials",
+              "headquarters": "Dallas, Texas",
+              "sub_industry": "Diversified Support Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "GLW",
+              "company_name": "Corning Inc.",
+              "sector": "Information Technology",
+              "headquarters": "Corning, New York",
+              "sub_industry": "Electronic Components",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CPAY",
+              "company_name": "Corpay",
+              "sector": "Financials",
+              "headquarters": "Atlanta, Georgia",
+              "sub_industry": "Transaction & Payment Processing Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CSGP",
+              "company_name": "CoStar Group",
+              "sector": "Real Estate",
+              "headquarters": "Washington, D.C.",
+              "sub_industry": "Real Estate Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COST",
+              "company_name": "Costco",
+              "sector": "Consumer Staples",
+              "headquarters": "Issaquah, Washington",
+              "sub_industry": "Consumer Staples Merchandise Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CRH",
+              "company_name": "CRH plc",
+              "sector": "Materials",
+              "headquarters": "Dublin, Ireland",
+              "sub_industry": "Construction Materials",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CRWD",
+              "company_name": "CrowdStrike",
+              "sector": "Information Technology",
+              "headquarters": "Austin, Texas",
+              "sub_industry": "Systems Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CCI",
+              "company_name": "Crown Castle",
+              "sector": "Real Estate",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Telecom Tower REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CSX",
+              "company_name": "CSX Corporation",
+              "sector": "Industrials",
+              "headquarters": "Jacksonville, Florida",
+              "sub_industry": "Rail Transportation",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CMI",
+              "company_name": "Cummins",
+              "sector": "Industrials",
+              "headquarters": "Columbus, Indiana",
+              "sub_industry": "Construction Machinery & Heavy Transportation Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CVS",
+              "company_name": "CVS Health",
+              "sector": "Health Care",
+              "headquarters": "Woonsocket, Rhode Island",
+              "sub_industry": "Health Care Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DHR",
+              "company_name": "Danaher Corporation",
+              "sector": "Health Care",
+              "headquarters": "Washington, D.C.",
+              "sub_industry": "Life Sciences Tools & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DRI",
+              "company_name": "Darden Restaurants",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Orlando, Florida",
+              "sub_industry": "Restaurants",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DDOG",
+              "company_name": "Datadog",
+              "sector": "Information Technology",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Application Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DVA",
+              "company_name": "DaVita",
+              "sector": "Health Care",
+              "headquarters": "Denver, Colorado",
+              "sub_industry": "Health Care Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DECK",
+              "company_name": "Deckers Brands",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Goleta, California",
+              "sub_industry": "Footwear",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DE",
+              "company_name": "Deere & Company",
+              "sector": "Industrials",
+              "headquarters": "Moline, Illinois",
+              "sub_industry": "Agricultural & Farm Machinery",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DELL",
+              "company_name": "Dell Technologies",
+              "sector": "Information Technology",
+              "headquarters": "Round Rock, Texas",
+              "sub_industry": "Technology Hardware, Storage & Peripherals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DAL",
+              "company_name": "Delta Air Lines",
+              "sector": "Industrials",
+              "headquarters": "Atlanta, Georgia",
+              "sub_industry": "Passenger Airlines",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DVN",
+              "company_name": "Devon Energy",
+              "sector": "Energy",
+              "headquarters": "Oklahoma City, Oklahoma",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DXCM",
+              "company_name": "Dexcom",
+              "sector": "Health Care",
+              "headquarters": "San Diego, California",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FANG",
+              "company_name": "Diamondback Energy",
+              "sector": "Energy",
+              "headquarters": "Midland, Texas",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DLR",
+              "company_name": "Digital Realty",
+              "sector": "Real Estate",
+              "headquarters": "Austin, Texas",
+              "sub_industry": "Data Center REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DG",
+              "company_name": "Dollar General",
+              "sector": "Consumer Staples",
+              "headquarters": "Goodlettsville, Tennessee",
+              "sub_industry": "Consumer Staples Merchandise Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DLTR",
+              "company_name": "Dollar Tree",
+              "sector": "Consumer Staples",
+              "headquarters": "Chesapeake, Virginia",
+              "sub_industry": "Consumer Staples Merchandise Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "D",
+              "company_name": "Dominion Energy",
+              "sector": "Utilities",
+              "headquarters": "Richmond, Virginia",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DPZ",
+              "company_name": "Domino's",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Ann Arbor, Michigan",
+              "sub_industry": "Restaurants",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DASH",
+              "company_name": "DoorDash",
+              "sector": "Consumer Discretionary",
+              "headquarters": "San Francisco, California",
+              "sub_industry": "Specialized Consumer Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DOV",
+              "company_name": "Dover Corporation",
+              "sector": "Industrials",
+              "headquarters": "Downers Grove, Illinois",
+              "sub_industry": "Industrial Machinery & Supplies & Components",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DOW",
+              "company_name": "Dow Inc.",
+              "sector": "Materials",
+              "headquarters": "Midland, Michigan",
+              "sub_industry": "Commodity Chemicals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DHI",
+              "company_name": "D. R. Horton",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Arlington, Texas",
+              "sub_industry": "Homebuilding",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DTE",
+              "company_name": "DTE Energy",
+              "sector": "Utilities",
+              "headquarters": "Detroit, Michigan",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DUK",
+              "company_name": "Duke Energy",
+              "sector": "Utilities",
+              "headquarters": "Charlotte, North Carolina",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DD",
+              "company_name": "DuPont",
+              "sector": "Industrials",
+              "headquarters": "Wilmington, Delaware",
+              "sub_industry": "Industrial Conglomerates",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ETN",
+              "company_name": "Eaton Corporation",
+              "sector": "Industrials",
+              "headquarters": "Dublin, Ireland",
+              "sub_industry": "Electrical Components & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EBAY",
+              "company_name": "eBay Inc.",
+              "sector": "Consumer Discretionary",
+              "headquarters": "San Jose, California",
+              "sub_industry": "Broadline Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ECHO",
+              "company_name": "EchoStar",
+              "sector": "Communication Services",
+              "headquarters": "Englewood, Colorado",
+              "sub_industry": "Wireless Telecommunication Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ECL",
+              "company_name": "Ecolab",
+              "sector": "Materials",
+              "headquarters": "Saint Paul, Minnesota",
+              "sub_industry": "Specialty Chemicals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EIX",
+              "company_name": "Edison International",
+              "sector": "Utilities",
+              "headquarters": "Rosemead, California",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EW",
+              "company_name": "Edwards Lifesciences",
+              "sector": "Health Care",
+              "headquarters": "Irvine, California",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ELV",
+              "company_name": "Elevance Health",
+              "sector": "Health Care",
+              "headquarters": "Indianapolis, Indiana",
+              "sub_industry": "Managed Health Care",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EME",
+              "company_name": "Emcor",
+              "sector": "Industrials",
+              "headquarters": "Norwalk, Connecticut",
+              "sub_industry": "Construction & Engineering",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EMR",
+              "company_name": "Emerson Electric",
+              "sector": "Industrials",
+              "headquarters": "Ferguson, Missouri",
+              "sub_industry": "Electrical Components & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ETR",
+              "company_name": "Entergy",
+              "sector": "Utilities",
+              "headquarters": "New Orleans, Louisiana",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EOG",
+              "company_name": "EOG Resources",
+              "sector": "Energy",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EQT",
+              "company_name": "EQT Corporation",
+              "sector": "Energy",
+              "headquarters": "Pittsburgh, Pennsylvania",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EFX",
+              "company_name": "Equifax",
+              "sector": "Industrials",
+              "headquarters": "Atlanta, Georgia",
+              "sub_industry": "Research & Consulting Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EQIX",
+              "company_name": "Equinix",
+              "sector": "Real Estate",
+              "headquarters": "Redwood City, California",
+              "sub_industry": "Data Center REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ERIE",
+              "company_name": "Erie Indemnity",
+              "sector": "Financials",
+              "headquarters": "Erie, Pennsylvania",
+              "sub_industry": "Insurance Brokers",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ESS",
+              "company_name": "Essex Property Trust",
+              "sector": "Real Estate",
+              "headquarters": "San Mateo, California",
+              "sub_industry": "Multi-Family Residential REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EL",
+              "company_name": "Estée Lauder Companies (The)",
+              "sector": "Consumer Staples",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Personal Care Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EG",
+              "company_name": "Everest Group",
+              "sector": "Financials",
+              "headquarters": "Hamilton, Bermuda",
+              "sub_industry": "Reinsurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EVRG",
+              "company_name": "Evergy",
+              "sector": "Utilities",
+              "headquarters": "Kansas City, Missouri",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "P",
+              "company_name": "Everpure",
+              "sector": "Information Technology",
+              "headquarters": "Santa Clara, California",
+              "sub_industry": "Technology Hardware, Storage & Peripherals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ES",
+              "company_name": "Eversource Energy",
+              "sector": "Utilities",
+              "headquarters": "Hartford, Connecticut",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EXC",
+              "company_name": "Exelon",
+              "sector": "Utilities",
+              "headquarters": "Chicago, Illinois",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EXE",
+              "company_name": "Expand Energy",
+              "sector": "Energy",
+              "headquarters": "Oklahoma City, Oklahoma",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EXPE",
+              "company_name": "Expedia Group",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Seattle, Washington",
+              "sub_industry": "Hotels, Resorts & Cruise Lines",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EXPD",
+              "company_name": "Expeditors International",
+              "sector": "Industrials",
+              "headquarters": "Seattle, Washington",
+              "sub_industry": "Air Freight & Logistics",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EXR",
+              "company_name": "Extra Space Storage",
+              "sector": "Real Estate",
+              "headquarters": "Salt Lake City, Utah",
+              "sub_industry": "Self-Storage REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "XOM",
+              "company_name": "ExxonMobil",
+              "sector": "Energy",
+              "headquarters": "Irving, Texas",
+              "sub_industry": "Integrated Oil & Gas",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FFIV",
+              "company_name": "F5, Inc.",
+              "sector": "Information Technology",
+              "headquarters": "Seattle, Washington",
+              "sub_industry": "Communications Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FDS",
+              "company_name": "FactSet",
+              "sector": "Financials",
+              "headquarters": "Norwalk, Connecticut",
+              "sub_industry": "Financial Exchanges & Data",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FICO",
+              "company_name": "Fair Isaac",
+              "sector": "Information Technology",
+              "headquarters": "Bozeman, Montana",
+              "sub_industry": "Application Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FAST",
+              "company_name": "Fastenal",
+              "sector": "Industrials",
+              "headquarters": "Winona, Minnesota",
+              "sub_industry": "Trading Companies & Distributors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FRT",
+              "company_name": "Federal Realty Investment Trust",
+              "sector": "Real Estate",
+              "headquarters": "Rockville, Maryland",
+              "sub_industry": "Retail REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FDX",
+              "company_name": "FedEx",
+              "sector": "Industrials",
+              "headquarters": "Memphis, Tennessee",
+              "sub_industry": "Air Freight & Logistics",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FDXF",
+              "company_name": "FedEx Freight",
+              "sector": "Industrials",
+              "headquarters": "Memphis, Tennessee",
+              "sub_industry": "Cargo Ground Transportation",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FERG",
+              "company_name": "Ferguson Enterprises",
+              "sector": "Industrials",
+              "headquarters": "Newport News, Virginia",
+              "sub_industry": "Trading Companies & Distributors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FIS",
+              "company_name": "Fidelity National Information Services",
+              "sector": "Financials",
+              "headquarters": "Jacksonville, Florida",
+              "sub_industry": "Transaction & Payment Processing Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FITB",
+              "company_name": "Fifth Third Bancorp",
+              "sector": "Financials",
+              "headquarters": "Cincinnati, Ohio",
+              "sub_industry": "Regional Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FSLR",
+              "company_name": "First Solar",
+              "sector": "Information Technology",
+              "headquarters": "Tempe, Arizona",
+              "sub_industry": "Semiconductors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FE",
+              "company_name": "FirstEnergy",
+              "sector": "Utilities",
+              "headquarters": "Akron, Ohio",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FISV",
+              "company_name": "Fiserv",
+              "sector": "Financials",
+              "headquarters": "Brookfield, Wisconsin",
+              "sub_industry": "Transaction & Payment Processing Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FLEX",
+              "company_name": "Flex Ltd.",
+              "sector": "Information Technology",
+              "headquarters": "Austin, Texas",
+              "sub_industry": "Electronic Manufacturing Services",
+              "review_state": "unreviewed"
+            }
+          ]
+        },
+        {
+          "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+          "source_name": "Open company demo 941ec91e a56e246e",
+          "domain": "CRM",
+          "resource": "sector_counts",
+          "key_field": "sector",
+          "bindings": {},
+          "writable_fields": [],
+          "schema_sha256": "55468cae5f6f71834d366d22067cbfe2895688911ae0ffc9e53312534835884d",
+          "rows": [
+            {
+              "sector": "Communication Services",
+              "security_count": 7
+            },
+            {
+              "sector": "Consumer Discretionary",
+              "security_count": 16
+            },
+            {
+              "sector": "Consumer Staples",
+              "security_count": 14
+            },
+            {
+              "sector": "Energy",
+              "security_count": 10
+            },
+            {
+              "sector": "Financials",
+              "security_count": 34
+            },
+            {
+              "sector": "Health Care",
+              "security_count": 23
+            },
+            {
+              "sector": "Industrials",
+              "security_count": 30
+            },
+            {
+              "sector": "Information Technology",
+              "security_count": 26
+            },
+            {
+              "sector": "Materials",
+              "security_count": 9
+            },
+            {
+              "sector": "Real Estate",
+              "security_count": 12
+            },
+            {
+              "sector": "Utilities",
+              "security_count": 19
+            }
+          ]
+        }
+      ]
+    },
+    "proposal": {
+      "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+      "resource": "companies",
+      "record_key": "A",
+      "changes": {
+        "review_state": "reviewed"
+      },
+      "before": {
+        "symbol": "A",
+        "company_name": "Agilent Technologies",
+        "sector": "Health Care",
+        "headquarters": "Santa Clara, California",
+        "sub_industry": "Life Sciences Tools & Services",
+        "review_state": "unreviewed"
+      },
+      "before_sha256": "dca16d86e7e70dfaa3ef4f73e139b8a3afb56d0498113674289660da5a79c562",
+      "schema_sha256": "55468cae5f6f71834d366d22067cbfe2895688911ae0ffc9e53312534835884d",
+      "key_field": "symbol"
+    },
+    "result": {
+      "type": "mutation_preparation",
+      "summary": "Retrieved current client records to prepare an exact field-change proposal. Review the before/after evidence below.",
+      "execution": {
+        "input": {
+          "request": "Update companies record A: review_state = reviewed",
+          "source_ids": [
+            "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f"
+          ]
+        },
+        "planner": "backend tools",
+        "provider": null,
+        "model": null,
+        "duration_ms": 28.4,
+        "score": null,
+        "score_note": "Retrieval returns source records; no trained classifier probability is produced."
+      }
+    }
+  },
+  "decision": {
+    "id": "7693a263-753e-4042-8a44-c9f354282b20",
+    "goal": "Update companies record A: review_state = reviewed",
+    "status": "COMPLETED",
+    "events": [
+      {
+        "timestamp": "2026-11-02T17:27:45.985518+00:00",
+        "tool": "planner",
+        "message": "Grounded local planner selected tools from approved client capabilities",
+        "details": {
+          "strategy": "retrieve_records",
+          "sources": [
+            "Open company demo 941ec91e a56e246e"
+          ],
+          "planner": "local constrained tool planner"
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:45.990248+00:00",
+        "tool": "schema_guard",
+        "message": "Verified the current client schema against the approved fingerprint",
+        "details": {
+          "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+          "schema_sha256": "55468cae5f6f71834d366d22067cbfe2895688911ae0ffc9e53312534835884d"
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:45.998975+00:00",
+        "tool": "client.read",
+        "message": "Retrieved 200 current records from Open company demo 941ec91e a56e246e · companies",
+        "details": {
+          "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+          "resource": "companies",
+          "domain": "CRM",
+          "response_sha256": "c0f474d494c9a87a14878cd46ddafdced2e8358c56888523edca489c964bd8aa"
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:46.004976+00:00",
+        "tool": "client.read",
+        "message": "Retrieved 11 current records from Open company demo 941ec91e a56e246e · sector_counts",
+        "details": {
+          "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+          "resource": "sector_counts",
+          "domain": "CRM",
+          "response_sha256": "bae3b74354da2cadbf446278bd4b8b2492db5f961fd4e2ed4e5df2d57b1da2ed"
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:46.009178+00:00",
+        "tool": "approval_gate",
+        "message": "Prepared exact before/after field changes; waiting for authenticated approval",
+        "details": {
+          "changes": {
+            "review_state": "reviewed"
+          },
+          "client_write_performed": false
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:46.040529+00:00",
+        "tool": "approval_gate",
+        "message": "Authenticated reviewer approved the exact proposed changes",
+        "details": {
+          "reviewer": "usr-admin-1",
+          "comments": "Verified public-source identity; only the local demo review_state is being changed."
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:46.055073+00:00",
+        "tool": "client.patch",
+        "message": "Client mutation submitted once; reading the source to verify",
+        "details": {
+          "idempotency_key": "7693a263-753e-4042-8a44-c9f354282b20"
+        }
+      },
+      {
+        "timestamp": "2026-11-02T17:27:46.063932+00:00",
+        "tool": "client.verify",
+        "message": "Re-read verified all approved field changes",
+        "details": {
+          "response_sha256": "52724e12995601821f5d334c103de8065c876b46a6c74eb46ebe315872f8fae7"
+        }
+      }
+    ],
+    "evidence": {
+      "resources": [
+        {
+          "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+          "source_name": "Open company demo 941ec91e a56e246e",
+          "domain": "CRM",
+          "resource": "companies",
+          "key_field": "symbol",
+          "bindings": {
+            "name": "company_name",
+            "address": "headquarters"
+          },
+          "writable_fields": [
+            "review_state"
+          ],
+          "schema_sha256": "55468cae5f6f71834d366d22067cbfe2895688911ae0ffc9e53312534835884d",
+          "rows": [
+            {
+              "symbol": "MMM",
+              "company_name": "3M",
+              "sector": "Industrials",
+              "headquarters": "Saint Paul, Minnesota",
+              "sub_industry": "Industrial Conglomerates",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AOS",
+              "company_name": "A. O. Smith",
+              "sector": "Industrials",
+              "headquarters": "Milwaukee, Wisconsin",
+              "sub_industry": "Building Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ABT",
+              "company_name": "Abbott Laboratories",
+              "sector": "Health Care",
+              "headquarters": "North Chicago, Illinois",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ABBV",
+              "company_name": "AbbVie",
+              "sector": "Health Care",
+              "headquarters": "North Chicago, Illinois",
+              "sub_industry": "Biotechnology",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ACN",
+              "company_name": "Accenture",
+              "sector": "Information Technology",
+              "headquarters": "Dublin, Ireland",
+              "sub_industry": "IT Consulting & Other Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ADBE",
+              "company_name": "Adobe Inc.",
+              "sector": "Information Technology",
+              "headquarters": "San Jose, California",
+              "sub_industry": "Application Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMD",
+              "company_name": "Advanced Micro Devices",
+              "sector": "Information Technology",
+              "headquarters": "Santa Clara, California",
+              "sub_industry": "Semiconductors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AES",
+              "company_name": "AES Corporation",
+              "sector": "Utilities",
+              "headquarters": "Arlington, Virginia",
+              "sub_industry": "Independent Power Producers & Energy Traders",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AFL",
+              "company_name": "Aflac",
+              "sector": "Financials",
+              "headquarters": "Columbus, Georgia",
+              "sub_industry": "Life & Health Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "A",
+              "company_name": "Agilent Technologies",
+              "sector": "Health Care",
+              "headquarters": "Santa Clara, California",
+              "sub_industry": "Life Sciences Tools & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APD",
+              "company_name": "Air Products",
+              "sector": "Materials",
+              "headquarters": "Upper Macungie Township, Pennsylvania",
+              "sub_industry": "Industrial Gases",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ABNB",
+              "company_name": "Airbnb",
+              "sector": "Consumer Discretionary",
+              "headquarters": "San Francisco, California",
+              "sub_industry": "Hotels, Resorts & Cruise Lines",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AKAM",
+              "company_name": "Akamai Technologies",
+              "sector": "Information Technology",
+              "headquarters": "Cambridge, Massachusetts",
+              "sub_industry": "Internet Services & Infrastructure",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ALB",
+              "company_name": "Albemarle Corporation",
+              "sector": "Materials",
+              "headquarters": "Charlotte, North Carolina",
+              "sub_industry": "Specialty Chemicals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ARE",
+              "company_name": "Alexandria Real Estate Equities",
+              "sector": "Real Estate",
+              "headquarters": "Pasadena, California",
+              "sub_industry": "Office REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ALGN",
+              "company_name": "Align Technology",
+              "sector": "Health Care",
+              "headquarters": "Tempe, Arizona",
+              "sub_industry": "Health Care Supplies",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ALLE",
+              "company_name": "Allegion",
+              "sector": "Industrials",
+              "headquarters": "Dublin, Ireland",
+              "sub_industry": "Building Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "LNT",
+              "company_name": "Alliant Energy",
+              "sector": "Utilities",
+              "headquarters": "Madison, Wisconsin",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ALL",
+              "company_name": "Allstate",
+              "sector": "Financials",
+              "headquarters": "Northbrook, Illinois",
+              "sub_industry": "Property & Casualty Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "GOOGL",
+              "company_name": "Alphabet Inc. (Class A)",
+              "sector": "Communication Services",
+              "headquarters": "Mountain View, California",
+              "sub_industry": "Interactive Media & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "GOOG",
+              "company_name": "Alphabet Inc. (Class C)",
+              "sector": "Communication Services",
+              "headquarters": "Mountain View, California",
+              "sub_industry": "Interactive Media & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "MO",
+              "company_name": "Altria",
+              "sector": "Consumer Staples",
+              "headquarters": "Richmond, Virginia",
+              "sub_industry": "Tobacco",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMZN",
+              "company_name": "Amazon",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Seattle, Washington",
+              "sub_industry": "Broadline Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMCR",
+              "company_name": "Amcor",
+              "sector": "Materials",
+              "headquarters": "Warmley, Bristol, United Kingdom",
+              "sub_industry": "Paper & Plastic Packaging Products & Materials",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AEE",
+              "company_name": "Ameren",
+              "sector": "Utilities",
+              "headquarters": "St. Louis, Missouri",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AEP",
+              "company_name": "American Electric Power",
+              "sector": "Utilities",
+              "headquarters": "Columbus, Ohio",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AXP",
+              "company_name": "American Express",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Consumer Finance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AIG",
+              "company_name": "American International Group",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Multi-line Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMT",
+              "company_name": "American Tower",
+              "sector": "Real Estate",
+              "headquarters": "Boston, Massachusetts",
+              "sub_industry": "Telecom Tower REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AWK",
+              "company_name": "American Water Works",
+              "sector": "Utilities",
+              "headquarters": "Camden, New Jersey",
+              "sub_industry": "Water Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMP",
+              "company_name": "Ameriprise Financial",
+              "sector": "Financials",
+              "headquarters": "Minneapolis, Minnesota",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AME",
+              "company_name": "Ametek",
+              "sector": "Industrials",
+              "headquarters": "Berwyn, Pennsylvania",
+              "sub_industry": "Electrical Components & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMGN",
+              "company_name": "Amgen",
+              "sector": "Health Care",
+              "headquarters": "Thousand Oaks, California",
+              "sub_industry": "Biotechnology",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APH",
+              "company_name": "Amphenol",
+              "sector": "Information Technology",
+              "headquarters": "Wallingford, Connecticut",
+              "sub_industry": "Electronic Components",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ADI",
+              "company_name": "Analog Devices",
+              "sector": "Information Technology",
+              "headquarters": "Wilmington, Massachusetts",
+              "sub_industry": "Semiconductors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AON",
+              "company_name": "Aon plc",
+              "sector": "Financials",
+              "headquarters": "London, United Kingdom",
+              "sub_industry": "Insurance Brokers",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APA",
+              "company_name": "APA Corporation",
+              "sector": "Energy",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APO",
+              "company_name": "Apollo Global Management",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AAPL",
+              "company_name": "Apple Inc.",
+              "sector": "Information Technology",
+              "headquarters": "Cupertino, California",
+              "sub_industry": "Technology Hardware, Storage & Peripherals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AMAT",
+              "company_name": "Applied Materials",
+              "sector": "Information Technology",
+              "headquarters": "Santa Clara, California",
+              "sub_industry": "Semiconductor Materials & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APP",
+              "company_name": "AppLovin",
+              "sector": "Communication Services",
+              "headquarters": "Palo Alto, California",
+              "sub_industry": "Advertising",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "APTV",
+              "company_name": "Aptiv",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Schaffhausen, Switzerland",
+              "sub_industry": "Automotive Parts & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ACGL",
+              "company_name": "Arch Capital Group",
+              "sector": "Financials",
+              "headquarters": "Hamilton, Bermuda",
+              "sub_industry": "Property & Casualty Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ADM",
+              "company_name": "Archer Daniels Midland",
+              "sector": "Consumer Staples",
+              "headquarters": "Chicago, Illinois",
+              "sub_industry": "Agricultural Products & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ARES",
+              "company_name": "Ares Management",
+              "sector": "Financials",
+              "headquarters": "Los Angeles, California",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ANET",
+              "company_name": "Arista Networks",
+              "sector": "Information Technology",
+              "headquarters": "Santa Clara, California",
+              "sub_industry": "Communications Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AJG",
+              "company_name": "Arthur J. Gallagher & Co.",
+              "sector": "Financials",
+              "headquarters": "Rolling Meadows, Illinois",
+              "sub_industry": "Insurance Brokers",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AIZ",
+              "company_name": "Assurant",
+              "sector": "Financials",
+              "headquarters": "Atlanta, Georgia",
+              "sub_industry": "Multi-line Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "T",
+              "company_name": "AT&T",
+              "sector": "Communication Services",
+              "headquarters": "Dallas, Texas",
+              "sub_industry": "Integrated Telecommunication Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ATO",
+              "company_name": "Atmos Energy",
+              "sector": "Utilities",
+              "headquarters": "Dallas, Texas",
+              "sub_industry": "Gas Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ADSK",
+              "company_name": "Autodesk",
+              "sector": "Information Technology",
+              "headquarters": "San Francisco, California",
+              "sub_industry": "Application Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ADP",
+              "company_name": "Automatic Data Processing",
+              "sector": "Industrials",
+              "headquarters": "Roseland, New Jersey",
+              "sub_industry": "Human Resource & Employment Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AZO",
+              "company_name": "AutoZone",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Memphis, Tennessee",
+              "sub_industry": "Automotive Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AVY",
+              "company_name": "Avery Dennison",
+              "sector": "Materials",
+              "headquarters": "Mentor, Ohio",
+              "sub_industry": "Paper & Plastic Packaging Products & Materials",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AXON",
+              "company_name": "Axon Enterprise",
+              "sector": "Industrials",
+              "headquarters": "Scottsdale, Arizona",
+              "sub_industry": "Aerospace & Defense",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BKR",
+              "company_name": "Baker Hughes",
+              "sector": "Energy",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Oil & Gas Equipment & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BALL",
+              "company_name": "Ball Corporation",
+              "sector": "Materials",
+              "headquarters": "Broomfield, Colorado",
+              "sub_industry": "Metal, Glass & Plastic Containers",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BAC",
+              "company_name": "Bank of America",
+              "sector": "Financials",
+              "headquarters": "Charlotte, North Carolina",
+              "sub_industry": "Diversified Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BAX",
+              "company_name": "Baxter International",
+              "sector": "Health Care",
+              "headquarters": "Deerfield, Illinois",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BDX",
+              "company_name": "Becton Dickinson",
+              "sector": "Health Care",
+              "headquarters": "Franklin Lakes, New Jersey",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BRK.B",
+              "company_name": "Berkshire Hathaway",
+              "sector": "Financials",
+              "headquarters": "Omaha, Nebraska",
+              "sub_industry": "Multi-Sector Holdings",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BBY",
+              "company_name": "Best Buy",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Richfield, Minnesota",
+              "sub_industry": "Computer & Electronics Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "TECH",
+              "company_name": "Bio-Techne",
+              "sector": "Health Care",
+              "headquarters": "Minneapolis, Minnesota",
+              "sub_industry": "Life Sciences Tools & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BIIB",
+              "company_name": "Biogen",
+              "sector": "Health Care",
+              "headquarters": "Cambridge, Massachusetts",
+              "sub_industry": "Biotechnology",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BLK",
+              "company_name": "BlackRock",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BX",
+              "company_name": "Blackstone Inc.",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "XYZ",
+              "company_name": "Block, Inc.",
+              "sector": "Financials",
+              "headquarters": "none",
+              "sub_industry": "Transaction & Payment Processing Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BE",
+              "company_name": "Bloom Energy",
+              "sector": "Industrials",
+              "headquarters": "San Jose, California",
+              "sub_industry": "Electrical Components & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BNY",
+              "company_name": "BNY Mellon",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Asset Management & Custody Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BA",
+              "company_name": "Boeing",
+              "sector": "Industrials",
+              "headquarters": "Arlington, Virginia",
+              "sub_industry": "Aerospace & Defense",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BKNG",
+              "company_name": "Booking Holdings",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Norwalk, Connecticut",
+              "sub_industry": "Hotels, Resorts & Cruise Lines",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BSX",
+              "company_name": "Boston Scientific",
+              "sector": "Health Care",
+              "headquarters": "Marlborough, Massachusetts",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BMY",
+              "company_name": "Bristol Myers Squibb",
+              "sector": "Health Care",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Pharmaceuticals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "AVGO",
+              "company_name": "Broadcom",
+              "sector": "Information Technology",
+              "headquarters": "Palo Alto, California",
+              "sub_industry": "Semiconductors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BR",
+              "company_name": "Broadridge Financial Solutions",
+              "sector": "Industrials",
+              "headquarters": "Lake Success, New York",
+              "sub_industry": "Data Processing & Outsourced Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BRO",
+              "company_name": "Brown & Brown",
+              "sector": "Financials",
+              "headquarters": "Daytona Beach, Florida",
+              "sub_industry": "Insurance Brokers",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BF.B",
+              "company_name": "Brown–Forman",
+              "sector": "Consumer Staples",
+              "headquarters": "Louisville, Kentucky",
+              "sub_industry": "Distillers & Vintners",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BG",
+              "company_name": "Bunge Global",
+              "sector": "Consumer Staples",
+              "headquarters": "Chesterfield, Missouri",
+              "sub_industry": "Agricultural Products & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "BXP",
+              "company_name": "BXP, Inc.",
+              "sector": "Real Estate",
+              "headquarters": "Boston, Massachusetts",
+              "sub_industry": "Office REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CHRW",
+              "company_name": "C.H. Robinson",
+              "sector": "Industrials",
+              "headquarters": "Eden Prairie, Minnesota",
+              "sub_industry": "Air Freight & Logistics",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CDNS",
+              "company_name": "Cadence Design Systems",
+              "sector": "Information Technology",
+              "headquarters": "San Jose, California",
+              "sub_industry": "Application Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CPT",
+              "company_name": "Camden Property Trust",
+              "sector": "Real Estate",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Multi-Family Residential REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COF",
+              "company_name": "Capital One",
+              "sector": "Financials",
+              "headquarters": "Tysons Corner, Virginia",
+              "sub_industry": "Consumer Finance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CAH",
+              "company_name": "Cardinal Health",
+              "sector": "Health Care",
+              "headquarters": "Dublin, Ohio",
+              "sub_industry": "Health Care Distributors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CCL",
+              "company_name": "Carnival Corporation",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Miami, Florida",
+              "sub_industry": "Hotels, Resorts & Cruise Lines",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CARR",
+              "company_name": "Carrier Global",
+              "sector": "Industrials",
+              "headquarters": "Palm Beach Gardens, Florida",
+              "sub_industry": "Building Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CVNA",
+              "company_name": "Carvana",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Tempe, Arizona",
+              "sub_industry": "Automotive Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CASY",
+              "company_name": "Casey's",
+              "sector": "Consumer Staples",
+              "headquarters": "Ankeny, Iowa",
+              "sub_industry": "Food Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CAT",
+              "company_name": "Caterpillar Inc.",
+              "sector": "Industrials",
+              "headquarters": "Irving, Texas",
+              "sub_industry": "Construction Machinery & Heavy Transportation Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CBOE",
+              "company_name": "Cboe Global Markets",
+              "sector": "Financials",
+              "headquarters": "Chicago, Illinois",
+              "sub_industry": "Financial Exchanges & Data",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CBRE",
+              "company_name": "CBRE Group",
+              "sector": "Real Estate",
+              "headquarters": "Dallas, Texas",
+              "sub_industry": "Real Estate Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CDW",
+              "company_name": "CDW Corporation",
+              "sector": "Information Technology",
+              "headquarters": "Vernon Hills, Illinois",
+              "sub_industry": "Technology Distributors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COR",
+              "company_name": "Cencora",
+              "sector": "Health Care",
+              "headquarters": "Conshohocken, Pennsylvania",
+              "sub_industry": "Health Care Distributors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CNC",
+              "company_name": "Centene Corporation",
+              "sector": "Health Care",
+              "headquarters": "St. Louis, Missouri",
+              "sub_industry": "Managed Health Care",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CNP",
+              "company_name": "CenterPoint Energy",
+              "sector": "Utilities",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CF",
+              "company_name": "CF Industries",
+              "sector": "Materials",
+              "headquarters": "Deerfield, Illinois",
+              "sub_industry": "Fertilizers & Agricultural Chemicals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CRL",
+              "company_name": "Charles River Laboratories",
+              "sector": "Health Care",
+              "headquarters": "Wilmington, Massachusetts",
+              "sub_industry": "Life Sciences Tools & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "SCHW",
+              "company_name": "Charles Schwab Corporation",
+              "sector": "Financials",
+              "headquarters": "Westlake, Texas",
+              "sub_industry": "Investment Banking & Brokerage",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CHTR",
+              "company_name": "Charter Communications",
+              "sector": "Communication Services",
+              "headquarters": "Stamford, Connecticut",
+              "sub_industry": "Cable & Satellite",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CVX",
+              "company_name": "Chevron Corporation",
+              "sector": "Energy",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Integrated Oil & Gas",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CMG",
+              "company_name": "Chipotle Mexican Grill",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Newport Beach, California",
+              "sub_industry": "Restaurants",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CB",
+              "company_name": "Chubb Limited",
+              "sector": "Financials",
+              "headquarters": "Zurich, Switzerland",
+              "sub_industry": "Property & Casualty Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CHD",
+              "company_name": "Church & Dwight",
+              "sector": "Consumer Staples",
+              "headquarters": "Ewing, New Jersey",
+              "sub_industry": "Household Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CIEN",
+              "company_name": "Ciena",
+              "sector": "Information Technology",
+              "headquarters": "Hanover, Maryland",
+              "sub_industry": "Communications Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CI",
+              "company_name": "Cigna",
+              "sector": "Health Care",
+              "headquarters": "Bloomfield, Connecticut",
+              "sub_industry": "Health Care Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CINF",
+              "company_name": "Cincinnati Financial",
+              "sector": "Financials",
+              "headquarters": "Fairfield, Ohio",
+              "sub_industry": "Property & Casualty Insurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CTAS",
+              "company_name": "Cintas",
+              "sector": "Industrials",
+              "headquarters": "Mason, Ohio",
+              "sub_industry": "Diversified Support Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CSCO",
+              "company_name": "Cisco",
+              "sector": "Information Technology",
+              "headquarters": "San Jose, California",
+              "sub_industry": "Communications Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "C",
+              "company_name": "Citigroup",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Diversified Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CFG",
+              "company_name": "Citizens Financial Group",
+              "sector": "Financials",
+              "headquarters": "Providence, Rhode Island",
+              "sub_industry": "Regional Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CLX",
+              "company_name": "Clorox",
+              "sector": "Consumer Staples",
+              "headquarters": "Oakland, California",
+              "sub_industry": "Household Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CME",
+              "company_name": "CME Group",
+              "sector": "Financials",
+              "headquarters": "Chicago, Illinois",
+              "sub_industry": "Financial Exchanges & Data",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CMS",
+              "company_name": "CMS Energy",
+              "sector": "Utilities",
+              "headquarters": "Jackson, Michigan",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "KO",
+              "company_name": "Coca-Cola Company (The)",
+              "sector": "Consumer Staples",
+              "headquarters": "Atlanta, Georgia",
+              "sub_industry": "Soft Drinks & Non-alcoholic Beverages",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CTSH",
+              "company_name": "Cognizant",
+              "sector": "Information Technology",
+              "headquarters": "Teaneck, New Jersey",
+              "sub_industry": "IT Consulting & Other Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COHR",
+              "company_name": "Coherent Corp.",
+              "sector": "Information Technology",
+              "headquarters": "Saxonburg, Pennsylvania",
+              "sub_industry": "Electronic Components",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COIN",
+              "company_name": "Coinbase",
+              "sector": "Financials",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Financial Exchanges & Data",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CL",
+              "company_name": "Colgate-Palmolive",
+              "sector": "Consumer Staples",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Household Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CMCSA",
+              "company_name": "Comcast",
+              "sector": "Communication Services",
+              "headquarters": "Philadelphia, Pennsylvania",
+              "sub_industry": "Cable & Satellite",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FIX",
+              "company_name": "Comfort Systems USA",
+              "sector": "Industrials",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Construction & Engineering",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COP",
+              "company_name": "ConocoPhillips",
+              "sector": "Energy",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ED",
+              "company_name": "Consolidated Edison",
+              "sector": "Utilities",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "STZ",
+              "company_name": "Constellation Brands",
+              "sector": "Consumer Staples",
+              "headquarters": "Rochester, New York",
+              "sub_industry": "Distillers & Vintners",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CEG",
+              "company_name": "Constellation Energy",
+              "sector": "Utilities",
+              "headquarters": "Baltimore, Maryland",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COO",
+              "company_name": "Cooper Companies (The)",
+              "sector": "Health Care",
+              "headquarters": "San Ramon, California",
+              "sub_industry": "Health Care Supplies",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CPRT",
+              "company_name": "Copart",
+              "sector": "Industrials",
+              "headquarters": "Dallas, Texas",
+              "sub_industry": "Diversified Support Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "GLW",
+              "company_name": "Corning Inc.",
+              "sector": "Information Technology",
+              "headquarters": "Corning, New York",
+              "sub_industry": "Electronic Components",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CPAY",
+              "company_name": "Corpay",
+              "sector": "Financials",
+              "headquarters": "Atlanta, Georgia",
+              "sub_industry": "Transaction & Payment Processing Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CSGP",
+              "company_name": "CoStar Group",
+              "sector": "Real Estate",
+              "headquarters": "Washington, D.C.",
+              "sub_industry": "Real Estate Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "COST",
+              "company_name": "Costco",
+              "sector": "Consumer Staples",
+              "headquarters": "Issaquah, Washington",
+              "sub_industry": "Consumer Staples Merchandise Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CRH",
+              "company_name": "CRH plc",
+              "sector": "Materials",
+              "headquarters": "Dublin, Ireland",
+              "sub_industry": "Construction Materials",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CRWD",
+              "company_name": "CrowdStrike",
+              "sector": "Information Technology",
+              "headquarters": "Austin, Texas",
+              "sub_industry": "Systems Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CCI",
+              "company_name": "Crown Castle",
+              "sector": "Real Estate",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Telecom Tower REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CSX",
+              "company_name": "CSX Corporation",
+              "sector": "Industrials",
+              "headquarters": "Jacksonville, Florida",
+              "sub_industry": "Rail Transportation",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CMI",
+              "company_name": "Cummins",
+              "sector": "Industrials",
+              "headquarters": "Columbus, Indiana",
+              "sub_industry": "Construction Machinery & Heavy Transportation Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "CVS",
+              "company_name": "CVS Health",
+              "sector": "Health Care",
+              "headquarters": "Woonsocket, Rhode Island",
+              "sub_industry": "Health Care Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DHR",
+              "company_name": "Danaher Corporation",
+              "sector": "Health Care",
+              "headquarters": "Washington, D.C.",
+              "sub_industry": "Life Sciences Tools & Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DRI",
+              "company_name": "Darden Restaurants",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Orlando, Florida",
+              "sub_industry": "Restaurants",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DDOG",
+              "company_name": "Datadog",
+              "sector": "Information Technology",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Application Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DVA",
+              "company_name": "DaVita",
+              "sector": "Health Care",
+              "headquarters": "Denver, Colorado",
+              "sub_industry": "Health Care Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DECK",
+              "company_name": "Deckers Brands",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Goleta, California",
+              "sub_industry": "Footwear",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DE",
+              "company_name": "Deere & Company",
+              "sector": "Industrials",
+              "headquarters": "Moline, Illinois",
+              "sub_industry": "Agricultural & Farm Machinery",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DELL",
+              "company_name": "Dell Technologies",
+              "sector": "Information Technology",
+              "headquarters": "Round Rock, Texas",
+              "sub_industry": "Technology Hardware, Storage & Peripherals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DAL",
+              "company_name": "Delta Air Lines",
+              "sector": "Industrials",
+              "headquarters": "Atlanta, Georgia",
+              "sub_industry": "Passenger Airlines",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DVN",
+              "company_name": "Devon Energy",
+              "sector": "Energy",
+              "headquarters": "Oklahoma City, Oklahoma",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DXCM",
+              "company_name": "Dexcom",
+              "sector": "Health Care",
+              "headquarters": "San Diego, California",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FANG",
+              "company_name": "Diamondback Energy",
+              "sector": "Energy",
+              "headquarters": "Midland, Texas",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DLR",
+              "company_name": "Digital Realty",
+              "sector": "Real Estate",
+              "headquarters": "Austin, Texas",
+              "sub_industry": "Data Center REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DG",
+              "company_name": "Dollar General",
+              "sector": "Consumer Staples",
+              "headquarters": "Goodlettsville, Tennessee",
+              "sub_industry": "Consumer Staples Merchandise Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DLTR",
+              "company_name": "Dollar Tree",
+              "sector": "Consumer Staples",
+              "headquarters": "Chesapeake, Virginia",
+              "sub_industry": "Consumer Staples Merchandise Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "D",
+              "company_name": "Dominion Energy",
+              "sector": "Utilities",
+              "headquarters": "Richmond, Virginia",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DPZ",
+              "company_name": "Domino's",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Ann Arbor, Michigan",
+              "sub_industry": "Restaurants",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DASH",
+              "company_name": "DoorDash",
+              "sector": "Consumer Discretionary",
+              "headquarters": "San Francisco, California",
+              "sub_industry": "Specialized Consumer Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DOV",
+              "company_name": "Dover Corporation",
+              "sector": "Industrials",
+              "headquarters": "Downers Grove, Illinois",
+              "sub_industry": "Industrial Machinery & Supplies & Components",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DOW",
+              "company_name": "Dow Inc.",
+              "sector": "Materials",
+              "headquarters": "Midland, Michigan",
+              "sub_industry": "Commodity Chemicals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DHI",
+              "company_name": "D. R. Horton",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Arlington, Texas",
+              "sub_industry": "Homebuilding",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DTE",
+              "company_name": "DTE Energy",
+              "sector": "Utilities",
+              "headquarters": "Detroit, Michigan",
+              "sub_industry": "Multi-Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DUK",
+              "company_name": "Duke Energy",
+              "sector": "Utilities",
+              "headquarters": "Charlotte, North Carolina",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "DD",
+              "company_name": "DuPont",
+              "sector": "Industrials",
+              "headquarters": "Wilmington, Delaware",
+              "sub_industry": "Industrial Conglomerates",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ETN",
+              "company_name": "Eaton Corporation",
+              "sector": "Industrials",
+              "headquarters": "Dublin, Ireland",
+              "sub_industry": "Electrical Components & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EBAY",
+              "company_name": "eBay Inc.",
+              "sector": "Consumer Discretionary",
+              "headquarters": "San Jose, California",
+              "sub_industry": "Broadline Retail",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ECHO",
+              "company_name": "EchoStar",
+              "sector": "Communication Services",
+              "headquarters": "Englewood, Colorado",
+              "sub_industry": "Wireless Telecommunication Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ECL",
+              "company_name": "Ecolab",
+              "sector": "Materials",
+              "headquarters": "Saint Paul, Minnesota",
+              "sub_industry": "Specialty Chemicals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EIX",
+              "company_name": "Edison International",
+              "sector": "Utilities",
+              "headquarters": "Rosemead, California",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EW",
+              "company_name": "Edwards Lifesciences",
+              "sector": "Health Care",
+              "headquarters": "Irvine, California",
+              "sub_industry": "Health Care Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ELV",
+              "company_name": "Elevance Health",
+              "sector": "Health Care",
+              "headquarters": "Indianapolis, Indiana",
+              "sub_industry": "Managed Health Care",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EME",
+              "company_name": "Emcor",
+              "sector": "Industrials",
+              "headquarters": "Norwalk, Connecticut",
+              "sub_industry": "Construction & Engineering",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EMR",
+              "company_name": "Emerson Electric",
+              "sector": "Industrials",
+              "headquarters": "Ferguson, Missouri",
+              "sub_industry": "Electrical Components & Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ETR",
+              "company_name": "Entergy",
+              "sector": "Utilities",
+              "headquarters": "New Orleans, Louisiana",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EOG",
+              "company_name": "EOG Resources",
+              "sector": "Energy",
+              "headquarters": "Houston, Texas",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EQT",
+              "company_name": "EQT Corporation",
+              "sector": "Energy",
+              "headquarters": "Pittsburgh, Pennsylvania",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EFX",
+              "company_name": "Equifax",
+              "sector": "Industrials",
+              "headquarters": "Atlanta, Georgia",
+              "sub_industry": "Research & Consulting Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EQIX",
+              "company_name": "Equinix",
+              "sector": "Real Estate",
+              "headquarters": "Redwood City, California",
+              "sub_industry": "Data Center REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ERIE",
+              "company_name": "Erie Indemnity",
+              "sector": "Financials",
+              "headquarters": "Erie, Pennsylvania",
+              "sub_industry": "Insurance Brokers",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ESS",
+              "company_name": "Essex Property Trust",
+              "sector": "Real Estate",
+              "headquarters": "San Mateo, California",
+              "sub_industry": "Multi-Family Residential REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EL",
+              "company_name": "Estée Lauder Companies (The)",
+              "sector": "Consumer Staples",
+              "headquarters": "New York City, New York",
+              "sub_industry": "Personal Care Products",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EG",
+              "company_name": "Everest Group",
+              "sector": "Financials",
+              "headquarters": "Hamilton, Bermuda",
+              "sub_industry": "Reinsurance",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EVRG",
+              "company_name": "Evergy",
+              "sector": "Utilities",
+              "headquarters": "Kansas City, Missouri",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "P",
+              "company_name": "Everpure",
+              "sector": "Information Technology",
+              "headquarters": "Santa Clara, California",
+              "sub_industry": "Technology Hardware, Storage & Peripherals",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "ES",
+              "company_name": "Eversource Energy",
+              "sector": "Utilities",
+              "headquarters": "Hartford, Connecticut",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EXC",
+              "company_name": "Exelon",
+              "sector": "Utilities",
+              "headquarters": "Chicago, Illinois",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EXE",
+              "company_name": "Expand Energy",
+              "sector": "Energy",
+              "headquarters": "Oklahoma City, Oklahoma",
+              "sub_industry": "Oil & Gas Exploration & Production",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EXPE",
+              "company_name": "Expedia Group",
+              "sector": "Consumer Discretionary",
+              "headquarters": "Seattle, Washington",
+              "sub_industry": "Hotels, Resorts & Cruise Lines",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EXPD",
+              "company_name": "Expeditors International",
+              "sector": "Industrials",
+              "headquarters": "Seattle, Washington",
+              "sub_industry": "Air Freight & Logistics",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "EXR",
+              "company_name": "Extra Space Storage",
+              "sector": "Real Estate",
+              "headquarters": "Salt Lake City, Utah",
+              "sub_industry": "Self-Storage REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "XOM",
+              "company_name": "ExxonMobil",
+              "sector": "Energy",
+              "headquarters": "Irving, Texas",
+              "sub_industry": "Integrated Oil & Gas",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FFIV",
+              "company_name": "F5, Inc.",
+              "sector": "Information Technology",
+              "headquarters": "Seattle, Washington",
+              "sub_industry": "Communications Equipment",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FDS",
+              "company_name": "FactSet",
+              "sector": "Financials",
+              "headquarters": "Norwalk, Connecticut",
+              "sub_industry": "Financial Exchanges & Data",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FICO",
+              "company_name": "Fair Isaac",
+              "sector": "Information Technology",
+              "headquarters": "Bozeman, Montana",
+              "sub_industry": "Application Software",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FAST",
+              "company_name": "Fastenal",
+              "sector": "Industrials",
+              "headquarters": "Winona, Minnesota",
+              "sub_industry": "Trading Companies & Distributors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FRT",
+              "company_name": "Federal Realty Investment Trust",
+              "sector": "Real Estate",
+              "headquarters": "Rockville, Maryland",
+              "sub_industry": "Retail REITs",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FDX",
+              "company_name": "FedEx",
+              "sector": "Industrials",
+              "headquarters": "Memphis, Tennessee",
+              "sub_industry": "Air Freight & Logistics",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FDXF",
+              "company_name": "FedEx Freight",
+              "sector": "Industrials",
+              "headquarters": "Memphis, Tennessee",
+              "sub_industry": "Cargo Ground Transportation",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FERG",
+              "company_name": "Ferguson Enterprises",
+              "sector": "Industrials",
+              "headquarters": "Newport News, Virginia",
+              "sub_industry": "Trading Companies & Distributors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FIS",
+              "company_name": "Fidelity National Information Services",
+              "sector": "Financials",
+              "headquarters": "Jacksonville, Florida",
+              "sub_industry": "Transaction & Payment Processing Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FITB",
+              "company_name": "Fifth Third Bancorp",
+              "sector": "Financials",
+              "headquarters": "Cincinnati, Ohio",
+              "sub_industry": "Regional Banks",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FSLR",
+              "company_name": "First Solar",
+              "sector": "Information Technology",
+              "headquarters": "Tempe, Arizona",
+              "sub_industry": "Semiconductors",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FE",
+              "company_name": "FirstEnergy",
+              "sector": "Utilities",
+              "headquarters": "Akron, Ohio",
+              "sub_industry": "Electric Utilities",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FISV",
+              "company_name": "Fiserv",
+              "sector": "Financials",
+              "headquarters": "Brookfield, Wisconsin",
+              "sub_industry": "Transaction & Payment Processing Services",
+              "review_state": "unreviewed"
+            },
+            {
+              "symbol": "FLEX",
+              "company_name": "Flex Ltd.",
+              "sector": "Information Technology",
+              "headquarters": "Austin, Texas",
+              "sub_industry": "Electronic Manufacturing Services",
+              "review_state": "unreviewed"
+            }
+          ]
+        },
+        {
+          "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+          "source_name": "Open company demo 941ec91e a56e246e",
+          "domain": "CRM",
+          "resource": "sector_counts",
+          "key_field": "sector",
+          "bindings": {},
+          "writable_fields": [],
+          "schema_sha256": "55468cae5f6f71834d366d22067cbfe2895688911ae0ffc9e53312534835884d",
+          "rows": [
+            {
+              "sector": "Communication Services",
+              "security_count": 7
+            },
+            {
+              "sector": "Consumer Discretionary",
+              "security_count": 16
+            },
+            {
+              "sector": "Consumer Staples",
+              "security_count": 14
+            },
+            {
+              "sector": "Energy",
+              "security_count": 10
+            },
+            {
+              "sector": "Financials",
+              "security_count": 34
+            },
+            {
+              "sector": "Health Care",
+              "security_count": 23
+            },
+            {
+              "sector": "Industrials",
+              "security_count": 30
+            },
+            {
+              "sector": "Information Technology",
+              "security_count": 26
+            },
+            {
+              "sector": "Materials",
+              "security_count": 9
+            },
+            {
+              "sector": "Real Estate",
+              "security_count": 12
+            },
+            {
+              "sector": "Utilities",
+              "security_count": 19
+            }
+          ]
+        }
+      ]
+    },
+    "proposal": {
+      "source_id": "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f",
+      "resource": "companies",
+      "record_key": "A",
+      "changes": {
+        "review_state": "reviewed"
+      },
+      "before": {
+        "symbol": "A",
+        "company_name": "Agilent Technologies",
+        "sector": "Health Care",
+        "headquarters": "Santa Clara, California",
+        "sub_industry": "Life Sciences Tools & Services",
+        "review_state": "unreviewed"
+      },
+      "before_sha256": "dca16d86e7e70dfaa3ef4f73e139b8a3afb56d0498113674289660da5a79c562",
+      "schema_sha256": "55468cae5f6f71834d366d22067cbfe2895688911ae0ffc9e53312534835884d",
+      "key_field": "symbol"
+    },
+    "result": {
+      "execution": {
+        "input": {
+          "request": "Update companies record A: review_state = reviewed",
+          "source_ids": [
+            "2a280f3b-a5cc-4b54-bf22-1a9dbc54761f"
+          ]
+        },
+        "planner": "backend tools",
+        "provider": null,
+        "model": null,
+        "duration_ms": 28.4,
+        "score": null,
+        "score_note": "Retrieval returns source records; no trained classifier probability is produced."
+      },
+      "type": "verified_update",
+      "before": {
+        "symbol": "A",
+        "company_name": "Agilent Technologies",
+        "sector": "Health Care",
+        "headquarters": "Santa Clara, California",
+        "sub_industry": "Life Sciences Tools & Services",
+        "review_state": "unreviewed"
+      },
+      "after": {
+        "symbol": "A",
+        "company_name": "Agilent Technologies",
+        "sector": "Health Care",
+        "headquarters": "Santa Clara, California",
+        "sub_industry": "Life Sciences Tools & Services",
+        "review_state": "reviewed"
+      },
+      "verified": true,
+      "summary": "Approved changes were applied and verified by reading the client system again."
+    }
+  },
+  "scope": "Local demonstration state only; no public dataset or external account modified"
+}

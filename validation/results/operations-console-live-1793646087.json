@@ -1,0 +1,44 @@
+{
+  "operations": [
+    {
+      "operation": "browse",
+      "status": "COMPLETED",
+      "summary": "Returned 10 of 5228 matching records from 7 connected resources.",
+      "error": null,
+      "returned": 10,
+      "provider": null,
+      "duration_ms": 318.62,
+      "id": "3dcd040f-ec09-4865-a284-ca11f8a462f8",
+      "candidate_generation": null
+    },
+    {
+      "operation": "summary",
+      "status": "COMPLETED",
+      "summary": "Summarized 5228 live records from 7 resources. Numeric sums use source units; currencies are not inferred.",
+      "error": null,
+      "returned": null,
+      "provider": null,
+      "duration_ms": 300.9,
+      "id": "e02e9523-e797-4f1a-b004-2e6d8cdd250f",
+      "candidate_generation": null
+    },
+    {
+      "operation": "compare",
+      "status": "COMPLETED",
+      "summary": "Scored 20984 candidate pairs across 4 resources; 15 candidate links need review. Large comparisons used a bounded lexical shortlist; results are not exhaustive. No records were merged.",
+      "error": null,
+      "returned": null,
+      "provider": null,
+      "duration_ms": 5824.98,
+      "id": "265c93a2-b9a8-474e-9585-b589e5fa1560",
+      "candidate_generation": {
+        "possible_pairs": 1020804,
+        "scored_pairs": 20984,
+        "lexical_shortlisting_used": true,
+        "shortlist_limit": 10,
+        "shortlist_cutoff": 60,
+        "note": "Lexical selection is deterministic candidate generation, not a learned prediction. Only the artifact produces match scores."
+      }
+    }
+  ]
+}

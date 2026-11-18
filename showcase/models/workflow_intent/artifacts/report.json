@@ -1,0 +1,104 @@
+{
+  "name": "workflow_intent",
+  "version": "1.0.0",
+  "provenance": "Synthetic showcase data generated locally; no customer records or real-world validation. Text templates authored for this showcase; numeric labels from simulated adjudication with noise; anomaly test includes deliberate synthetic injections.",
+  "split": "Held-out template groups (text); stratified independent rows (invoice); normal-only train with held-out normals + injections (anomaly)",
+  "train_count": 240,
+  "test_count": 60,
+  "seed": 42,
+  "metrics": {
+    "accuracy": 0.6,
+    "macro_f1": 0.58,
+    "per_class": {
+      "customer_onboarding": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 12.0
+      },
+      "customer_support": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1-score": 0.5,
+        "support": 12.0
+      },
+      "invoice_processing": {
+        "precision": 0.3333333333333333,
+        "recall": 0.5,
+        "f1-score": 0.4,
+        "support": 12.0
+      },
+      "payment_approval": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 12.0
+      },
+      "supplier_management": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 12.0
+      },
+      "accuracy": 0.6,
+      "macro avg": {
+        "precision": 0.5666666666666667,
+        "recall": 0.6,
+        "f1-score": 0.58,
+        "support": 60.0
+      },
+      "weighted avg": {
+        "precision": 0.5666666666666667,
+        "recall": 0.6,
+        "f1-score": 0.58,
+        "support": 60.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        12,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        6,
+        0,
+        6,
+        0
+      ],
+      [
+        0,
+        6,
+        6,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        12
+      ]
+    ],
+    "classes": [
+      "customer_onboarding",
+      "customer_support",
+      "invoice_processing",
+      "payment_approval",
+      "supplier_management"
+    ]
+  },
+  "artifact_sha256": "1f3055f9cac1bb070a1024939f5480eec89b7e8853da7297ab0272fb8e58e061",
+  "dataset_sha256": "95b669d3d746458ad213b36d165c257de039d0a25ad44982e145c358fa273c67"
+}

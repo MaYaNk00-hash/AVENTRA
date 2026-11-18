@@ -1,15 +1,26 @@
 import datetime
+import os
+import secrets
 from typing import Optional, Dict, Any
 import bcrypt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
+from pathlib import Path
+from dotenv import dotenv_values
 from sqlalchemy.orm import Session
 
 from backend.database.session import get_db
 from backend.database.models import User
 
-SECRET_KEY = "AVENTRA_SUPER_SECURE_ENTERPRISE_KEY_2026_PRODUCTION"
+# main.py loads .env.local before importing routers. Also support standalone
+# imports (CLI tools/tests) using the same configured key, rather than generating
+# a different signing key per process when a local key is already available.
+SECRET_KEY = (os.getenv("AVENTRA_JWT_SECRET")
+              or dotenv_values(Path(__file__).resolve().parents[2] / ".env.local").get("AVENTRA_JWT_SECRET")
+              or secrets.token_urlsafe(64))
+if len(SECRET_KEY) < 32:
+    raise RuntimeError("AVENTRA_JWT_SECRET must contain at least 32 characters")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24
 

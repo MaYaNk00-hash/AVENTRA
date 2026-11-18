@@ -11,6 +11,19 @@ def calculate_variances(rec_in: ReconciliationInput, price_tolerance_pct: float 
     total_price_variance = 0.0
     total_qty_variance = 0.0
     flags = []
+    if po is None:
+        flags.append("MISSING_PURCHASE_ORDER")
+    if gr is None:
+        flags.append("MISSING_GOODS_RECEIPT")
+    if po and inv.po_number != po.po_number:
+        flags.append("PO_REFERENCE_MISMATCH")
+    if gr and gr.po_number != inv.po_number:
+        flags.append("RECEIPT_REFERENCE_MISMATCH")
+    for item in inv.line_items:
+        if item.quantity <= 0 or item.unit_price < 0 or abs(item.quantity * item.unit_price - item.total) > .05:
+            flags.append("INVALID_LINE_ARITHMETIC: " + item.sku)
+    if not inv.line_items:
+        flags.append("MISSING_LINE_ITEMS")
 
     # Check duplicate invoice
     if inv.invoice_number in rec_in.existing_invoice_numbers:

@@ -63,7 +63,7 @@ def bootstrap_registry():
             supported_tasks=["parse_nl_query", "security_guardrail"],
             input_schema="NaturalLanguagePrompt",
             output_schema="TypedIntentJSON",
-            artifact_path="in-memory",
+            artifact_path="ml/models/intent_parser/artifacts/intent_model.pkl",
             metrics={"intent_acc": 0.965, "injection_blocked_rate": 0.998}
         )
     )
@@ -81,7 +81,7 @@ def bootstrap_registry():
             supported_tasks=["plan_dag", "validate_policy"],
             input_schema="PlanIntentRequest",
             output_schema="ExecutableWorkflowDAG",
-            artifact_path="in-memory",
+            artifact_path="ml/models/workflow_planner/artifacts/workflow_planner.pkl",
             metrics={"valid_plan_rate": 0.992, "cycle_free_rate": 1.000}
         )
     )
@@ -99,7 +99,7 @@ def bootstrap_registry():
             supported_tasks=["reconcile_3way", "audit_tolerances"],
             input_schema="ThreeWayReconciliationPayload",
             output_schema="ReconciliationStatusReport",
-            artifact_path="in-memory",
+            artifact_path="ml/models/invoice_reconciliation/artifacts/reconciliation_calibrator.pkl",
             metrics={"exception_precision": 0.998, "reconciliation_acc": 0.997}
         )
     )
@@ -117,7 +117,7 @@ def bootstrap_registry():
             supported_tasks=["detect_drift", "recommend_migration"],
             input_schema="SchemaDriftDiffInput",
             output_schema="VersionedMigrationProposal",
-            artifact_path="in-memory",
+            artifact_path="ml/models/adaptation_recommender/artifacts/adaptation_recommender.pkl",
             metrics={"drift_recall": 0.985, "unauthorized_blocked": 1.000}
         )
     )
@@ -135,7 +135,7 @@ def bootstrap_registry():
             supported_tasks=["parse_invoice", "extract_receipt"],
             input_schema="RawDocumentInput",
             output_schema="StructuredInvoiceSchema",
-            artifact_path="in-memory",
+            artifact_path="ml/models/document_intelligence/artifacts/document_extractor.pkl",
             metrics={"field_f1": 0.942, "exact_match": 0.918}
         )
     )
@@ -158,4 +158,3 @@ def bootstrap_registry():
         )
     )
     print("All 8 modular models bootstrapped into ModelRegistry.")
-

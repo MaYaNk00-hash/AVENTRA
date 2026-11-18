@@ -1,0 +1,26 @@
+[
+  {
+    "attempt": 1,
+    "status": "COMPLETED",
+    "returned": 100,
+    "total_matches": 5228,
+    "error": null,
+    "run_id": "21aab818-92a1-47e0-8b42-2cfb6ac17172"
+  },
+  {
+    "attempt": 2,
+    "status": "COMPLETED",
+    "returned": 100,
+    "total_matches": 5228,
+    "error": null,
+    "run_id": "3137ef1c-25f1-4a9a-b977-ab1a028b842c"
+  },
+  {
+    "attempt": 3,
+    "status": "COMPLETED",
+    "returned": 100,
+    "total_matches": 5228,
+    "error": null,
+    "run_id": "929971d1-1d21-45fb-a1fe-72ddbcbb4e85"
+  }
+]

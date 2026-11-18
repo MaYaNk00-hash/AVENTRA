@@ -1,6 +1,8 @@
 import os
 import time
 import yaml
+import pickle
+import numpy as np
 from typing import Dict, Any, Optional
 from pydantic import BaseModel as PydanticBaseModel, Field
 
@@ -35,7 +37,16 @@ class IntentParserModel(BaseModel):
         else:
             self.config = {}
 
+        self.artifact_path = os.path.join(base_dir, "artifacts", "intent_model.pkl")
+        self.trained_bundle = None
+
     def load(self) -> None:
+        if os.path.exists(self.artifact_path):
+            try:
+                with open(self.artifact_path, "rb") as f:
+                    self.trained_bundle = pickle.load(f)
+            except Exception:
+                self.trained_bundle = None
         self.is_loaded = True
 
     def preprocess(self, data: Dict[str, Any]) -> PreprocessedIntentInput:
@@ -70,11 +81,24 @@ class IntentParserModel(BaseModel):
                     processing_metadata={"duration_ms": (time.time() - start_time) * 1000}
                 )
 
+            # ML model prediction if available
+            ml_intent = None
+            ml_confidence = 0.0
+            if self.trained_bundle:
+                vec = self.trained_bundle.get("vectorizer")
+                clf = self.trained_bundle.get("classifier")
+                if vec and clf:
+                    X_v = vec.transform([inp.cleaned_prompt])
+                    probs = clf.predict_proba(X_v)[0]
+                    top_idx = int(np.argmax(probs))
+                    ml_intent = clf.classes_[top_idx]
+                    ml_confidence = float(probs[top_idx])
+
             analysis = extract_keywords_and_entities(inp.cleaned_prompt)
             scores = analysis["intent_scores"]
             sorted_intents = sorted(scores.items(), key=lambda x: x[1], reverse=True)
             
-            top_intent = sorted_intents[0][0] if sorted_intents and sorted_intents[0][1] > 0 else "SYSTEM_HEALTH_CHECK"
+            top_intent = sorted_intents[0][0] if sorted_intents and sorted_intents[0][1] > 0 else (ml_intent or "SYSTEM_HEALTH_CHECK")
             is_write = analysis["is_write"]
 
             # Target systems derivation

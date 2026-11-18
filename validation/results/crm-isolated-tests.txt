@@ -1,0 +1,24 @@
+FF...F.                                                                  [100%]
+================================== FAILURES ===================================
+__________________ test_schema_1_salesforce_read_operations ___________________
+backend\tests\test_crm_integration.py:93: in test_schema_1_salesforce_read_operations
+    assert page_cnt.count >= 1
+E   assert 0 >= 1
+E    +  where 0 = ConnectorPage(records=[], count=0, has_more=False, next_cursor=None, total_count=0).count
+____________________ test_schema_2_hubspot_read_operations ____________________
+backend\tests\test_crm_integration.py:124: in test_schema_2_hubspot_read_operations
+    assert page_comp.count >= 1
+E   assert 0 >= 1
+E    +  where 0 = ConnectorPage(records=[], count=0, has_more=False, next_cursor=None, total_count=0).count
+____________ test_governance_approval_policies_and_audit_on_writes ____________
+backend\tests\test_crm_integration.py:327: in test_governance_approval_policies_and_audit_on_writes
+    assert rec2.canonical_id == merge_res["canonical_id"]
+           ^^^^^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'canonical_id'
+---------------------------- Captured stdout call -----------------------------
+All 8 modular models bootstrapped into ModelRegistry.
+=========================== short test summary info ===========================
+FAILED backend/tests/test_crm_integration.py::test_schema_1_salesforce_read_operations
+FAILED backend/tests/test_crm_integration.py::test_schema_2_hubspot_read_operations
+FAILED backend/tests/test_crm_integration.py::test_governance_approval_policies_and_audit_on_writes
+3 failed, 4 passed, 57 warnings in 8.90s

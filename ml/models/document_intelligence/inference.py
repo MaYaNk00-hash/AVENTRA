@@ -1,6 +1,7 @@
 import os
 import time
 import yaml
+import pickle
 import numpy as np
 from typing import Dict, Any, Optional
 
@@ -25,7 +26,16 @@ class DocumentIntelligenceModel(BaseModel):
         else:
             self.config = {}
 
+        self.artifact_path = os.path.join(base_dir, "artifacts", "document_extractor.pkl")
+        self.trained_bundle = None
+
     def load(self) -> None:
+        if os.path.exists(self.artifact_path):
+            try:
+                with open(self.artifact_path, "rb") as f:
+                    self.trained_bundle = pickle.load(f)
+            except Exception:
+                self.trained_bundle = None
         self.is_loaded = True
 
     def preprocess(self, data: Dict[str, Any]) -> PreprocessedDocument:

@@ -5,8 +5,9 @@ import bcrypt
 from sqlalchemy import create_engine, event
 from sqlalchemy.orm import sessionmaker, Session
 from backend.database.models import (
-    Base, User, AuditLedgerEntry, WorkflowDefinition, EnterpriseRecord, SchemaMapping
+    Base, User, AuditLedgerEntry, WorkflowDefinition, EnterpriseRecord, SchemaMapping, EnterpriseConnection
 )
+from backend.security.vault import encrypt_secrets
 
 DB_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "aventra.db"))
 DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{DB_PATH}")
@@ -234,6 +235,178 @@ def seed_database():
             db.add_all(records)
             db.commit()
 
+        # Seed Live ERP Records (POs, Goods Receipts, Invoices across SAP and NetSuite schemas)
+        if not db.query(EnterpriseRecord).filter(EnterpriseRecord.entity_type == "PURCHASE_ORDER").first():
+            erp_seed_records = [
+                # 1. SAP ERP: Standard Purchase Order
+                EnterpriseRecord(
+                    id="PO-2026-8801",
+                    system_origin="COMPANY_B_ERP",
+                    entity_type="PURCHASE_ORDER",
+                    name="Apex Global Logistics Inc",
+                    status="APPROVED",
+                    raw_data={
+                        "po_number": "PO-2026-8801",
+                        "vendor_id": "ERP-B-501",
+                        "vendor_name": "Apex Global Logistics Inc",
+                        "order_date": "2026-10-15T09:00:00Z",
+                        "total_amount": 5400.00,
+                        "tax_amount": 0.00,
+                        "subtotal": 5400.00,
+                        "currency": "USD",
+                        "payment_terms": "Net30",
+                        "line_items": [
+                            {"line_number": 1, "sku": "LOG-FREIGHT-40FT", "description": "Ocean Freight 40ft Container", "quantity": 1.0, "unit_price": 4200.00, "total": 4200.00},
+                            {"line_number": 2, "sku": "LOG-PORT-HANDLING", "description": "Port Handling & Customs Clearance", "quantity": 1.0, "unit_price": 1200.00, "total": 1200.00}
+                        ]
+                    }
+                ),
+                # 2. SAP ERP: Goods Receipt for PO-2026-8801
+                EnterpriseRecord(
+                    id="GR-2026-4401",
+                    system_origin="COMPANY_B_ERP",
+                    entity_type="GOODS_RECEIPT",
+                    name="GR for PO-2026-8801",
+                    status="VERIFIED_RECEIVED",
+                    raw_data={
+                        "gr_number": "GR-2026-4401",
+                        "po_number": "PO-2026-8801",
+                        "vendor_id": "ERP-B-501",
+                        "received_date": "2026-10-18T14:30:00Z",
+                        "carrier_tracking": "TRK-MAERSK-9921",
+                        "received_items": [
+                            {"sku": "LOG-FREIGHT-40FT", "quantity_received": 1.0, "condition": "ACCEPTABLE"},
+                            {"sku": "LOG-PORT-HANDLING", "quantity_received": 1.0, "condition": "ACCEPTABLE"}
+                        ]
+                    }
+                ),
+                # 3. SAP ERP: Exact Match Invoice
+                EnterpriseRecord(
+                    id="INV-2026-001",
+                    system_origin="COMPANY_B_ERP",
+                    entity_type="INVOICE",
+                    name="Apex Global Logistics Inc",
+                    status="RECONCILED",
+                    raw_data={
+                        "invoice_number": "INV-2026-001",
+                        "po_number": "PO-2026-8801",
+                        "vendor_id": "ERP-B-501",
+                        "vendor_name": "Apex Global Logistics Inc",
+                        "invoice_date": "2026-10-19T10:00:00Z",
+                        "due_date": "2026-11-19T10:00:00Z",
+                        "subtotal": 5400.00,
+                        "tax_amount": 0.00,
+                        "total_amount": 5400.00,
+                        "currency": "USD",
+                        "reconciliation_status": "RECONCILED_EXACT",
+                        "line_items": [
+                            {"line_number": 1, "sku": "LOG-FREIGHT-40FT", "description": "Ocean Freight 40ft Container", "quantity": 1.0, "unit_price": 4200.00, "total": 4200.00},
+                            {"line_number": 2, "sku": "LOG-PORT-HANDLING", "description": "Port Handling & Customs Clearance", "quantity": 1.0, "unit_price": 1200.00, "total": 1200.00}
+                        ]
+                    }
+                ),
+                # 4. SAP ERP: Discrepant Invoice (Triggers Approval Gate)
+                EnterpriseRecord(
+                    id="INV-2026-003",
+                    system_origin="COMPANY_B_ERP",
+                    entity_type="INVOICE",
+                    name="Apex Global Logistics Inc",
+                    status="DISCREPANCY_APPROVAL_REQUIRED",
+                    raw_data={
+                        "invoice_number": "INV-2026-003",
+                        "po_number": "PO-2026-8801",
+                        "vendor_id": "ERP-B-501",
+                        "vendor_name": "Apex Global Logistics Inc",
+                        "invoice_date": "2026-10-21T11:00:00Z",
+                        "due_date": "2026-11-21T11:00:00Z",
+                        "subtotal": 7800.00,
+                        "tax_amount": 0.00,
+                        "total_amount": 7800.00,
+                        "currency": "USD",
+                        "reconciliation_status": "DISCREPANCY_APPROVAL_REQUIRED",
+                        "line_items": [
+                            {"line_number": 1, "sku": "LOG-FREIGHT-40FT", "description": "Ocean Freight 40ft Container", "quantity": 1.0, "unit_price": 6200.00, "total": 6200.00},
+                            {"line_number": 2, "sku": "LOG-PORT-HANDLING", "description": "Port Handling & Customs Clearance", "quantity": 1.0, "unit_price": 1600.00, "total": 1600.00}
+                        ]
+                    }
+                ),
+                # 5. NetSuite ERP: Vendor
+                EnterpriseRecord(
+                    id="NS-VND-701",
+                    system_origin="NETSUITE_ERP",
+                    entity_type="VENDOR",
+                    name="Meridian Cloud Software Inc",
+                    address="200 Tech Blvd, Austin, TX 78701",
+                    tax_identifier="US-EIN-4491029",
+                    status="ACTIVE",
+                    raw_data={
+                        "currency_code": "USD",
+                        "terms": "Net 30",
+                        "subsidiary": "Americas"
+                    }
+                ),
+                # 6. NetSuite ERP: Purchase Order
+                EnterpriseRecord(
+                    id="NS-PO-301",
+                    system_origin="NETSUITE_ERP",
+                    entity_type="PURCHASE_ORDER",
+                    name="Meridian Cloud Software Inc",
+                    status="APPROVED",
+                    raw_data={
+                        "tran_id": "NS-PO-301",
+                        "entity_ref": "NS-VND-701",
+                        "vendor_title": "Meridian Cloud Software Inc",
+                        "tran_date": "2026-10-10T08:00:00Z",
+                        "foreign_total": 8200.00,
+                        "tax_total": 0.00,
+                        "currency_code": "USD",
+                        "items": [
+                            {"line_id": 1, "item_ref": "SW-SUB-ENT", "memo": "Annual Enterprise Cloud License", "qty": 1.0, "rate": 8200.00, "amount": 8200.00}
+                        ]
+                    }
+                ),
+                # 7. NetSuite ERP: Item Receipt
+                EnterpriseRecord(
+                    id="NS-GR-301",
+                    system_origin="NETSUITE_ERP",
+                    entity_type="GOODS_RECEIPT",
+                    name="Item Receipt for NS-PO-301",
+                    status="RECEIVED",
+                    raw_data={
+                        "receipt_doc_no": "NS-GR-301",
+                        "po_ref": "NS-PO-301",
+                        "date_received": "2026-10-12T12:00:00Z",
+                        "items_received": [
+                            {"item_ref": "SW-SUB-ENT", "quantity": 1.0}
+                        ]
+                    }
+                ),
+                # 8. NetSuite ERP: Vendor Bill
+                EnterpriseRecord(
+                    id="NS-BILL-301",
+                    system_origin="NETSUITE_ERP",
+                    entity_type="INVOICE",
+                    name="Meridian Cloud Software Inc",
+                    status="OPEN",
+                    raw_data={
+                        "bill_number": "NS-BILL-301",
+                        "po_ref": "NS-PO-301",
+                        "entity_ref": "NS-VND-701",
+                        "vendor_title": "Meridian Cloud Software Inc",
+                        "bill_date": "2026-10-13T10:00:00Z",
+                        "net_amount": 8200.00,
+                        "tax_amount": 0.00,
+                        "gross_amount": 8200.00,
+                        "currency_code": "USD",
+                        "bill_items": [
+                            {"line_id": 1, "item_ref": "SW-SUB-ENT", "memo": "Annual Enterprise Cloud License", "qty": 1.0, "rate": 8200.00, "amount": 8200.00}
+                        ]
+                    }
+                )
+            ]
+            db.add_all(erp_seed_records)
+            db.commit()
+
         # 5. Seed Schema Mappings
         if not db.query(SchemaMapping).first():
             sm = SchemaMapping(
@@ -251,6 +424,164 @@ def seed_database():
                 approved_by="compliance"
             )
             db.add(sm)
+            db.commit()
+
+        # 6. Seed Enterprise Connections
+        if not db.query(EnterpriseConnection).first():
+            connections = [
+                EnterpriseConnection(
+                    id="conn-crm-01",
+                    name="Company A CRM (Alpha Production)",
+                    connector_type="CRM",
+                    provider="salesforce",
+                    description="Primary corporate customer accounts, contacts, and opportunities management.",
+                    environment="PRODUCTION",
+                    tenant_id="default-enterprise",
+                    status="CONNECTED",
+                    is_enabled=True,
+                    read_only=False,
+                    allowed_operations=["READ", "SEARCH", "CREATE_RECORD", "UPDATE_RECORD"],
+                    allowed_entities=["accounts", "contacts", "opportunities"],
+                    encrypted_secrets=encrypt_secrets({
+                        "api_key": "sec_crm_alpha_token_live",
+                        "client_secret": "sf_live_oauth2_sec991"
+                    }),
+                    config={
+                        "endpoint": "https://api.crm-alpha.internal",
+                        "timeout_seconds": 10,
+                        "max_retries": 3,
+                        "rate_limit_per_minute": 120
+                    },
+                    last_health_check={
+                        "status": "CONNECTED",
+                        "latency_ms": 14.2,
+                        "message": "Connected. 3 accounts discoverable.",
+                        "last_checked_at": "2026-11-02T12:00:00Z"
+                    },
+                    metrics={
+                        "total_requests": 28,
+                        "successful_requests": 28,
+                        "failed_requests": 0,
+                        "consecutive_failures": 0,
+                        "rate_limited_count": 0
+                    }
+                ),
+                EnterpriseConnection(
+                    id="conn-erp-01",
+                    name="Company B ERP (Vendor Ledger)",
+                    connector_type="ERP",
+                    provider="sap",
+                    description="Core enterprise resource planning, vendor master, and purchase orders.",
+                    environment="PRODUCTION",
+                    tenant_id="default-enterprise",
+                    status="CONNECTED",
+                    is_enabled=True,
+                    read_only=False,
+                    allowed_operations=["READ", "SEARCH", "CREATE_RECORD", "UPDATE_RECORD"],
+                    allowed_entities=["vendors", "purchase_orders", "invoices"],
+                    encrypted_secrets=encrypt_secrets({
+                        "client_secret": "erp_b_secret_9981",
+                        "api_key": "sap_gateway_token_prod"
+                    }),
+                    config={
+                        "endpoint": "https://erp.enterprise-internal.net/api/v2",
+                        "timeout_seconds": 15,
+                        "max_retries": 3,
+                        "rate_limit_per_minute": 100
+                    },
+                    last_health_check={
+                        "status": "CONNECTED",
+                        "latency_ms": 22.8,
+                        "message": "ERP Connected. 3 vendors discoverable.",
+                        "last_checked_at": "2026-11-02T12:00:00Z"
+                    },
+                    metrics={
+                        "total_requests": 42,
+                        "successful_requests": 42,
+                        "failed_requests": 0,
+                        "consecutive_failures": 0,
+                        "rate_limited_count": 0
+                    }
+                ),
+                EnterpriseConnection(
+                    id="conn-db-01",
+                    name="Enterprise Analytics Data Warehouse",
+                    connector_type="DATABASE",
+                    provider="postgresql",
+                    description="Read-only enterprise financial audit repository and historical transaction warehouse.",
+                    environment="PRODUCTION",
+                    tenant_id="default-enterprise",
+                    status="CONNECTED",
+                    is_enabled=True,
+                    read_only=True,
+                    allowed_operations=["READ", "SEARCH", "QUERY"],
+                    allowed_entities=["audit_logs", "general_ledger", "reconciliation_batches"],
+                    encrypted_secrets=encrypt_secrets({
+                        "password": "dw_prod_pg_password_90!",
+                        "username": "avent_ro"
+                    }),
+                    config={
+                        "host": "dw.analytics.enterprise.local",
+                        "port": 5432,
+                        "database_name": "dw_enterprise",
+                        "timeout_seconds": 10,
+                        "max_retries": 2,
+                        "rate_limit_per_minute": 200
+                    },
+                    last_health_check={
+                        "status": "CONNECTED",
+                        "latency_ms": 8.4,
+                        "message": "PostgreSQL database ready. 12 tables discoverable.",
+                        "last_checked_at": "2026-11-02T12:00:00Z"
+                    },
+                    metrics={
+                        "total_requests": 15,
+                        "successful_requests": 15,
+                        "failed_requests": 0,
+                        "consecutive_failures": 0,
+                        "rate_limited_count": 0
+                    }
+                ),
+                EnterpriseConnection(
+                    id="conn-email-01",
+                    name="Corporate Operations Mailbox",
+                    connector_type="EMAIL",
+                    provider="gmail",
+                    description="Google Workspace operational inbox for invoice submission and vendor alerts.",
+                    environment="PRODUCTION",
+                    tenant_id="default-enterprise",
+                    status="CONNECTED",
+                    is_enabled=True,
+                    read_only=False,
+                    allowed_operations=["READ", "SEARCH", "CREATE_DRAFT"],
+                    allowed_entities=["messages", "threads", "drafts"],
+                    encrypted_secrets=encrypt_secrets({
+                        "oauth_client_secret": "GOCSPX-live-prod-secret-9921",
+                        "refresh_token": "1//04live_refresh_token"
+                    }),
+                    config={
+                        "domain": "enterprise.com",
+                        "service_account": "ops-bot@enterprise.com",
+                        "timeout_seconds": 10,
+                        "max_retries": 3,
+                        "rate_limit_per_minute": 60
+                    },
+                    last_health_check={
+                        "status": "CONNECTED",
+                        "latency_ms": 31.0,
+                        "message": "Google Workspace API operational. Mailbox authorized.",
+                        "last_checked_at": "2026-11-02T12:00:00Z"
+                    },
+                    metrics={
+                        "total_requests": 19,
+                        "successful_requests": 19,
+                        "failed_requests": 0,
+                        "consecutive_failures": 0,
+                        "rate_limited_count": 0
+                    }
+                )
+            ]
+            db.add_all(connections)
             db.commit()
 
     finally:

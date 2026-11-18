@@ -1,0 +1,18 @@
+{
+  "title": "Synthetic company directory — 5,000 fictional records",
+  "dataset_kind": "synthetic",
+  "generator_version": "1.0.0",
+  "seed": 42,
+  "publisher_url": "",
+  "license": "Locally generated synthetic demonstration data",
+  "retrieved_at": "2026-11-02T17:30:24.548093+00:00",
+  "sha256": "359da44fe1b398e74e3a8362f263b0379984a299bd1a79237a5f27ccbbcafc4c",
+  "source_rows": 5000,
+  "imported_rows": 5000,
+  "sampling": "Seeded pseudorandom generation; no sampling of real companies",
+  "unit": "fictional company; SYN identifiers are not real stock tickers",
+  "synthetic_fields": "All fields are synthetic. City and sector labels are vocabulary only; no real company, address, or review decision is represented.",
+  "derived_tables": "sector_counts is calculated from the generated company rows; security_count retains the existing demo schema",
+  "database_relative_path": "synthetic_company_demo/20261102T173024Z-8c4b3486/companies.sqlite",
+  "training": "No model training, predictions, or evaluation results are generated"
+}

@@ -1,0 +1,217 @@
+C:\Users\mayan\AppData\Roaming\Python\Python314\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+All 8 modular models bootstrapped into ModelRegistry.
+[AVENTRA] Initializing database and cryptographic ledger...
+[AVENTRA] Bootstrapping modular ML Model Registry...
+All 8 modular models bootstrapped into ModelRegistry.
+[AVENTRA] System ready. All trust & execution services active.
+All 8 modular models bootstrapped into ModelRegistry.
+All 8 modular models bootstrapped into ModelRegistry.
+FAIL read_only_request_does_not_create_customer
+All 8 modular models bootstrapped into ModelRegistry.
+All 8 modular models bootstrapped into ModelRegistry.
+FAIL agent_preserves_unseen_customer
+All 8 modular models bootstrapped into ModelRegistry.
+All 8 modular models bootstrapped into ModelRegistry.
+FAIL invoice_intent_executes_invoice_pipeline
+PASS intent_customer
+PASS intent_invoice
+PASS intent_schema
+PASS intent_risk
+PASS intent_audit
+PASS guardrail_known_phrase
+FAIL guardrail_paraphrase
+PASS invoice_exact_match
+FAIL invoice_quantity_overbill
+FAIL invoice_missing_po
+FAIL invoice_missing_receipt
+FAIL invoice_wrong_po_reference
+FAIL invoice_wrong_receipt_reference
+PASS invoice_incorrect_line_math
+FAIL invoice_stated_total_mismatch
+FAIL invoice_line_product_mismatch
+FAIL invoice_unknown_sku
+PASS invoice_duplicate
+PASS invoice_vendor_mismatch
+PASS document_standard_us
+FAIL document_inr_currency
+FAIL document_rupee_symbol
+FAIL document_european_decimal
+FAIL document_integer_total
+PASS document_empty_input
+PASS schema_numeric_to_address_rejected
+PASS schema_supported_address_mapping
+PASS planner_onboard_customer
+PASS planner_reconcile_invoice
+FAIL planner_map_schema
+FAIL planner_detect_anomalies
+PASS drift_proposal_stays_pending
+PASS anomaly_normal
+PASS anomaly_extreme
+All 8 modular models bootstrapped into ModelRegistry.
+All 8 modular models bootstrapped into ModelRegistry.
+All 8 modular models bootstrapped into ModelRegistry.
+FAIL approval_auth_role_and_nonce_enforced
+FAIL audit_detects_genesis_tampering
+PASS audit_detects_second_tampering
+[AVENTRA] Graceful shutdown completed.
+Evaluating existing labeled challenge data...
+{
+  "checks_passed": 20,
+  "checks_total": 40,
+  "labeled_data_evaluation": {
+    "status": "MEASURED",
+    "source": "Existing local Amazon challenge labeled train files; no external upload",
+    "scope": "500 source1 rows starting at offset 100000, all their known true targets, and 10000 distractors from offset 600000 in source2/source3",
+    "limitations": [
+      "Challenge-data provenance is not independently verified; this is not a customer production dataset",
+      "Training overlap cannot be ruled out from the artifact metadata",
+      "Small supplied-target pool does not represent full-corpus search or production prevalence",
+      "Observed link precision is specific to this candidate pool and cannot establish operational accuracy"
+    ],
+    "artifact_sha256": "1c7303332f8821191d3a536fc2f7b0e7c0635f557cbf562a5e5589f49b1afda0",
+    "queries": 500,
+    "candidate_pool": 11748,
+    "known_match_links": 1754,
+    "missing_truth_targets": 0,
+    "blocking_recall_at_25": 0.9663625997719498,
+    "pipeline_threshold": 0.85,
+    "pipeline_true_positive_links": 1592,
+    "pipeline_false_positive_links": 1,
+    "pipeline_false_negative_links": 162,
+    "pipeline_precision": 0.9993722536095417,
+    "pipeline_recall": 0.9076396807297605,
+    "positive_pair_recall_with_true_target_supplied": 0.9258836944127709,
+    "false_negative_examples_ids_only": [
+      {
+        "query_id": "S1-766683741",
+        "expected_ids": [
+          "S2-11363276",
+          "S2-210912877",
+          "S2-418963491",
+          "S3-522679631"
+        ],
+        "predicted_ids": [
+          "S2-11363276",
+          "S2-210912877",
+          "S2-418963491"
+        ],
+        "retrieved_true": 3
+      },
+      {
+        "query_id": "S1-382334348",
+        "expected_ids": [
+          "S2-5993364",
+          "S2-641545020",
+          "S2-725673530",
+          "S3-840198756"
+        ],
+        "predicted_ids": [],
+        "retrieved_true": 0
+      },
+      {
+        "query_id": "S1-322755503",
+        "expected_ids": [
+          "S2-110283609",
+          "S2-52990176",
+          "S2-950296421",
+          "S3-625249035"
+        ],
+        "predicted_ids": [
+          "S2-110283609",
+          "S2-52990176",
+          "S3-625249035"
+        ],
+        "retrieved_true": 4
+      },
+      {
+        "query_id": "S1-691910865",
+        "expected_ids": [
+          "S2-455623397",
+          "S2-49205158",
+          "S3-178023693",
+          "S3-222409763",
+          "S3-708755909"
+        ],
+        "predicted_ids": [
+          "S2-455623397",
+          "S2-49205158",
+          "S3-222409763",
+          "S3-708755909"
+        ],
+        "retrieved_true": 5
+      },
+      {
+        "query_id": "S1-220106932",
+        "expected_ids": [
+          "S2-366046279",
+          "S2-534613792",
+          "S2-59260593",
+          "S3-265934483",
+          "S3-821569366"
+        ],
+        "predicted_ids": [
+          "S2-534613792",
+          "S2-59260593",
+          "S3-821569366"
+        ],
+        "retrieved_true": 5
+      },
+      {
+        "query_id": "S1-145748636",
+        "expected_ids": [
+          "S2-660720951",
+          "S3-268778020",
+          "S3-402701557",
+          "S3-484454878"
+        ],
+        "predicted_ids": [
+          "S3-402701557",
+          "S3-484454878"
+        ],
+        "retrieved_true": 3
+      },
+      {
+        "query_id": "S1-377628080",
+        "expected_ids": [
+          "S2-816760297",
+          "S2-828516488",
+          "S3-170844831",
+          "S3-366311146",
+          "S3-575488867"
+        ],
+        "predicted_ids": [
+          "S2-816760297",
+          "S2-828516488",
+          "S3-170844831",
+          "S3-366311146"
+        ],
+        "retrieved_true": 4
+      },
+      {
+        "query_id": "S1-249052110",
+        "expected_ids": [
+          "S2-237058171",
+          "S2-343438747",
+          "S2-578854644",
+          "S2-962723693",
+          "S3-167733598",
+          "S3-458263775",
+          "S3-750300132",
+          "S3-77015952"
+        ],
+        "predicted_ids": [
+          "S2-237058171",
+          "S2-343438747",
+          "S2-578854644",
+          "S2-962723693",
+          "S3-167733598",
+          "S3-750300132"
+        ],
+        "retrieved_true": 6
+      }
+    ],
+    "duration_seconds": 3.66
+  }
+}
+Report: C:\Hackathons\Gwalior\AVENTRA\validation\results\real-world-readiness.json
